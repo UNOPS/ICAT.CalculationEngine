@@ -1,0 +1,479 @@
+{
+  "methodology": {
+    "id": "2",
+    "name": "UNFCCC_AMS_III_BC",
+    "code": "UNFCCC_AMS_III_BC",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameters": [
+          
+        ],
+        "dimensions": [
+          
+        ]
+      },
+      {
+        "id": "2",
+        "name": "baseline vehicle details",
+        "code": "vehicle",
+        "description": " baseline vehicle details",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type ",
+            "values": [
+              {
+                "id": "1",
+                "name": "car",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "2",
+                "name": "bus",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "3",
+                "name": "truck",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "4",
+                "name": "Threewheel",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "5",
+                "name": "Motor Cycle",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Baseline emission factor",
+                "code": "beftkmixy",
+                "type": "local value",
+                "unit": [
+				  "gCO₂/km",
+                  "gCO₂/tkm"
+                  
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Specific baseline fuel consumption",
+                    "code": "sfcblixy",
+                    "type": "local value",
+                    "unit": [
+                      "g/km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Average GVW",
+                    "code": "awblixy",
+                    "type": "local value",
+                    "unit": [
+                      "tonnes"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Activity level of project",
+                "code": "altkmixy",
+                "type": "local value",
+                "unit": [
+				"km",
+                 "tkm"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Average weight by vehicle",
+                    "code": "avgweightbyvehicle",
+                    "type": "local value",
+                    "unit": [
+                      "tonnes"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Total distance travel",
+                    "code": "totaldistancetravel",
+                    "type": "local value",
+                    "unit": [
+                      "km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+         
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "MJ/g"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2xy",
+                    "type": "country value",
+                    "unit": [
+                      "gCO₂/MJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Gasolin",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "MJ/g"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2xy",
+                    "type": "country value",
+                    "unit": [
+                      "gCO₂/MJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+          
+        ]
+      },
+      {
+        "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter ",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type ",
+            "values": [
+              {
+                "id": "1",
+                "name": "car",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "2",
+                "name": "bus",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "3",
+                "name": "truck",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "4",
+                "name": "Threewheel",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "5",
+                "name": "Motor Cycle",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Project emission factor",
+                "code": "beftkmixy",
+                "type": "local value",
+                "unit": [
+                   "gCO₂/km",
+                  "gCO₂/tkm"
+
+                  
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Specific project fuel consumption",
+                    "code": "sfcblixy",
+                    "type": "local value",
+                    "unit": [
+                      "g/km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Average GVW",
+                    "code": "awblixy",
+                    "type": "local value",
+                    "unit": [
+                      "tonnes"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Activity level of project",
+                "code": "altkmixy",
+                "type": "local value",
+                "unit": [
+                  "km",
+                  "tkm"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Average weight by vehicle",
+                    "code": "avgweightbyvehicle",
+                    "type": "local value",
+                    "unit": [
+                      "tonnes"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Total distance travel",
+                    "code": "totaldistancetravel",
+                    "type": "local value",
+                    "unit": [
+                      "km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+          
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "MJ/g"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2xy",
+                    "type": "country value",
+                    "unit": [
+                      "gCO₂/MJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Gasolin",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "MJ/g"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2xy",
+                    "type": "country value",
+                    "unit": [
+                      "gCO₂/MJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+          
+        ]
+      }
+    ]
+  }
+}
