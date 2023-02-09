@@ -18,7 +18,7 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
     async updateConsumervalue(countryCode: string, year: number): Promise<number> {
         // console.log(countryCode)
         let y = year;
-        let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({where: { countryCode: countryCode, year: y }}).then((valu) => { if (valu) { return valu.value } });
         // let price = ( await this.repo.findOne({ countryCode, year })).value;
         // while (price == undefined) {
         //     let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
@@ -34,10 +34,10 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
     async getConsumervalue(countryCode: string, year: number): Promise<number> {
         // console.log(countryCode)
         let y = year;
-        let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({where: { countryCode: countryCode, year: y }}).then((valu) => { if (valu) { return valu.value } });
         // let price = ( await this.repo.findOne({ countryCode, year })).value;
         while (price == undefined) {
-             price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+             price = await this.repo.findOne({where: { countryCode: countryCode, year: y }}).then((valu) => { if (valu) { return valu.value } });
             y = y - 1;
         }
         console.log("price+++++++",price)

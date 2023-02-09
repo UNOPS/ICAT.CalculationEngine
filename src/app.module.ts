@@ -64,7 +64,7 @@ import { DefaultValue } from './master-data/default-value/defaultValue.entity';
 import { DefaultValueController } from './master-data/default-value/default-value.controller';
 import { DefaultValueService } from './master-data/default-value/default-value.service';
 import { LocalStrategy } from './auth/strategies/local.strategy';
-import { ConfigService } from '@nestjs/config';
+//import { ConfigService } from '@nestjs/config';
 import { MulterModule } from '@nestjs/platform-express';
 import { am0110VE02Module } from './calculation/am0110_ve02.0/am0110_ve02.moduel';
 import { JicaRailwayFreight } from './calculation/jica-railway-freight/jica-railway-freight.module';
@@ -99,13 +99,11 @@ import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
 
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      // password: 'icat',
-      // database: 'calculation_engine',
-      password: 'pasindu',
-      database: 'calculation',
+      socketPath: process.env.SOCKET_PATH,
+      port: Number(process.env.DATABASE_PORT),
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME,
       entities: [
         PppConversionFactor,
         Sample,
@@ -122,6 +120,7 @@ import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
       // autoLoadEntities:true,
 
       synchronize: false,
+      // extra: { socketPath: '/cloudsql/unops-cpit-icat-prod:europe-west3:icat-qa' },
     }),
     JsonFileViwerModule,
     MacModule,

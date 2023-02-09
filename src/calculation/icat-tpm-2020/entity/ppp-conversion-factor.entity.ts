@@ -2,7 +2,7 @@ import { BaseTrackingEntity } from "src/shared/entities/base.tracking.entity";
 import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({name:'pppConversionFactor'})
-export class PppConversionFactor extends BaseTrackingEntity{
+export class PppConversionFactor extends BaseTrackingEntity {
 
     @PrimaryGeneratedColumn()
     id:number;
@@ -12,12 +12,12 @@ export class PppConversionFactor extends BaseTrackingEntity{
     // primaryKey:true;
 
     @Column()
-    countryName:string;
+    countryName: string;
 
     @Column()
-    value:number;
+    value: number;
 
     @Column()
-    year:number;
+    year: number;
 
 }

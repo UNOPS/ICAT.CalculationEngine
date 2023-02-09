@@ -13,17 +13,16 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor>{
         @InjectRepository(PppConversionFactor) repo,
     ) {
         super(repo);
-
     }
 
     async uploadPPPvalue(countryCode: string, year: number): Promise<number> {
         // console.log(countryCode)
         let years = year
-        let price = await this.repo.findOne({ countryCode: countryCode, year: years }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({where: { countryCode: countryCode, year: years }}).then((valu) => { if (valu) { return valu.value } });
         // let price = ( await this.repo.findOne({ countryCode, year })).value;
         // console.log("+++++++++++", price)
         // while (price == undefined) {
-        //     price = await this.repo.findOne({ countryCode: countryCode, year: years }).then((valu) => { if (valu) { return valu.value } });
+        //     price = await this.repo.findOne({where: { countryCode: countryCode, year: years }}).then((valu) => { if (valu) { return valu.value } });
         //     years = years - 1;
         // }
         return price;
@@ -33,10 +32,10 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor>{
     async getPPPvalue(countryCode: string, year: number): Promise<number> {
         // console.log(countryCode)
         let years = year
-        let price = await this.repo.findOne({ countryCode: countryCode, year: years }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({where: { countryCode: countryCode, year: years }}).then((valu: any) => { if (valu) { return valu.value } });
         
         while (price == undefined) {
-            price = await this.repo.findOne({ countryCode: countryCode, year: years }).then((valu) => { if (valu) { return valu.value } });
+            price = await this.repo.findOne({where: { countryCode: countryCode, year: years }}).then((valu: any) => { if (valu) { return valu.value } });
             years = years - 1;
         }
         return price;
