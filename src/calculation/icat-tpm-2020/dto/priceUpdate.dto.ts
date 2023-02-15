@@ -1,13 +1,10 @@
 export class PriceUpdate {
+  countryCode: string;
+  // primaryKey:true;
 
+  countryName: string;
 
-    countryCode: string;
-    // primaryKey:true;
+  value: number;
 
-    countryName:string;
-
-    value:number;
-
-    year:number;
-
+  year: number;
 }

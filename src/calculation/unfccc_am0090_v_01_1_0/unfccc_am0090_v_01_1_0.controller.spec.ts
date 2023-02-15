@@ -9,7 +9,9 @@ describe('Icatm1Controller', () => {
       controllers: [UnfcccAm0090V0110Controller],
     }).compile();
 
-    controller = module.get<UnfcccAm0090V0110Controller>(UnfcccAm0090V0110Controller);
+    controller = module.get<UnfcccAm0090V0110Controller>(
+      UnfcccAm0090V0110Controller,
+    );
   });
 
   it('should be defined', () => {

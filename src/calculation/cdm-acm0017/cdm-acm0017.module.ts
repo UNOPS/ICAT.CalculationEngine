@@ -4,6 +4,6 @@ import { CdmAcm0017Controller } from './cdm-acm0017.controller';
 
 @Module({
   controllers: [CdmAcm0017Controller],
-  providers: [CdmAcm0017Service]
+  providers: [CdmAcm0017Service],
 })
 export class CdmAcm0017Module {}

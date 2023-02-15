@@ -10,16 +10,10 @@ export class SectorService extends TypeOrmCrudService<Sector> {
   }
 
   public async crete(req: Sector) {
-    this.repo.save(req)
+    this.repo.save(req);
   }
 
   public async getdatails() {
     return this.repo.find();
   }
-    
-  }
-
-
-
-
-
+}

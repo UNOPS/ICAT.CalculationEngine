@@ -1,29 +1,25 @@
-export class UnfcccAmsIIIBcResMsg{
+export class UnfcccAmsIIIBcResMsg {
+  year: number;
 
-    year:number;
+  // baselineEmissionHeavy:number;
+  // baselineEmissionOther:number;
+  // projectEmissionHeay:number;
+  // projectEmissionOther:number;
 
-    // baselineEmissionHeavy:number;
-    // baselineEmissionOther:number;
-    // projectEmissionHeay:number;
-    // projectEmissionOther:number;
-  
+  baselineEmission: number;
+  projectEmission: number;
+  emissionReduction: number;
+  leakegeEmission: number;
+  projectionResults: any[];
 
-    baselineEmission:number;
-    projectEmission:number;
-    emissionReduction:number;
-    leakegeEmission:number;
-    projectionResults:any[];
+  //     baseLineEmission : number;
+  //     projectEmission : number;
 
+  //     leakegeEmission :number;
 
-//     baseLineEmission : number;
-//     projectEmission : number;
+  //     emissionReduction : number;
 
-//     leakegeEmission :number;
+  //     projectionResults:any[];
 
-//     emissionReduction : number;
-
-//     projectionResults:any[];
-
-//     year:number;
-
- }
+  //     year:number;
+}

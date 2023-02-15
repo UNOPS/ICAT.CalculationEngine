@@ -16,12 +16,8 @@
         "type": "local value",
         "multyselect": "true",
         "defaultvalue": "",
-        "parameters": [
-          
-        ],
-        "dimensions": [
-          
-        ]
+        "parameters": [],
+        "dimensions": []
       },
       {
         "id": "2",
@@ -31,9 +27,7 @@
         "category": "baseline",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -80,11 +74,7 @@
                 "name": "Baseline emission factor",
                 "code": "beftkmixy",
                 "type": "local value",
-                "unit": [
-				  "gCO₂/km",
-                  "gCO₂/tkm"
-                  
-                ],
+                "unit": ["gCO₂/km", "gCO₂/tkm"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -92,26 +82,18 @@
                     "name": "Specific baseline fuel consumption",
                     "code": "sfcblixy",
                     "type": "local value",
-                    "unit": [
-                      "g/km"
-                    ],
+                    "unit": ["g/km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Average GVW",
                     "code": "awblixy",
                     "type": "local value",
-                    "unit": [
-                      "tonnes"
-                    ],
+                    "unit": ["tonnes"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -120,10 +102,7 @@
                 "name": "Activity level of project",
                 "code": "altkmixy",
                 "type": "local value",
-                "unit": [
-				"km",
-                 "tkm"
-                ],
+                "unit": ["km", "tkm"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -131,30 +110,21 @@
                     "name": "Average weight by vehicle",
                     "code": "avgweightbyvehicle",
                     "type": "local value",
-                    "unit": [
-                      "tonnes"
-                    ],
+                    "unit": ["tonnes"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Total distance travel",
                     "code": "totaldistancetravel",
                     "type": "local value",
-                    "unit": [
-                      "km"
-                    ],
+                    "unit": ["km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
-         
             ]
           },
           {
@@ -180,28 +150,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "MJ/g"
-                    ],
+                    "unit": ["MJ/g"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "efco2xy",
                     "type": "country value",
-                    "unit": [
-                      "gCO₂/MJ"
-                    ],
+                    "unit": ["gCO₂/MJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -215,37 +177,26 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "MJ/g"
-                    ],
+                    "unit": ["MJ/g"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "efco2xy",
                     "type": "country value",
-                    "unit": [
-                      "gCO₂/MJ"
-                    ],
+                    "unit": ["gCO₂/MJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
             ],
-            "parameter": [
-              
-            ]
+            "parameter": []
           }
-          
         ]
       },
       {
@@ -256,9 +207,7 @@
         "category": "project",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -305,12 +254,7 @@
                 "name": "Project emission factor",
                 "code": "beftkmixy",
                 "type": "local value",
-                "unit": [
-                   "gCO₂/km",
-                  "gCO₂/tkm"
-
-                  
-                ],
+                "unit": ["gCO₂/km", "gCO₂/tkm"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -318,26 +262,18 @@
                     "name": "Specific project fuel consumption",
                     "code": "sfcblixy",
                     "type": "local value",
-                    "unit": [
-                      "g/km"
-                    ],
+                    "unit": ["g/km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Average GVW",
                     "code": "awblixy",
                     "type": "local value",
-                    "unit": [
-                      "tonnes"
-                    ],
+                    "unit": ["tonnes"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -346,10 +282,7 @@
                 "name": "Activity level of project",
                 "code": "altkmixy",
                 "type": "local value",
-                "unit": [
-                  "km",
-                  "tkm"
-                ],
+                "unit": ["km", "tkm"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -357,30 +290,21 @@
                     "name": "Average weight by vehicle",
                     "code": "avgweightbyvehicle",
                     "type": "local value",
-                    "unit": [
-                      "tonnes"
-                    ],
+                    "unit": ["tonnes"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Total distance travel",
                     "code": "totaldistancetravel",
                     "type": "local value",
-                    "unit": [
-                      "km"
-                    ],
+                    "unit": ["km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
-          
             ]
           },
           {
@@ -406,28 +330,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "MJ/g"
-                    ],
+                    "unit": ["MJ/g"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "efco2xy",
                     "type": "country value",
-                    "unit": [
-                      "gCO₂/MJ"
-                    ],
+                    "unit": ["gCO₂/MJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -441,37 +357,26 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "MJ/g"
-                    ],
+                    "unit": ["MJ/g"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "efco2xy",
                     "type": "country value",
-                    "unit": [
-                      "gCO₂/MJ"
-                    ],
+                    "unit": ["gCO₂/MJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
             ],
-            "parameter": [
-              
-            ]
+            "parameter": []
           }
-          
         ]
       }
     ]

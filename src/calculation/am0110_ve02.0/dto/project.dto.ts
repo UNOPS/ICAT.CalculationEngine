@@ -1,7 +1,5 @@
-import { RouteDto } from "./route";
+import { RouteDto } from './route';
 
 export class ProjectDto {
-
-    rout:RouteDto[];
-
+  rout: RouteDto[];
 }

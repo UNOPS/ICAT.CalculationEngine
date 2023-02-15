@@ -1,7 +1,6 @@
-import { FeedstockDto } from "./feedstock.dto";
-import { VehicleDto } from "./vehicle.dto";
+import { FeedstockDto } from './feedstock.dto';
 
-export class ProjectDto{
-    year: number;
-    feedstock: FeedstockDto[];
+export class ProjectDto {
+  year: number;
+  feedstock: FeedstockDto[];
 }

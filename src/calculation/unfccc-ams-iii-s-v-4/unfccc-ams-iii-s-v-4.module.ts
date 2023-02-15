@@ -4,7 +4,7 @@ import { UnfcccAmsIIISV4Service } from './unfccc-ams-iii-s-v-4.service';
 
 @Module({
   controllers: [UnfcccAmsIIISV4Controller],
-  providers:[UnfcccAmsIIISV4Service],
-  exports:[UnfcccAmsIIISV4Service]
+  providers: [UnfcccAmsIIISV4Service],
+  exports: [UnfcccAmsIIISV4Service],
 })
 export class UnfcccAmsIIISV4Module {}

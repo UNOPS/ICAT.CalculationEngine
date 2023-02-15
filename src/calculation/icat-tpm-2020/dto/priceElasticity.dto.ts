@@ -1,6 +1,5 @@
-export class PriceElasticityDto{
+export class PriceElasticityDto {
+  mixFuelPrice: number;
 
-    mixFuelPrice:number;
-
-    capitalIncome:number;
+  capitalIncome: number;
 }

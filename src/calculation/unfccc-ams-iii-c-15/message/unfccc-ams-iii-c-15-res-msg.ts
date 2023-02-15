@@ -1,8 +1,7 @@
-import { UnfcccAmsIIIC15ReqMsg } from "./unfccc-ams-iii-c-15-req-msg";
+import { UnfcccAmsIIIC15ReqMsg } from './unfccc-ams-iii-c-15-req-msg';
 
 export class UnfcccAmsIIIC15ResponseMsg {
+  response = [];
 
-    response= new Array();
-
-    metaData :UnfcccAmsIIIC15ReqMsg;
+  metaData: UnfcccAmsIIIC15ReqMsg;
 }

@@ -1,6 +1,6 @@
-import { CdmAmsIiiAkReqMsg } from "./cdm-ams-iii-ak-req-msg";
+import { CdmAmsIiiAkReqMsg } from './cdm-ams-iii-ak-req-msg';
 
 export class CdmAmsIiiAkResMsg {
-    response = new Array();
-    metaData: CdmAmsIiiAkReqMsg;
+  response = [];
+  metaData: CdmAmsIiiAkReqMsg;
 }

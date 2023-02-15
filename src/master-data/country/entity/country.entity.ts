@@ -1,14 +1,8 @@
-
 import { BaseTrackingEntity } from 'src/shared/entities/base.tracking.entity';
-import {
-  Column,
-  Entity,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({name: 'country'})
-export class Country extends BaseTrackingEntity{
-    
+@Entity({ name: 'country' })
+export class Country extends BaseTrackingEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -28,7 +22,7 @@ export class Country extends BaseTrackingEntity{
   sortOrder: number;
 
   // @Column()
-  // submissions: string; // add as string for document upload 
+  // submissions: string; // add as string for document upload
 
   // @Column({ default: null })
   // emissionSummary: string;
@@ -45,14 +39,13 @@ export class Country extends BaseTrackingEntity{
   // @Column({ default: null })
   // registeredDate: Date;
 
-  
   // @Column({ default: null })
   // isMember: boolean;
 
- // @Column({ default: null })
- // isRegister: boolean;
+  // @Column({ default: null })
+  // isRegister: boolean;
 
-  // @Column({ default: null })  // enum 
+  // @Column({ default: null })  // enum
   // countryStatus: number;
 
   @Column({ default: null })
@@ -60,6 +53,4 @@ export class Country extends BaseTrackingEntity{
 
   @Column({ default: null })
   uniqueIdentification: string;
-
-
 }

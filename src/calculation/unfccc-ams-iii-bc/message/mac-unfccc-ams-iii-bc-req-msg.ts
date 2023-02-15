@@ -1,16 +1,12 @@
-import { MacFuelGeneraInputlDto } from "../dto/mac-fuel-general-input.dto";
-import { MacFuelProjectDto } from "../dto/mac-fuel-project.dto";
+import { MacFuelGeneraInputlDto } from '../dto/mac-fuel-general-input.dto';
+import { MacFuelProjectDto } from '../dto/mac-fuel-project.dto';
 
-export class MacUnfcccAmsIIIBcReqMsg{
+export class MacUnfcccAmsIIIBcReqMsg {
+  fuelProject: MacFuelProjectDto;
 
-    fuelProject:MacFuelProjectDto;
+  fuelReference: MacFuelProjectDto;
 
-    fuelReference:MacFuelProjectDto;
+  generalInput: MacFuelGeneraInputlDto;
 
-    generalInput:MacFuelGeneraInputlDto;
-
-
-
-    // fuelReference:MacFuelReferenceDto;
-
+  // fuelReference:MacFuelReferenceDto;
 }

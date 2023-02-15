@@ -1,20 +1,19 @@
 export class BaselineDTO {
+  bsTotalInvestment: number;
 
-    bsTotalInvestment: number;
+  bsOtherAnnualCost: number;
 
-    bsOtherAnnualCost: number;
+  bsAnnualFuel: number;
 
-    bsAnnualFuel: number;
+  bsAnnualOM: number;
 
-    bsAnnualOM: number;
-
-    bsProjectLife: number;
+  bsProjectLife: number;
 }
 
 export class ProjectDTO {
-    psTotalInvestment: number;
-    psOtherAnnualCost: number;
-    psAnnualOM: number;
-    psAnnualFuel: number;
-    psProjectLife: number;
+  psTotalInvestment: number;
+  psOtherAnnualCost: number;
+  psAnnualOM: number;
+  psAnnualFuel: number;
+  psProjectLife: number;
 }

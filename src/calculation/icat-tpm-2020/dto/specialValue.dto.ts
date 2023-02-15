@@ -1,14 +1,12 @@
+import { PriceElasticityDto } from './priceElasticity.dto';
 
-import { PriceElasticityDto } from "./priceElasticity.dto";
+export class SpecialValueDto {
+  year: number;
+  countryCode: string;
 
-export class SpecialValueDto{
-    
-    year:number;
-    countryCode:string;
+  beta: number;
+  toilIncrease: number;
+  existingToil: number;
 
-    beta:number;
-    toilIncrease:number;
-    existingToil:number;  
-
-    priceElasticity: PriceElasticityDto;
+  priceElasticity: PriceElasticityDto;
 }

@@ -1,8 +1,7 @@
-export class TotalEmission{
+export class TotalEmission {
+  year: number;
 
-    year : number;
+  value: number;
 
-    value : number;
-
-    name: string;
+  name: string;
 }

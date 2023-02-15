@@ -1,5 +1,4 @@
-export class ResponceDto{
-
-    year:number;
-    baselineemission
+export class ResponceDto {
+  year: number;
+  baselineemission;
 }

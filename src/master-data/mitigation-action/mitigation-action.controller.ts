@@ -20,15 +20,15 @@ export class MitigationActionController
 {
   constructor(public service: MitigationActionService) {}
 
-  @Get("")
-  public async getall(){
-      let details = this.service.getdatails()
-      return details
+  @Get('')
+  public async getall() {
+    const details = this.service.getdatails();
+    return details;
   }
 
   @Post()
-  public async createUnit(@Body() req:MitigationActionType){
-       console.log(req);
-      this.service.crete(req)
+  public async createUnit(@Body() req: MitigationActionType) {
+    console.log(req);
+    this.service.crete(req);
   }
 }

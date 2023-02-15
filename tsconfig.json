@@ -12,5 +12,5 @@
     "baseUrl": "./",
     "incremental": true
   },
-  "selectFolderPath":"json-files"
+  "selectFolderPath": "json-files"
 }

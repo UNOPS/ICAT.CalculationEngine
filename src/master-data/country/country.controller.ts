@@ -4,32 +4,30 @@ import { CountryService } from './country.service';
 import { Country } from './entity/country.entity';
 
 @Crud({
-    model: {
-      type: Country,
-    },
-    query: {
-      join:{
-        sector: {
-          eager: true,
-        },
+  model: {
+    type: Country,
+  },
+  query: {
+    join: {
+      sector: {
+        eager: true,
       },
     },
-  })
-
+  },
+})
 @Controller('country')
-export class CountryController implements CrudController<Country>{
-    constructor(public service: CountryService){}
+export class CountryController implements CrudController<Country> {
+  constructor(public service: CountryService) {}
 
-    @Get("")
-    public async getall(){
-        let details = this.service.getdatails()
-        return details
-    }
-  
-    @Post()
-    public async createUnit(@Body() req:Country){
-         console.log(req);
-        this.service.crete(req)
-    }
+  @Get('')
+  public async getall() {
+    const details = this.service.getdatails();
+    return details;
+  }
 
+  @Post()
+  public async createUnit(@Body() req: Country) {
+    console.log(req);
+    this.service.crete(req);
+  }
 }

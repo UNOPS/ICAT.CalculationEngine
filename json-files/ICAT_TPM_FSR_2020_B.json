@@ -16,12 +16,8 @@
         "type": "local value",
         "multyselect": "true",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
-        "dimensions": [
-          
-        ]
+        "parameter": [],
+        "dimensions": []
       },
       {
         "id": "2",
@@ -31,9 +27,7 @@
         "category": "baseline",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -58,37 +52,27 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "3",
                     "name": "Total Diesel used for ground transport (Gg)",
                     "code": "used_weight",
                     "type": "country value",
-                    "unit": [
-                      "Gg"
-                    ],
+                    "unit": ["Gg"],
                     "usedefaultvalue": "false",
                     "alternativeparameters": [
                       {
@@ -96,27 +80,19 @@
                         "name": "Total Diesel used for ground transport (liters)",
                         "code": "used_liters",
                         "type": "country value",
-                        "unit": [
-                          "liters"
-                        ],
+                        "unit": ["liters"],
                         "usedefaultvalue": "false",
-                        "alternativeparameters": [
-                          
-                        ]
+                        "alternativeparameters": []
                       },
                       {
                         "id": "2",
                         "name": "Density",
                         "code": "density",
                         "type": "country value",
-                        "unit": [
-                          "Kg/m3"
-                        ],
+                        "unit": ["Kg/m3"],
                         "defaultvalue": "",
                         "usedefaultvalue": "true",
-                        "alternativeparameters": [
-                          
-                        ]
+                        "alternativeparameters": []
                       }
                     ]
                   }
@@ -132,37 +108,27 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "3",
                     "name": "Total Petrol used for ground transport (Gg)",
                     "code": "used_weight",
                     "type": "country value",
-                    "unit": [
-                      "Gg"
-                    ],
+                    "unit": ["Gg"],
                     "usedefaultvalue": "false",
                     "alternativeparameters": [
                       {
@@ -170,27 +136,19 @@
                         "name": "Total Petrol used for ground transport (liters)",
                         "code": "used_liters",
                         "type": "country value",
-                        "unit": [
-                          "liters"
-                        ],
+                        "unit": ["liters"],
                         "usedefaultvalue": "false",
-                        "alternativeparameters": [
-                          
-                        ]
+                        "alternativeparameters": []
                       },
                       {
                         "id": "2",
                         "name": "Density",
                         "code": "density",
                         "type": "country value",
-                        "unit": [
-                          "Kg/m3"
-                        ],
+                        "unit": ["Kg/m3"],
                         "defaultvalue": "",
                         "usedefaultvalue": "true",
-                        "alternativeparameters": [
-                          
-                        ]
+                        "alternativeparameters": []
                       }
                     ]
                   }
@@ -208,9 +166,7 @@
         "category": "project",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -229,58 +185,44 @@
                 "id": "1",
                 "name": "Diesel",
                 "defaultvalue": "false",
-                "parameter": [                  
-                ]
+                "parameter": []
               },
               {
                 "id": "2",
                 "name": "Petrol",
                 "defaultvalue": "false",
-                "parameter": [
-                ]
+                "parameter": []
               }
             ],
             "parameter": [
-              
               {
                 "id": "1",
                 "name": "Own-price elasticity",
                 "code": "priceElasticity",
                 "type": "country value",
-                "unit": [
-                  "-"
-                ],
+                "unit": ["-"],
                 "defaultvalue": "-0.22",
                 "usedefaultvalue": "true",
                 "alternativeparameters": [
-              
                   {
                     "id": "1",
                     "name": "Actual fuel price (annual average) in local currency for the assessment year",
                     "code": "fuelPrice",
                     "type": "country value",
-                    "unit": [
-                      "price per liter"
-                    ],
+                    "unit": ["price per liter"],
                     "defaultvalue": "",
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Actual per capita income in local currency for the assessment year",
                     "code": "capitalIncome",
                     "type": "country value",
-                    "unit": [
-                      "price per capita"
-                    ],
+                    "unit": ["price per capita"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -289,14 +231,10 @@
                 "name": "Relative fuel price increase ",
                 "code": "priceIncrease",
                 "type": "country value",
-                "unit": [
-                  "%"
-                ],
+                "unit": ["%"],
                 "defaultvalue": "",
                 "usedefaultvalue": "true",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               }
             ]
           }

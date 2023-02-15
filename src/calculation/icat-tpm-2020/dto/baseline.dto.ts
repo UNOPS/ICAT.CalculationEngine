@@ -1,15 +1,10 @@
-import { VehicleDto } from "./vehicle.dto";
+import { VehicleDto } from './vehicle.dto';
 export class BaselineDto {
-    
-    vehicle: VehicleDto[];
+  vehicle: VehicleDto[];
 
-    fuelUsed: number;  // Total fuel used for ground transport in year y (unspecified mix of gasoline, diesel and/or other transport fuels) 
-    
-    pkm:number;
+  fuelUsed: number; // Total fuel used for ground transport in year y (unspecified mix of gasoline, diesel and/or other transport fuels)
 
-    beta:number;
- 
+  pkm: number;
 
-    
-
+  beta: number;
 }

@@ -10,7 +10,7 @@ export class ApplicabilityService extends TypeOrmCrudService<ApplicabilityEntity
   }
 
   public async crete(req: ApplicabilityEntity) {
-    this.repo.save(req)
+    this.repo.save(req);
   }
 
   public async getdatails() {

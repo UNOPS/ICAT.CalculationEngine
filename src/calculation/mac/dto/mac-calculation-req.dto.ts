@@ -1,15 +1,13 @@
-import { BaselineDTO, ProjectDTO } from "./request.dto";
+import { BaselineDTO, ProjectDTO } from './request.dto';
 
 export class MacCalculationReqDTO {
+  year: number;
 
-    year:number;
+  DiscountRate: number;
 
-    DiscountRate: number;
+  reduction: number;
 
-    reduction: number;
+  project: ProjectDTO;
 
-    project: ProjectDTO;
-
-    baseline: BaselineDTO;
-
+  baseline: BaselineDTO;
 }

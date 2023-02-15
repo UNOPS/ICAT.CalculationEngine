@@ -15,16 +15,16 @@ export class ApplicabilityController
 {
   constructor(public service: ApplicabilityService) {}
 
-  @Get("")
-  public async getall(){
-      let details = this.service.getdatails()
-      return details
+  @Get('')
+  public async getall() {
+    const details = this.service.getdatails();
+    return details;
   }
 
   @Post()
-  public async createUnit(@Body() req:ApplicabilityEntity){
-       console.log(req);
-      this.service.crete(req)
+  public async createUnit(@Body() req: ApplicabilityEntity) {
+    console.log(req);
+    this.service.crete(req);
   }
 
   get base(): CrudController<ApplicabilityEntity> {

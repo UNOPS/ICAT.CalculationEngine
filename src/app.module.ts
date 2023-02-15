@@ -19,7 +19,6 @@ import { UnfcccAm0090V0110Controller } from './calculation/unfccc_am0090_v_01_1_
 import { UnfcccAm0090V0110Service } from './calculation/unfccc_am0090_v_01_1_0/unfccc_am0090_v_01_1_0.service';
 import { PppConversionFactor } from './calculation/icat-tpm-2020/entity/ppp-conversion-factor.entity';
 import { ConsumerPriceEntity } from './calculation/icat-tpm-2020/entity/consumer-price.entity';
-//import { UnfcccAm0016V5Module } from './unfccc-am0016-v-5/unfccc-am0016-v-5.module';
 import { UnfcccAm0016V5Module } from './calculation/unfccc-am0016-v-5/unfccc-am0016-v-5.module';
 import { UnfcccAm0016V5Controller } from './calculation/unfccc-am0016-v-5/unfccc-am0016-v-5.controller';
 import { UnfcccAm0016V5Service } from './calculation/unfccc-am0016-v-5/unfccc-am0016-v-5.service';
@@ -63,8 +62,6 @@ import { DefaultValueModule } from './master-data/default-value/default-value.mo
 import { DefaultValue } from './master-data/default-value/defaultValue.entity';
 import { DefaultValueController } from './master-data/default-value/default-value.controller';
 import { DefaultValueService } from './master-data/default-value/default-value.service';
-import { LocalStrategy } from './auth/strategies/local.strategy';
-//import { ConfigService } from '@nestjs/config';
 import { MulterModule } from '@nestjs/platform-express';
 import { am0110VE02Module } from './calculation/am0110_ve02.0/am0110_ve02.moduel';
 import { JicaRailwayFreight } from './calculation/jica-railway-freight/jica-railway-freight.module';
@@ -78,7 +75,8 @@ import { MethodologyDataService } from './master-data/methodology-data/methodolo
 import { CdmAm0031AkModule } from './calculation/cdm-am0031/cdm-am0031.module';
 import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
 @Module({
-  imports: [SampleModule,
+  imports: [
+    SampleModule,
     TypeOrmModule.forFeature([
       Sample,
       PppConversionFactor,
@@ -191,4 +189,4 @@ import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
     CDMAM0031Service,
   ],
 })
-export class AppModule { }
+export class AppModule {}

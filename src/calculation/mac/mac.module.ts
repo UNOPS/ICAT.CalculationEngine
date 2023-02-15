@@ -4,6 +4,6 @@ import { MacService } from './mac.service';
 
 @Module({
   controllers: [MacController],
-  providers: [MacService]
+  providers: [MacService],
 })
 export class MacModule {}

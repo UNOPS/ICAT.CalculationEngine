@@ -2,7 +2,6 @@
 
 // import { FuelDto } from "./fuel.dto";
 
-
 // export class VehicleDto{
 
 //     vehicleType: string; //vehicle type
@@ -14,7 +13,7 @@
 
 //     ms : number;  // Share of passengers by transport mode
 
-//     or : number; // 
+//     or : number; //
 
 //     fuel: FuelDto;
 // }

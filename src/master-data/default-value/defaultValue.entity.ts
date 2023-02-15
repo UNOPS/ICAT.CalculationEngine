@@ -34,7 +34,7 @@ export class DefaultValue extends BaseTrackingEntity {
   @Column({ default: null })
   value: string;
 
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   unitIdentification: number;
 
   name: string;

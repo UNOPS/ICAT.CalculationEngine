@@ -5,14 +5,10 @@ import { JsonFileViwerService } from './json-file-viwer.service';
 @Controller('filename')
 @UseGuards(LocalAuthGuard)
 export class JsonFileViwerController {
+  constructor(public service: JsonFileViwerService) {}
 
-    constructor(public service: JsonFileViwerService,
-        
-    ) {
-    }
-
-    @Get(':name')
-    public methodology(@Param('name') name) {
-        return this.service.selectJson(name);
-    }
+  @Get(':name')
+  public methodology(@Param('name') name) {
+    return this.service.selectJson(name);
+  }
 }

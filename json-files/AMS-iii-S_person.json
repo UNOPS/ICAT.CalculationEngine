@@ -16,12 +16,8 @@
         "type": "local value",
         "multyselect": "true",
         "defaultvalue": "",
-        "parameters": [
-          
-        ],
-        "dimensions": [
-          
-        ]
+        "parameters": [],
+        "dimensions": []
       },
       {
         "id": "2",
@@ -31,9 +27,7 @@
         "category": "baseline",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -75,9 +69,7 @@
                 "name": "The annual average distance of transportation per person",
                 "code": "dp",
                 "type": "local value",
-                "unit": [
-                  "km"
-                ],
+                "unit": ["km"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -85,13 +77,9 @@
                     "name": "Total annual distance",
                     "code": "d",
                     "type": "local value",
-                    "unit": [
-                      "km"
-                    ],
+                    "unit": ["km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -100,26 +88,18 @@
                 "name": "Total annual passengers transported",
                 "code": "p",
                 "type": "local value",
-                "unit": [
-                  "passengers"
-                ],
+                "unit": ["passengers"],
                 "usedefaultvalue": "false",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               },
               {
                 "id": "3",
                 "name": "Fuel efficiency",
                 "code": "n",
                 "type": "country value",
-                "unit": [
-                  "fuel/km"
-                ],
+                "unit": ["fuel/km"],
                 "usedefaultvalue": "false",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               }
             ]
           },
@@ -146,14 +126,10 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -167,14 +143,10 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
@@ -185,14 +157,10 @@
                 "name": "CO₂ emission factor",
                 "code": "ef",
                 "type": "country value",
-                "unit": [
-                  "t-CO₂/TJ"
-                ],
+                "unit": ["t-CO₂/TJ"],
                 "defaultvalue": "",
                 "usedefaultvalue": "true",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               }
             ]
           },
@@ -215,9 +183,7 @@
                 "defaultvalue": ""
               }
             ],
-            "parameter": [
-              
-            ]
+            "parameter": []
           }
         ]
       },
@@ -229,9 +195,7 @@
         "category": "project",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -273,9 +237,7 @@
                 "name": "The annual average distance of transportation per person",
                 "code": "dp",
                 "type": "local value",
-                "unit": [
-                  "km" 
-                ],
+                "unit": ["km"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": [
                   {
@@ -283,27 +245,18 @@
                     "name": "Fuel efficiency",
                     "code": "n",
                     "type": "local value",
-                    "unit": [
-                      "fuel/km"
-                    ],
+                    "unit": ["fuel/km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Total annual distance",
                     "code": "d",
                     "type": "local value",
-                    "unit": [
-                      "km"
-                    ],
+                    "unit": ["km"],
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -312,28 +265,19 @@
                 "name": "Consumption of fuel",
                 "code": "fc",
                 "type": "local value",
-                "unit": [
-                  "t/y",
-                  "t-CO₂/MWh"
-                ],
+                "unit": ["t/y", "t-CO₂/MWh"],
                 "defaultvalue": "",
                 "usedefaultvalue": "false",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               },
               {
                 "id": "3",
                 "name": "Total annual passengers transported",
                 "code": "p",
                 "type": "local value",
-                "unit": [
-                  "passengers"
-                ],
+                "unit": ["passengers"],
                 "usedefaultvalue": "false",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               }
             ]
           },
@@ -360,28 +304,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -395,28 +331,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -430,14 +358,10 @@
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/MWh"
-                    ],
+                    "unit": ["t-CO₂/MWh"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -451,28 +375,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -486,28 +402,20 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -521,35 +429,25 @@
                     "name": "Net calorific value",
                     "code": "ncv",
                     "type": "country value",
-                    "unit": [
-                      "TJ/t"
-                    ],
+                    "unit": ["TJ/t"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
             ],
-            "parameter": [
-              
-            ]
+            "parameter": []
           },
           {
             "id": "3",
@@ -563,12 +461,8 @@
             "orderid": "3",
             "multyselect": "true",
             "description": "vehicle type ",
-            "values": [
-              
-            ],
-            "parameter": [
-              
-            ]
+            "values": [],
+            "parameter": []
           }
         ]
       }

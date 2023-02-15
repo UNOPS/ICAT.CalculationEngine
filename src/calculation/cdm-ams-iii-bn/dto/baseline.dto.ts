@@ -1,7 +1,6 @@
-import { RouteDto } from "./route.dto";
-
+import { RouteDto } from './route.dto';
 
 export class BaselineDto {
-    year: number;
-    route: RouteDto[];
+  year: number;
+  route: RouteDto[];
 }

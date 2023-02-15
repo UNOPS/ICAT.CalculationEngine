@@ -1,14 +1,12 @@
-import { JicaTcmMsPV3ReqMsg } from "../message/Jica-tcm-ms-p-v-3-req-msg";
+import { JicaTcmMsPV3ReqMsg } from '../message/Jica-tcm-ms-p-v-3-req-msg';
 
-export class ResponseDto{
+export class ResponseDto {
+  year: number;
 
-    
-    year:number;
+  baseLineEmission: number;
+  projectEmission: number;
 
-    baseLineEmission : number;
-    projectEmission : number;
+  emissionReduction: number;
 
-    emissionReduction : number;
-
-    meta_data : JicaTcmMsPV3ReqMsg;
+  meta_data: JicaTcmMsPV3ReqMsg;
 }

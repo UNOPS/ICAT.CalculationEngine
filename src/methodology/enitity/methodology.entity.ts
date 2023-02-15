@@ -5,23 +5,21 @@ import { MitigationActionType } from 'src/master-data/mitigation-action/entity/m
 import { Sector } from 'src/master-data/sector/entity/sector.entity';
 import { BaseTrackingEntity } from 'src/shared/entities/base.tracking.entity';
 import {
-    Column,
-    Entity,
-    JoinColumn,
-    ManyToOne,
-    PrimaryColumn,
-    PrimaryGeneratedColumn,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity({ name: 'methodology' })
-export class Methodology extends BaseTrackingEntity{
-    constructor() {
-        super();
-        this.createdBy = '-';
-        this.editedBy = '-';
-      }
+export class Methodology extends BaseTrackingEntity {
+  constructor() {
+    super();
+    this.createdBy = '-';
+    this.editedBy = '-';
+  }
 
-   
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -46,8 +44,8 @@ export class Methodology extends BaseTrackingEntity{
   @Column({ default: null })
   Documents: string;
 
-//   @Column({ default: 0 })
-//   isActive: number;
+  //   @Column({ default: 0 })
+  //   isActive: number;
 
   @Column({ default: null })
   easenessOfDataCollection: string;
@@ -60,9 +58,9 @@ export class Methodology extends BaseTrackingEntity{
 
   @Column({ default: null })
   ghgIncluded: string;
-  
-  @PrimaryGeneratedColumn("uuid")
-  uniqueIdentification:number;
+
+  @PrimaryGeneratedColumn('uuid')
+  uniqueIdentification: number;
 
   @ManyToOne((type) => Country, { cascade: false })
   @JoinColumn({ name: 'countryId' })

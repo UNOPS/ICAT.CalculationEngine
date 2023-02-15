@@ -1,85 +1,78 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { MacUnfcccAmsIIIBcReqMsg } from './message/mac-unfccc-ams-iii-bc-req-msg';
+// import { MacUnfcccAmsIIIBcReqMsg } from './message/mac-unfccc-ams-iii-bc-req-msg';
 import { UnfccAmsIIIBcReqMsg } from './message/unfccc-ams-iii-bc-req-msg';
 import { UnfcccAmsIIIBcResMsg } from './message/unfccc-ams-iii-bc-res-msg';
 import { UnfcccAmsIiiBcService } from './unfccc-ams-iii-bc.service';
 
 @Controller('unfccc-ams-iii-bc')
 export class UnfcccAmsIiiBcController {
+  constructor(public service: UnfcccAmsIiiBcService) {}
 
-    constructor(public service: UnfcccAmsIiiBcService) { }
+  @Post('/icatm1')
+  private ICATM1(@Body() req: UnfccAmsIIIBcReqMsg) {
+    const response = new UnfcccAmsIIIBcResMsg();
+    for (const num in req.baseline) {
+      var responseArray = [];
 
+      const baselineEmissionHeavy = this.service.baselineEmissionHeavy(
+        req.baseline[num],
+      );
 
+      const baselineEmissionOther = this.service.baselineEmissionOther(
+        req.baseline[num],
+      );
 
-    @Post('/icatm1')
-    private ICATM1(@Body() req: UnfccAmsIIIBcReqMsg) {
+      const projectEmissionHeay = this.service.projectEmissionHeavy(
+        req.project[num],
+      );
 
-        var response = new UnfcccAmsIIIBcResMsg();
-        for (let num in req.baseline) {
+      const projectEmissionOther = this.service.projectEmissionOther(
+        req.project[num],
+      );
 
-        var responseArray = new Array();
+      response.year = req.baseline[num].year;
 
-        let baselineEmissionHeavy = this.service.baselineEmissionHeavy(req.baseline[num]);
+      response.baselineEmission = baselineEmissionHeavy + baselineEmissionOther;
 
-        let baselineEmissionOther = this.service.baselineEmissionOther(req.baseline[num]);
+      response.projectEmission = projectEmissionHeay + projectEmissionOther;
 
-        let projectEmissionHeay = this.service.projectEmissionHeavy(req.project[num]);
+      response.leakegeEmission = null;
 
-        let projectEmissionOther = this.service.projectEmissionOther(req.project[num]);
+      response.emissionReduction =
+        response.baselineEmission - response.projectEmission;
 
-        response.year = req.baseline[num].year;
-
-        response.baselineEmission = baselineEmissionHeavy + baselineEmissionOther;
-
-        response.projectEmission =  projectEmissionHeay + projectEmissionOther;
-
-        response.leakegeEmission = null;
-
-        response.emissionReduction = response.baselineEmission -  response.projectEmission;
-
-        responseArray.push(response);
-        
-        }
-
-        return responseArray;
-
+      responseArray.push(response);
     }
 
-    //Mac Calculations
-    @Post('/mac')
-    private macCalculation(@Body() req: MacUnfcccAmsIIIBcReqMsg) {
+    return responseArray;
+  }
 
-        //project (reduction)
-        let projecttotalInvestment =  this.service.projecttotalInvestment(req.generalInput);
-
-        let projectLevInvestment = this.service.pmtCalculation(req.generalInput.discountRate, req.fuelProject.projectLife, projecttotalInvestment);
-
-        let projectAnualOAndM = this.service.annual_OM(req.generalInput);
-
-        let projectAnnualFuelCost = this.service.annualFuelCost(req.fuelProject);
-        
-
-        //reference
-        let referencetotalInvestment =0;
-
-        let referenceLevInvestment = 0;
-        
-        let referenceAnualOAndM = 0;
-
-        let referenceAnnualFuelCost = this.service.referenceAnnualFuelCost(req.fuelReference);
-
-
-        let increaseTotalInvestment= projecttotalInvestment - referencetotalInvestment ;
-        let increaseLevInvestment= projectLevInvestment - referenceLevInvestment ;
-        let increaseAnualOAndM = projectAnualOAndM - referenceAnualOAndM  ;
-        let increaseAnnualFuelCost = projectAnnualFuelCost - referenceAnnualFuelCost;
-        
-
-
-
-        
-
-
-    }
-
+  //Mac Calculations
+  // @Post('/mac')
+  // private macCalculation(@Body() req: MacUnfcccAmsIIIBcReqMsg) {
+  //project (reduction)
+  // const projecttotalInvestment = this.service.projecttotalInvestment(
+  //   req.generalInput,
+  // );
+  // const projectLevInvestment = this.service.pmtCalculation(
+  //   req.generalInput.discountRate,
+  //   req.fuelProject.projectLife,
+  //   projecttotalInvestment,
+  // );
+  // const projectAnualOAndM = this.service.annual_OM(req.generalInput);
+  // const projectAnnualFuelCost = this.service.annualFuelCost(req.fuelProject);
+  // //reference
+  // const referencetotalInvestment = 0;
+  // const referenceLevInvestment = 0;
+  // const referenceAnualOAndM = 0;
+  // const referenceAnnualFuelCost = this.service.referenceAnnualFuelCost(
+  //   req.fuelReference,
+  // );
+  // const increaseTotalInvestment =
+  //   projecttotalInvestment - referencetotalInvestment;
+  // const increaseLevInvestment = projectLevInvestment - referenceLevInvestment;
+  // const increaseAnualOAndM = projectAnualOAndM - referenceAnualOAndM;
+  // const increaseAnnualFuelCost =
+  //   projectAnnualFuelCost - referenceAnnualFuelCost;
+  // }
 }

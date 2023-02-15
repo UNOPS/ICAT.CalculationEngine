@@ -1,30 +1,21 @@
-import { vehicleDto } from "./vehicle.dto";
+import { vehicleDto } from './vehicle.dto';
 
+export class leakageDto {
+  year: number;
+  vehicle: vehicleDto[];
 
-export class leakageDto{
+  py: number;
 
-year:number;
-vehicle:vehicleDto[];
+  arsy: number; //not used
 
-py:number;
+  bscry: number;
+  nzx: number;
+  srsx: number;
+  rsx: number;
+  rsy: number;
 
-
-
-arsy:number;//not used
-
-bscry:number;
-nzx:number;
-srsx:number;
-rsx:number;
-rsy:number;
-
-//srsx alternatives
-tdbx:number;//a
-tdtx:number;
-tdcx:number;
-
-
-
-
-
+  //srsx alternatives
+  tdbx: number; //a
+  tdtx: number;
+  tdcx: number;
 }

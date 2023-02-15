@@ -1,17 +1,15 @@
+import { BaseMileStoneDto } from '../dto/baseMileStone.dto';
+import { BaselineDto } from '../dto/baseline.dto';
+import { SelectApproch } from '../dto/selectApproch.dto';
+import { ProjectDto } from '../dto/project.dto';
 
-import { BaseMileStoneDto } from "../dto/baseMileStone.dto";
-import { BaselineDto } from "../dto/baseline.dto";
-import { SelectApproch } from "../dto/selectApproch.dto";
-import { ProjectDto } from "../dto/project.dto";
+export class IcatTpm2020request {
+  projectType: SelectApproch;
 
-export class IcatTpm2020request{
+  baseline: BaselineDto;
+  project: ProjectDto;
 
-   projectType: SelectApproch ;
+  baseMileStone: BaseMileStoneDto;
 
-   baseline: BaselineDto;
-   project:ProjectDto;
-
-   baseMileStone :BaseMileStoneDto;
-
-   // mileStone: MileStoneParameterDto[];
+  // mileStone: MileStoneParameterDto[];
 }

@@ -5,9 +5,9 @@ import { UnitConversionController } from './unit-conversion.controller';
 import { UnitConversionService } from './unit-conversion.service';
 
 @Module({
-  imports:[TypeOrmModule.forFeature([UnitConversion])],
+  imports: [TypeOrmModule.forFeature([UnitConversion])],
   controllers: [UnitConversionController],
   providers: [UnitConversionService],
-  exports:[UnitConversionService]
+  exports: [UnitConversionService],
 })
 export class UnitConversionModule {}

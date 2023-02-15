@@ -16,12 +16,8 @@
         "type": "local value",
         "multyselect": "true",
         "defaultvalue": "",
-        "parameters": [
-          
-        ],
-        "dimensions": [
-          
-        ]
+        "parameters": [],
+        "dimensions": []
       },
       {
         "id": "2",
@@ -31,9 +27,7 @@
         "category": "baseline",
         "type": "local value",
         "defaultvalue": "",
-        "parameter": [
-          
-        ],
+        "parameter": [],
         "dimensions": [
           {
             "id": "1",
@@ -58,94 +52,70 @@
                     "name": "Total fuel used for ground transport(Fuel mix)",
                     "code": "fuelUsed",
                     "type": "local value",
-                    "unit": [
-                      "TJ"
-                    ],
+                    "unit": ["TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
-              
+
               {
                 "id": "2",
                 "name": "Petrol",
                 "defaultvalue": "true",
                 "parameter": [
-                  
                   {
                     "id": "1",
                     "name": "Share of fuel ",
                     "code": "fuelShare",
                     "type": "local value",
-                    "unit": [
-                      "%"
-                    ],
+                    "unit": ["%"],
                     "defaultvalue": "",
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
-                ] 
+                ]
               },
               {
                 "id": "3",
                 "name": "Diesel",
                 "defaultvalue": "true",
                 "parameter": [
-                  
                   {
                     "id": "1",
                     "name": "Share of fuel type",
                     "code": "fuelShare",
                     "type": "local value",
-                    "unit": [
-                      "%"
-                    ],
+                    "unit": ["%"],
                     "defaultvalue": "",
                     "usedefaultvalue": "false",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "CO₂ emission factor",
                     "code": "ef",
                     "type": "country value",
-                    "unit": [
-                      "t-CO₂/TJ"
-                    ],
+                    "unit": ["t-CO₂/TJ"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               }
             ],
-            "parameter": [
-              
-            ]
+            "parameter": []
           }
         ]
       },
@@ -175,9 +145,7 @@
                 "id": "1",
                 "name": "Fuel Mix",
                 "defaultvalue": "true",
-                "parameter": [
-                  
-                ]
+                "parameter": []
               }
             ],
             "parameter": [
@@ -186,40 +154,29 @@
                 "name": "Fuel mix own - price elasticity",
                 "code": "fuelMixPriceElasticity",
                 "type": "country value",
-                "unit": [
-                  "-"
-                ],
+                "unit": ["-"],
                 "defaultvalue": "-0.24",
                 "usedefaultvalue": "true",
                 "alternativeparameters": [
-                 
                   {
                     "id": "1",
                     "name": "Actual fuel mix price in local currency for the assessment year",
                     "code": "mixFuelPrice",
                     "type": "country value",
-                    "unit": [
-                      "price per liter"
-                    ],
+                    "unit": ["price per liter"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   },
                   {
                     "id": "2",
                     "name": "Actual per capita income in local currency for the assessment year",
                     "code": "capitalIncome",
                     "type": "country value",
-                    "unit": [
-                      "price per capita"
-                    ],
+                    "unit": ["price per capita"],
                     "defaultvalue": "",
                     "usedefaultvalue": "true",
-                    "alternativeparameters": [
-                      
-                    ]
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -228,21 +185,15 @@
                 "name": "Relative fuel mix price increase",
                 "code": "fuelMixPriceIncrease",
                 "type": "country value",
-                "unit": [
-                  "%"
-                ],
+                "unit": ["%"],
                 "defaultvalue": "",
                 "usedefaultvalue": "false",
-                "alternativeparameters": [
-                  
-                ]
+                "alternativeparameters": []
               }
             ]
           }
         ],
-        "parameter": [
-          
-        ]
+        "parameter": []
       }
     ]
   }

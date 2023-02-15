@@ -1,5 +1,4 @@
-export class MacFuelGeneraInputlDto{
-
-    discountRate:number;
-    dailyActivity:number;
+export class MacFuelGeneraInputlDto {
+  discountRate: number;
+  dailyActivity: number;
 }

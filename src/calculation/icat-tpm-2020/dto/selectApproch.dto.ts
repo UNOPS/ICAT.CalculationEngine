@@ -1,9 +1,7 @@
-import { ProjectTypeEnum } from "src/calculation/enum/project_type.enum";
+import { ProjectTypeEnum } from 'src/calculation/enum/project_type.enum';
 
-export class SelectApproch{
+export class SelectApproch {
+  baseLineApproch: ProjectTypeEnum;
 
-    baseLineApproch : ProjectTypeEnum;
-
-    projectApproch : ProjectTypeEnum;
-
+  projectApproch: ProjectTypeEnum;
 }

@@ -1,31 +1,26 @@
 import { BaseTrackingEntity } from 'src/shared/entities/base.tracking.entity';
-import {
-    Column,
-    Entity,
-    PrimaryColumn,
-    PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'unit_conversion' })
 export class UnitConversion extends BaseTrackingEntity {
-    constructor() {
-        super();
-        this.createdBy = '';
-        this.editedBy = '';
-    }
+  constructor() {
+    super();
+    this.createdBy = '';
+    this.editedBy = '';
+  }
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column({ nullable: false })
-    fromUnit: string;
+  @Column({ nullable: false })
+  fromUnit: string;
 
-    @Column({ nullable: false })
-    toUnit: string;
+  @Column({ nullable: false })
+  toUnit: string;
 
-    @Column({ type: 'decimal', precision: 10, scale: 6, nullable: false })
-    conversionFactor: number;
+  @Column({ type: 'decimal', precision: 10, scale: 6, nullable: false })
+  conversionFactor: number;
 
-    @PrimaryGeneratedColumn("uuid")
-    unitIdentification: number;
+  @PrimaryGeneratedColumn('uuid')
+  unitIdentification: number;
 }

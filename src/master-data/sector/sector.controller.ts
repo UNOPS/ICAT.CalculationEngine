@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query, Request } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import {
   Crud,
   CrudController,
@@ -36,25 +36,24 @@ export class SectorController implements CrudController<Sector> {
     return this;
   }
 
-  @Get("")
-  public async getall(){
-      let details = this.service.getdatails()
-      return details
+  @Get('')
+  public async getall() {
+    const details = this.service.getdatails();
+    return details;
   }
 
   @Post()
-  public async createUnit(@Body() req:Sector){
-       console.log(req);
-      this.service.crete(req)
+  public async createUnit(@Body() req: Sector) {
+    console.log(req);
+    this.service.crete(req);
   }
 
   @Override()
   async getMany(
     @ParsedRequest() req: CrudRequest,
-    @Request() req2,
   ): Promise<GetManyDefaultResponse<Sector> | Sector[]> {
     try {
-      let res = await this.base.getManyBase(req);
+      const res = await this.base.getManyBase(req);
       // console.log('*********************************************');
       // console.log(res);
       // console.log('*********************************************');
@@ -65,12 +64,4 @@ export class SectorController implements CrudController<Sector> {
       console.log(error);
     }
   }
-
-
-
-  
-
-
-
-
 }

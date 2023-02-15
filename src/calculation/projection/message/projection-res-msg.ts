@@ -1,13 +1,11 @@
 export class ProjectionResMsg {
+  year: number;
 
-    year: number;
+  baselineEmission: number;
 
-    baselineEmission: number;
+  projectEmission: number;
 
-    projectEmission: number;
+  leakegeEmission: number;
 
-    leakegeEmission:number;
-
-    emissionReduction: number;
-
+  emissionReduction: number;
 }

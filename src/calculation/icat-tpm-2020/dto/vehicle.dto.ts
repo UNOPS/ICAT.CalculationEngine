@@ -1,27 +1,25 @@
-import { ElectricityDto } from "./electricity.dto";
-import { FuelDto } from "./fuel.dto";
+import { ElectricityDto } from './electricity.dto';
+import { FuelDto } from './fuel.dto';
 
-export class VehicleDto{
-    
-    vehicleType:string;
+export class VehicleDto {
+  vehicleType: string;
 
-    or:number;
-    
-    n:number;
-    fuel: FuelDto;
-    electricity: ElectricityDto;
+  or: number;
 
-    fuelEconomy:number;
+  n: number;
+  fuel: FuelDto;
+  electricity: ElectricityDto;
 
-    price: number;
+  fuelEconomy: number;
 
-    prevuiousTax: number;
+  price: number;
 
-    newTax: number;
+  prevuiousTax: number;
 
-    percentageReduction:number;
+  newTax: number;
 
-    
-    vahicleSale: number
-    distance: number;
+  percentageReduction: number;
+
+  vahicleSale: number;
+  distance: number;
 }

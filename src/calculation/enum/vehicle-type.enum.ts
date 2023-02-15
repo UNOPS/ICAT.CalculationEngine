@@ -1,10 +1,9 @@
-export enum VehicleTypeEnum{
+export enum VehicleTypeEnum {
+  fuel_vehicle = 1,
+  electric_vehicle = 2,
 
-    fuel_vehicle = 1,
-    electric_vehicle = 2,
-    
-    heavy_duty = 3,
-    light_duty = 4, 
+  heavy_duty = 3,
+  light_duty = 4,
 
-    pipline=5,
+  pipline = 5,
 }

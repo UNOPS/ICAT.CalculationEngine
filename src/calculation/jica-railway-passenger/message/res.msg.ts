@@ -1,10 +1,8 @@
-export class ResponseMsg{
+export class ResponseMsg {
+  year: number;
 
-   
-    year:number;
+  baseLineEmission: number;
+  projectEmission: number;
 
-    baseLineEmission : number;
-    projectEmission : number;
-
-    emissionReduction : number;
+  emissionReduction: number;
 }

@@ -1,7 +1,6 @@
-import { PowerplantDto } from "./powerplant.dto";
+import { PowerplantDto } from './powerplant.dto';
 
-
-export class ProjectDto{
-    year: number;
-   powerplant: PowerplantDto;
+export class ProjectDto {
+  year: number;
+  powerplant: PowerplantDto;
 }
