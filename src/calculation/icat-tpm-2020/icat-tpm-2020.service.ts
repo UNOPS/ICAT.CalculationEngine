@@ -55,10 +55,7 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
           );
 
           baseLineEmission += emission;
-
-          //
         }
-        // response.baseLineEmission = baseLineEmission;
       } else if (
         req.projectType.baseLineApproch === ProjectTypeEnum.baseLineApproch_C
       ) {
@@ -70,7 +67,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
               req.baseline.vehicle[num].fuel.fc === 0) &&
             req.baseline.vehicle[num].fuel.type != 'Electricity'
           ) {
-            // console.log('kddddddddddd')
             const fuelEnergy = this.fuelEnergyWithVKT(
               req.baseline.vehicle[num].fuel.vkt,
               req.baseline.vehicle[num].fuel.sfc,
@@ -79,7 +75,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
               req.baseline.vehicle[num].fuel.ef,
             );
             fuelEmission += fuelEnergy;
-            // console.log('kddddddddddd',fuelEmission);
           } else if (
             (req.baseline.vehicle[num].fuel.vkt === 0 ||
               req.baseline.vehicle[num].fuel.fc > 0) &&
@@ -92,12 +87,10 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
               req.baseline.vehicle[num].fuel.ef,
             );
             fuelEmission += fuelEnergy;
-            // console.log(fuelEmission);
           } else if (
             req.baseline.vehicle[num].fuel.vkt > 0 &&
             req.baseline.vehicle[num].fuel.type === 'Electricity'
           ) {
-            console.log(req.baseline.vehicle[num].fuel);
             const elecEnergy = this.elecEnergy(
               req.baseline.vehicle[num].fuel.vkt,
               req.baseline.vehicle[num].fuel.sfc,
@@ -107,7 +100,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
               req.baseline.vehicle[num].fuel.ef,
               elecEnergy,
             );
-            // console.log(elecEmission)
           } else if (
             req.baseline.vehicle[num].fuel.vkt === 0 &&
             req.baseline.vehicle[num].fuel.type === 'Electricity'
@@ -119,7 +111,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
           }
         }
         baseLineEmission = fuelEmission + elecEmission;
-        console.log(baseLineEmission);
       }
     }
 
@@ -136,7 +127,7 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
             req.project.special.countryCode,
             req.project.special.year,
           );
-          console.log('++++++pppp', fuelElasticity);
+
           fuelElasticity = await this.elesticPrice(
             req.project.special.priceElasticity.mixFuelPrice,
             req.project.special.priceElasticity.capitalIncome,
@@ -144,7 +135,7 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
             req.project.special.year,
           );
         }
-        console.log('++++++', fuelElasticity);
+
         const ghgEmission = this.AnticipatedCalculation(
           fuelElasticity,
           req.project.fuelMixPriceIncrease,
@@ -262,17 +253,11 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
 
           pkmWithTrain += energy;
         }
-        //--------------------------------------------------------------------------
         for (const num in req.baseline.vehicle) {
           for (const pro in req.project.fuel) {
             if (
               req.baseline.vehicle[num].fuel.type == req.project.fuel[pro].type
             ) {
-              console.log(
-                '+++',
-                req.baseline.vehicle[num].vehicleType,
-                req.project.fuel[pro].type,
-              );
               let crosePriseElasticity = 0;
               let fuelEmission = 0;
 
@@ -321,9 +306,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
                   req.baseline.vehicle[num].fuel.fc,
                 );
               }
-
-              //------------------------------
-
               if (req.project.fuel[pro].priceElasticity != 0) {
                 crosePriseElasticity = req.project.fuel[pro].priceElasticity;
               } else {
@@ -331,24 +313,12 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
                   req.project.special.countryCode,
                   req.project.special.year,
                 );
-                // if(req.project.fuel[pro].type=="Petrol" || req.project.fuel[pro].type=="Gasolin"){
                 crosePriseElasticity = await this.crossElesticPriceWithdiesel(
                   req.project.fuel[pro].fuelPrice,
                   req.project.special.priceElasticity.capitalIncome,
                   countriFuelPrice,
                   req.project.special.year,
                   req.baseline.vehicle[num].vehicleType,
-                );
-
-                // }
-                // else{
-                // crosePriseElasticity = await this.elesticPriceWithdiesel(req.project.fuel[pro].fuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year);
-
-                // }
-                console.log(
-                  '++++++++++ppp',
-                  countriFuelPrice,
-                  crosePriseElasticity,
                 );
               }
 
@@ -370,27 +340,17 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
                   req.baseline.vehicle[num].fuel.ef,
                   pkmWithTrain,
                 );
-                console.log('pkmWithTrain====', pasengerTransport);
               }
               const anticipatedPKM = this.AnticipatedCalculation(
                 crosePriseElasticity,
                 req.project.fuel[pro].priceIncrease,
                 pasengerTransport,
               );
-              // console.log("anticipatedPKM====", anticipatedPKM) //61
               const projetEmission = this.projectEmission(
                 fuelEmission,
                 anticipatedPKM,
                 pasengerTransport,
               );
-              console.log(
-                'anticipatedPKM====',
-                fuelEmission,
-                anticipatedPKM,
-                pasengerTransport,
-                projetEmission,
-              );
-
               ghgImpact += projetEmission;
             }
           }
@@ -428,10 +388,7 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
               elecEnergy,
             );
             elcEmission += Emission;
-            // console.log("++++++++++++ppp",elecEnergy,Emission)
           }
-
-          // console.log(fuelEmission)
         }
         const emissionReduction = fuelEmission - elcEmission;
         for (const n in req.project.vehicle) {
@@ -469,7 +426,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
         if (req.project.fuelMixPriceElasticity != 0) {
           fuelElasticity = req.project.fuelMixPriceElasticity;
         } else {
-          // console.log("ppp")
           const countriFuelPrice = await this.PPPPriceService.getPPPvalue(
             req.project.special.countryCode,
             req.project.special.year,
@@ -492,7 +448,7 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
             req.project.special.toilIncrease,
             req.project.special.existingToil,
           );
-          console.log('vkt---', vkt);
+
           const fuelEnergy = this.fuelEnergyWithVKT(
             vkt,
             req.baseline.vehicle[num].fuel.sfc,
@@ -501,7 +457,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
             req.baseline.vehicle[num].fuel.ef,
           );
           fuelEmission += fuelEnergy;
-          console.log('fuelEmission---', fuelEmission);
         }
         ghgImpact = baseLineEmission + fuelEmission;
       } else if (
@@ -523,7 +478,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
             req.baseline.vehicle[num].fuel.ef,
           );
           fuelEmission += fuelEnergy;
-          console.log(' vkt ===========', fuelEnergy);
         }
         ghgImpact = baseLineEmission - fuelEmission;
       }
@@ -537,24 +491,8 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
     );
     response.year = req.project.year;
 
-    // console.log("pppppppppppppppppppppppp" + response.baseLineEmission)
     return response;
   }
-
-  // async getPPPvalue(countryCode: string, year: number) {
-  //     // console.log(countryCode, year)
-  //     const price = this.PPPPriceService.getPPPvalue(countryCode, year);
-  //     // const price = (await this.repo.findOne({ countryCode, year })).value;
-
-  //     // console.log(price);
-  //     return price;
-  // }
-
-  // async getConsumerValue(year: number) {
-  //     const price = await this.consumerPriceService.getConsumervalue("US", year);
-
-  //     return price;
-  // }
 
   public async elesticPrice(
     fuelPrice: number,
@@ -580,8 +518,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
       await usPrice2016,
       24000,
     );
-
-    // console.log(ppp, capitalIncome, fuelMinPrice, fuelMaxPrice, capitalMax, capitalMin)
 
     if (fuelMinPrice > fuelPrice && capitalIncome < capitalMin) {
       return -0.15;
@@ -884,7 +820,6 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
     mixPrice: number,
     energy: number,
   ) {
-    // console.log("MMMM",fuelElasticity,mixPrice,energy)
     const presentage = 100;
     return ((fuelElasticity * mixPrice) / presentage + 1) * energy;
   }
@@ -915,11 +850,9 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
     exToll: number,
   ) {
     const fuelCost = price * fuelEconomy;
-    console.log(fuelCost);
+
     const drivingCost = tollIncrease / (exToll + fuelCost);
-    console.log(drivingCost);
-    console.log(elasticitY);
-    console.log(vkt);
+
     return drivingCost * elasticitY * vkt;
   }
 

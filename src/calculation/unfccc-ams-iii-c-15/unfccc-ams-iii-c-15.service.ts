@@ -12,8 +12,6 @@ export class UnfcccAmsIiiC15Service {
     const response = new UnfcccAmsIIIC15ResponseMsg();
     const responseArray = [];
 
-    // let baseResponse = new ResponseDto();
-
     for (const num in req.baseline) {
       const baseResponse = new ResponseDto();
 
@@ -32,7 +30,7 @@ export class UnfcccAmsIiiC15Service {
     }
 
     response.response = responseArray;
-    console.log(response);
+
     return response;
   }
 
@@ -99,18 +97,10 @@ export class UnfcccAmsIiiC15Service {
           (1 - project.tdl / 100)) *
           1000 +
         fuel;
-      console.log('emissioFactor ' + emissioFactor);
+
       const emission =
         emissioFactor * project.distance * project.vehicle[num].n;
       projectEmission += emission;
-      // if (project.vehicle[num].vehicleType === VehicleTypeEnum.electric_vehicle) {
-      //     let emission = emissioFactor * project.vehicle[num].fuel.fc / project.vehicle[num].sfc;
-      //     projectEmission += emission;
-      // }
-      // else {
-      //     let emission = emissioFactor * project.distance * project.vehicle[num].n;
-      //     projectEmission += emission;
-      // }
     }
     return projectEmission / 1000000;
   }

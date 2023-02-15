@@ -8,7 +8,6 @@ export class fuelDto {
   efco2: number; //CO2 emission factor of fuel i consumed by the trucks in year x (PE - weighted average CO2 emission factor )
 
   //PE
-
   coefiy: number; //  CO2 emission coefficient of fuel type i (tCO2/mass or volume unit);
 
   fcijy: number; // quantity of fuel type i combusted in process j
@@ -18,8 +17,6 @@ export class fuelDto {
   piy: number; // weighted average density of fuel type i
 
   //electricity
-  // ecpjjy:number;//Quantity of electricity consumed by the project electricity consumption source j
-
   efefjy: number; //Emission factor for electricity generation for source j
 
   tdljy: number; //Average technical transmission and distribution losses for providing electricity to source j

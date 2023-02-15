@@ -5,12 +5,9 @@ import { VehicleDto } from './vehicle.dto';
 export class ProjectDto {
   year: number;
   special: SpecialValueDto;
-
-  // fuelUsed: number;
   fuelMixPriceIncrease: number;
   fuelMixPriceElasticity: number;
   vehicle: VehicleDto[];
   beta: number;
-
   fuel: FuelDto[];
 }

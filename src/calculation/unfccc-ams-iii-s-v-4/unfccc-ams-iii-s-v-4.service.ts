@@ -29,7 +29,6 @@ export class UnfcccAmsIIISV4Service {
       }
 
       baseResponse.year = req.baseline[arr].year;
-      // baseResponse.year=2017;
       baseResponse.projectEmission = parseFloat(
         Number(projectEmission).toFixed(2),
       );
@@ -73,7 +72,6 @@ export class UnfcccAmsIIISV4Service {
         projectDP) /
       (baselineVehicle.p * baseLineDP)
     );
-    // return  baselineVehicle.n * baselineVehicle.fuel.ncv * baselineVehicle.fuel.ef * projectVehicle.p * projectDP ;
   }
 
   public projectEmission(vehicle: VehicleDto) {

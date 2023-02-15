@@ -115,10 +115,8 @@ import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
         DefaultValue,
         MethodologyData,
       ],
-      // autoLoadEntities:true,
 
       synchronize: false,
-      // extra: { socketPath: '/cloudsql/unops-cpit-icat-prod:europe-west3:icat-qa' },
     }),
     JsonFileViwerModule,
     MacModule,

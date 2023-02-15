@@ -12,7 +12,6 @@ export class baselineDto {
   frtbl: number; //Factor to account for non-empty return trips in the baseline scenario (fraction)
 
   vehicle: vehicleDto[];
-  // fuel: fuelDto[];  //efbl historic values according to fuel i
 
   tx: number; //Amount of cargo transported in trucks in year x
 

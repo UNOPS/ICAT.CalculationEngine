@@ -44,7 +44,7 @@ export class IcatTpm2020Controller {
   )
   public async ConsumerPricUpdate(@UploadedFile() file) {
     const newSavedfile = file.filename;
-    console.log(newSavedfile);
+
     return this.consumeService.Consumerupload(newSavedfile);
   }
 
@@ -59,7 +59,6 @@ export class IcatTpm2020Controller {
   public async pppPricUpdateOneValue(
     @Body() req: PriceUpdate,
   ): Promise<string> {
-    console.log(req);
     return await this.pppService.ConsumeruploadOneValue(req);
   }
 
@@ -75,7 +74,7 @@ export class IcatTpm2020Controller {
   )
   public async PPPPriceUpdate(@UploadedFile() file) {
     const newSavedfile = file.filename;
-    console.log(newSavedfile);
+
     return this.pppService.PPPupload(newSavedfile);
   }
 
@@ -90,8 +89,6 @@ export class IcatTpm2020Controller {
     // get baseline emission value
 
     if (req.projectType.baseLineApproch > 0) {
-      console.log(req.projectType.baseLineApproch);
-
       if (
         req.projectType.baseLineApproch === ProjectTypeEnum.baseLineApproch_A
       ) {
@@ -121,8 +118,6 @@ export class IcatTpm2020Controller {
           );
 
           baseLineEmission += emission;
-
-          //
         }
         response.baseLineEmission = baseLineEmission;
       } else if (
@@ -155,7 +150,6 @@ export class IcatTpm2020Controller {
               req.baseline.vehicle[num].fuel.ef,
             );
             fuelEmission += fuelEnergy;
-            // console.log(fuelEmission);
           } else if (req.baseline.vehicle[num].electricity.vkt > 0) {
             const elecEnergy = this.service.elecEnergy(
               req.baseline.vehicle[num].electricity.vkt,
@@ -291,32 +285,7 @@ export class IcatTpm2020Controller {
 
           ghgImpact += projetEmission;
         }
-      }
-
-      // else if (req.projectType.projectApproch === ProjectTypeEnum.simplified) {
-
-      //     let fuelEmission = 0;
-      //     for (let num in req.baseline.vehicle) {
-      //         let fuelEnergy = this.service.fuelEnergyWithVKT(req.baseline.vehicle[num].fuel.vkt, req.baseline.vehicle[num].fuel.sfc, req.baseline.vehicle[num].fuel.density, req.baseline.vehicle[num].fuel.ncv, req.baseline.vehicle[num].fuel.ef);
-      //         fuelEmission += fuelEnergy;
-      //     }
-
-      //     let elecEnergy = this.service.elecEnergy(req.baseline.electricity.vkt, req.baseline.electricity.sfc);
-      //     let elecEmission = this.service.emission(req.baseline.electricity.ef, elecEnergy);
-
-      //     let emissionReduction = 0;
-      //     for (let num in req.baseline.vehicle) {
-      //         let reduction = this.service.emissionReduction(fuelEmission, req.baseline.vehicle[num].fuel.vkt, elecEmission, req.baseline.electricity.vkt);
-      //         emissionReduction += reduction;
-      //     }
-
-      //     for(let num in req.baseline.vehicle){
-      //         let marketShare = this.service.marketShare(req.baseline.vehicle[num], req.project.special.beta);
-      //         ghgImpact += this.service.ghgImpact(marketShare, req.baseline.vehicle[num].vahicleSale, emissionReduction, req.baseline.vehicle[num].distance);
-      //     }
-
-      // }
-      else if (
+      } else if (
         req.projectType.projectApproch === ProjectTypeEnum.roadpricingSimlified
       ) {
         let fuelEmission = 0;

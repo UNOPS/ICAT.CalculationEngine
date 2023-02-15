@@ -8,7 +8,6 @@ export class ConsumerPriceEntity extends BaseTrackingEntity {
 
   @Column()
   countryCode: string;
-  // primaryKey:true;
 
   @Column()
   countryName: string;

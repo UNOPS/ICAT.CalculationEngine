@@ -41,8 +41,6 @@ export class UnfcccAmsIiiBcService {
         response.baselineEmission - response.projectEmission;
 
       responseArray.push(response);
-
-      //console.log("calengine-response1--",responseArray)
     }
 
     return responseArray;
@@ -50,8 +48,6 @@ export class UnfcccAmsIiiBcService {
   ///------------
 
   public baselineEmissionHeavy(baseline: baselineDto) {
-    console.log('baselineEmissionHeavy');
-
     let BEyt = 0;
     let beftkmixy = 0;
     let BEy: number;
@@ -61,21 +57,14 @@ export class UnfcccAmsIiiBcService {
       if (baseline.vehicle[num].type == VehicleTypeEnum.heavy_duty) {
         if (baseline.vehicle[num].altkmixy > 0) {
           altkmixy = baseline.vehicle[num].altkmixy;
-          console.log('uuuu==', altkmixy);
         } else {
-          console.log(
-            'totaldistancetravel',
-            baseline.vehicle[num].totaldistancetravel,
-          );
           altkmixy =
             baseline.vehicle[num].avgweightbyvehicle *
             baseline.vehicle[num].totaldistancetravel;
-          console.log('xxxxxxxxx');
         }
 
         if (baseline.vehicle[num].beftkmixy > 0) {
           beftkmixy = baseline.vehicle[num].beftkmixy;
-          console.log('iiiii===', beftkmixy);
         } else {
           beftkmixy =
             (baseline.vehicle[num].sfcblixy *
@@ -85,7 +74,6 @@ export class UnfcccAmsIiiBcService {
         }
 
         BEy = beftkmixy * altkmixy * 0.000001;
-        console.log('baselineHeay--', BEy);
 
         BEyt += BEy;
       }
@@ -95,8 +83,6 @@ export class UnfcccAmsIiiBcService {
   }
 
   public baselineEmissionOther(baseline: baselineDto) {
-    console.log('baselineEmissionLight');
-
     let BEyt = 0;
     let BEy: number;
     let befkmixy = 0;
@@ -105,27 +91,22 @@ export class UnfcccAmsIiiBcService {
       if (baseline.vehicle[num].type == VehicleTypeEnum.light_duty) {
         if (baseline.vehicle[num].altkmixy) {
           alkmixy = baseline.vehicle[num].altkmixy;
-          // console.log("yyyyyyy")
         } else {
           alkmixy =
             baseline.vehicle[num].avgweightbyvehicle *
             baseline.vehicle[num].totaldistancetravel;
-          // console.log("yyyyyyy")
         }
 
         if (baseline.vehicle[num].beftkmixy > 0) {
           befkmixy = baseline.vehicle[num].beftkmixy;
-          //console.log("yyyyyyy")
         } else {
           befkmixy =
             baseline.vehicle[num].sfcblixy *
             baseline.vehicle[num].fuel.ncv *
             baseline.vehicle[num].fuel.efco2xy;
-          //console.log("yyyyyyy")
         }
 
         BEy = befkmixy * alkmixy * 0.000001;
-        console.log('baselinelight--', BEy);
 
         BEyt += BEy;
       }
@@ -151,7 +132,6 @@ export class UnfcccAmsIiiBcService {
 
         if (project.vehicle[num].beftkmixy > 0) {
           beftkmixy = project.vehicle[num].beftkmixy;
-          console.log('hhhhhh');
         } else {
           beftkmixy =
             (project.vehicle[num].sfcblixy *
@@ -163,10 +143,9 @@ export class UnfcccAmsIiiBcService {
         PEy = beftkmixy * altkmixy * 0.000001;
 
         PEyt += PEy;
-        //  console.log(BEy);
       }
     }
-    // console.log(BEyt);
+
     return PEyt;
   }
 
@@ -228,8 +207,6 @@ export class UnfcccAmsIiiBcService {
           totalInvestment *
           presentValueInterstFector) /
         (presentValueInterstFector - 1);
-
-      console.log('LevInvest ' + pmt);
 
       return pmt;
     }
@@ -296,9 +273,6 @@ export class UnfcccAmsIiiBcService {
       const totAnnualTravelOfAboveVehicles: number =
         (annualTestFailuresVehicles * vehicle.vehicle[num].novehicles) /
         1000000;
-
-      // tspecificFuelConsumption = vehicle.vehicle[num].fuel.SpecificFuelConsumption*(1+vehicle.vehicle[num].fuel.fuelSavingMaintenance/100);
-
       const annualFuelConsumption: number =
         totAnnualTravelOfAboveVehicles /
         vehicle.vehicle[num].fuel.SpecificFuelConsumption;

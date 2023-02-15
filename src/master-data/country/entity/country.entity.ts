@@ -21,32 +21,8 @@ export class Country extends BaseTrackingEntity {
   @Column({ default: 1 })
   sortOrder: number;
 
-  // @Column()
-  // submissions: string; // add as string for document upload
-
-  // @Column({ default: null })
-  // emissionSummary: string;
-
-  // @Column({ default: null })
-  // ndcDocuments: string;
-
-  // @Column({ default: null })
-  // isSystemUse: boolean;
-
   @Column({ default: null })
   flagPath: string;
-
-  // @Column({ default: null })
-  // registeredDate: Date;
-
-  // @Column({ default: null })
-  // isMember: boolean;
-
-  // @Column({ default: null })
-  // isRegister: boolean;
-
-  // @Column({ default: null })  // enum
-  // countryStatus: number;
 
   @Column({ default: null })
   region: string;

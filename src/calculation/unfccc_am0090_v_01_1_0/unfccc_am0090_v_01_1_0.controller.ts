@@ -10,8 +10,6 @@ export class UnfcccAm0090V0110Controller {
 
   @Post('/icatm1')
   public ICATM1(@Body() req: UnfcccAm0090V0110ReqMsg) {
-    console.log('reqpull===', req);
-
     const responseArray = [];
 
     for (const num in req.baseline) {

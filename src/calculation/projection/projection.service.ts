@@ -8,14 +8,6 @@ export class ProjectionService {
     const projection = [];
 
     for (const num in req.mileStoneParameter) {
-      // if (num === '0') {
-      //     let baseProjectionResponse = new ProjectionResMsg();
-      //     baseProjectionResponse.year = req.baseYearParameter.year;
-      //     baseProjectionResponse.baselineEmission = Math.round(req.baseYearParameter.baselineEmission);
-      //     baseProjectionResponse.projectEmission = Math.round(req.baseYearParameter.projectEmission);
-      //     baseProjectionResponse.emissionReduction = Math.round(req.baseYearParameter.baselineEmission - req.baseYearParameter.projectEmission);
-      //     projection.push(baseProjectionResponse);
-      // }
       const projectionResponse = new ProjectionResMsg();
 
       const baselineEmission = this.projectionCalculation(
@@ -54,7 +46,6 @@ export class ProjectionService {
     newMileStone: number,
     currentGHG: number,
   ) {
-    // console.log(currentGHG)
     return (newMileStone * currentGHG) / currentMileStone;
   }
 }

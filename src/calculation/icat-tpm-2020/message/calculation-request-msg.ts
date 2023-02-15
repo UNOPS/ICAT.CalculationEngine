@@ -5,11 +5,7 @@ import { ProjectDto } from '../dto/project.dto';
 
 export class IcatTpm2020request {
   projectType: SelectApproch;
-
   baseline: BaselineDto;
   project: ProjectDto;
-
   baseMileStone: BaseMileStoneDto;
-
-  // mileStone: MileStoneParameterDto[];
 }

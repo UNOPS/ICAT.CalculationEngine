@@ -27,7 +27,6 @@ export class CountryController implements CrudController<Country> {
 
   @Post()
   public async createUnit(@Body() req: Country) {
-    console.log(req);
     this.service.crete(req);
   }
 }

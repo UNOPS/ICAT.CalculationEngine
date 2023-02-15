@@ -38,7 +38,4 @@ export class DefaultValue extends BaseTrackingEntity {
   unitIdentification: number;
 
   name: string;
-  //   public setName() {
-  //     this.name = `${this.value} - ${this.unit} - ${this.administrationLevel} - ${this.source}  - ${this.year}`;
-  //   }
 }

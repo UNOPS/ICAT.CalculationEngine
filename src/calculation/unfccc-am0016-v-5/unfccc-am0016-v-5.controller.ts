@@ -9,8 +9,6 @@ export class UnfcccAm0016V5Controller {
 
   @Post('/ghg')
   private ICATM(@Body() req: UnfcccAm0016V5ReqMsg) {
-    console.log('iiii====', req);
-
     const response = new UnfcccAm0016V5ResMsg();
     const responseArray = [];
 
@@ -18,24 +16,6 @@ export class UnfcccAm0016V5Controller {
       response.baselineEmission = this.service.baselineEmission(
         req.baseline[num],
       );
-      // let directprojectEmissionFromFuel = this.service.directprojectEmissionFromFuel(req.project[num]);
-      //  let directprojectEmissionFromElectricity = this.service.directprojectEmissionFromElectricity(req.project[num]);
-      ///   let indiectProjectEmission = this.service.indiectProjectEmission(req.project[num]);
-
-      //  response.projectEmission = directprojectEmissionFromFuel+directprojectEmissionFromElectricity+indiectProjectEmission;
-
-      // for (let m in req.leakage[num].vehicle) {//buses and taxis
-      //        if (req.leakage[num].vehicle[m].type === "bus" || req.leakage[num].vehicle[m].type === "taxi") {
-      //         let leakageloadfactor = this.service.leakageloadfactorbusesandtaxis(req.leakage[num].vehicle[m]);
-      //         console.log("leakageloadfactor==",leakageloadfactor)
-      //         leakageloadfactorbusesandtaxis += leakageloadfactor;
-      //         console.log("leakageloadfactorbusesandtaxis==",leakageloadfactorbusesandtaxis)
-
-      //        }
-
-      //      }
-      // let leakageduetoreducedcongestion = this.service.leakageduetoreducedcongestion(req.leakage[0]);//car and taxis
-
       responseArray.push(response);
     }
 

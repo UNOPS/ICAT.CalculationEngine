@@ -44,7 +44,6 @@ export class SectorController implements CrudController<Sector> {
 
   @Post()
   public async createUnit(@Body() req: Sector) {
-    console.log(req);
     this.service.crete(req);
   }
 
@@ -54,14 +53,8 @@ export class SectorController implements CrudController<Sector> {
   ): Promise<GetManyDefaultResponse<Sector> | Sector[]> {
     try {
       const res = await this.base.getManyBase(req);
-      // console.log('*********************************************');
-      // console.log(res);
-      // console.log('*********************************************');
-      // console.log(req);
+
       return res;
-    } catch (error) {
-      console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-      console.log(error);
-    }
+    } catch (error) {}
   }
 }

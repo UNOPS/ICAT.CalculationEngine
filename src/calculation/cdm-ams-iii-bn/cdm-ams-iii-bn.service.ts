@@ -12,8 +12,6 @@ export class CdmAmsIiiBnService {
     const responseArray = [];
 
     for (const arr in req.baseline) {
-      console.log(arr);
-
       const baseResponse = new ResponseDto();
       baseResponse.year = req.baseline[arr].year;
       const secbl = this.baselineEmission(req.baseline[arr]);
@@ -29,14 +27,11 @@ export class CdmAmsIiiBnService {
         baselineEmission +=
           pk[ele] * avdk[ele] * efco2[ele] * (secbl[ele] / secpr[ele]);
         projectEmission += pk[ele] * avdk[ele] * efco2[ele];
-        // er += pk[ele] * avdk[ele] * efco2[ele]* ((secbl[ele]/secpr[ele])-1)
       }
       baseResponse.baseLineEmission = baselineEmission;
       baseResponse.projectEmission = projectEmission;
       baseResponse.emissionReduction =
         baseResponse.baseLineEmission - baseResponse.projectEmission;
-
-      console.log(baseResponse);
 
       responseArray.push(baseResponse);
     }
@@ -57,16 +52,13 @@ export class CdmAmsIiiBnService {
         for (const fuel of vehicle.fuel) {
           if (fuel.type === 'Electricity') {
             secElec = (fuel.ecConsumption * 3.6) / (1 - fuel.tdlgrid);
-            console.log('secElec', secElec, fuel.ecConsumption, fuel.tdlgrid);
           } else {
             secFossil += fuel.fuelConsumption * fuel.ncv;
-            console.log('secFossil', secFossil);
           }
         }
       }
       emissions.push((secFossil + secElec) / _route.pk);
     }
-    console.log('emissions', emissions);
 
     return emissions;
   }
@@ -100,8 +92,6 @@ export class CdmAmsIiiBnService {
       pk.push(_route.p);
       avdk.push(_route.avdk);
     }
-
-    console.log(emissions, secpk, pk, avdk);
 
     return {
       emissions: emissions,

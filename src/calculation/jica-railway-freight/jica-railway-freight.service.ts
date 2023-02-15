@@ -29,7 +29,7 @@ export class JicaRailwayFreightService {
         Number(emissionReduction).toFixed(5),
       );
     }
-    console.log(responsemsg);
+
     return responsemsg;
   }
 

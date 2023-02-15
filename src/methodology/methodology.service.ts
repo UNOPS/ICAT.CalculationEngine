@@ -174,7 +174,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     leakege: number,
     mile: number,
   ) {
-    // console.log(base,project,mile)
     const request = new ProjectionReqMsg();
     const baseparameter = new BaseYearParameterDto();
 
@@ -225,7 +224,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const vehicle = new VehicleDtoAMS();
       for (const num in req) {
         let value: number;
-        console.log('ssssssssssss');
+
         baselineEmission.baselineEmissonType =
           ProjectEmissionTypeEnum.model_shift;
 
@@ -332,7 +331,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               !vehicleArray.includes(vehicledata[vehi])
             ) {
               vehicleArray.push(vehicledata[vehi]);
-              // rout.vehicle = vehicledata[vehi];
             }
             this.getValue(req[num], 'distance') === -999
               ? (value = 1)
@@ -350,7 +348,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
         }
       }
     }
-    // console.log(vehicleArray)
+
     if (name == 'baseline') {
       base.routs = routArray;
       baseline.push(base);
@@ -573,7 +571,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             }
           }
           vehicle.fuel = fuel;
-          console.log(vehicle);
+
           vehicleArray.push(vehicle);
         }
 
@@ -642,14 +640,13 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             }
           }
           vehicle.fuel = fuel;
-          console.log(vehicle);
+
           vehicleArray.push(vehicle);
         }
 
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
         baseEmission.push(baselineEmission);
-        // console.log(baselineEmission)
       }
     }
 
@@ -800,14 +797,13 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             }
           }
           vehicle.fuel = fuel;
-          console.log(vehicle);
+
           vehicleArray.push(vehicle);
         }
 
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
         baseEmission.push(baselineEmission);
-        // console.log(baselineEmission)
       }
     } else {
       for (const fu in fueldata) {
@@ -884,14 +880,13 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             }
           }
           vehicle.fuel = fuel;
-          console.log(vehicle);
+
           vehicleArray.push(vehicle);
         }
 
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
         baseEmission.push(baselineEmission);
-        // console.log(baselineEmission)
       }
     }
 
@@ -906,7 +901,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     fuelType: any,
     year: number,
   ) {
-    // console.log("reqLength===", req.length)
     const baseEmission = [];
     const baselineEmission = new baselineDto();
 
@@ -973,15 +967,11 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             vehicleArray.push(vehicle);
           }
         }
-
-        // console.log("varry====", vehicleArray)
       }
       baselineEmission.vehicle = vehicleArray;
       baselineEmission.year = year;
       baseEmission.push(baselineEmission);
     } else {
-      //fuel>>>>>>>>>
-
       const vehicleArray = [];
 
       for (const fu in fuelType) {
@@ -1038,8 +1028,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           vehicleArray.push(vehicle);
         }
 
-        // console.log("varry====", vehicleArray)
-
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
         baseEmission.push(baselineEmission);
@@ -1061,10 +1049,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
     if (Object.keys(vehicleType).length > Object.keys(fuelType).length) {
       const vehicleArray = [];
-      //let fuelArray = new Array();
       for (const vehi in vehicleType) {
-        console.log('v', vehicleType[vehi]);
-
         const vehicle = new VehicleDtoAM0090();
         for (const fu in fuelType) {
           const fuel = new FuelDtoAM0090();
@@ -1138,24 +1123,19 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           vehicleArray.push(vehicle);
         }
 
-        console.log('varry====', vehicleArray);
-
         baselineEmission.vehicle = vehicleArray;
 
         baselineEmission.year = year;
         baseEmission.push(baselineEmission);
-        // console.log(baselineEmission)
       }
       return baseEmission;
     } //fuel>>>>>>>>>>>>>>>>
     else {
       const vehicleArray = [];
       for (const fu in fuelType) {
-        console.log('kkk', fu);
         const fuel = new FuelDtoAM0090();
 
         for (const vehi in vehicleType) {
-          console.log('v', vehicleType[vehi]);
           const vehicle = new VehicleDtoAM0090();
 
           for (const num in req) {
@@ -1228,7 +1208,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           vehicleArray.push(vehicle);
         }
 
-        console.log('varry====', vehicleArray);
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
       }
@@ -1237,7 +1216,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
       return baseEmission;
     }
-    // return baseEmission;
   }
 
   //AM0090-ProjectMapping-----------------------------
@@ -1252,13 +1230,9 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     const projectEmission = new projectDtoAM0090();
 
     if (Object.keys(vehicleType).length > Object.keys(fuelType).length) {
-      console.log('fuel<<<<<<<<<<<<<<<<<<');
-
       const vehicleArray = [];
 
       for (const vehi in vehicleType) {
-        console.log('v', vehicleType[vehi]);
-
         const vehicle = new VehicleDtoAM0090();
         for (const fu in fuelType) {
           const fuel = new FuelDtoAM0090();
@@ -1315,26 +1289,20 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           vehicleArray.push(vehicle);
         }
 
-        console.log('varry====', vehicleArray);
-
         projectEmission.vehicle = vehicleArray;
 
         projectEmission.year = year;
         projEmission.push(projectEmission);
-        // console.log(baselineEmission)
       }
       return projEmission;
     } //fuel>>>>>>>>>>>>>>>>>>>>>>>>>
     else {
-      console.log('fuel>>>>>>>>>>>>>>>>>>');
       const vehicleArray = [];
 
       for (const fu in fuelType) {
-        console.log('aa', fuelType[fu]);
         const fuel = new FuelDtoAM0090();
 
         for (const vehi in vehicleType) {
-          console.log('vee', vehicleType[vehi]);
           const vehicle = new VehicleDtoAM0090();
 
           for (const num in req) {
@@ -1391,18 +1359,14 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           }
         }
 
-        console.log('varry====', vehicleArray);
-
         projectEmission.vehicle = vehicleArray;
 
         projectEmission.year = year;
-        // console.log(baselineEmission)
       }
       projEmission.push(projectEmission);
 
       return projEmission;
     }
-    // return baseEmission;
   }
   //am0090-project
 
@@ -1414,7 +1378,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     fuelType: any,
     year: number,
   ) {
-    console.log('===========AMC0016-Basline================');
     const baseEmission = [];
     const baselineEmission = new BaselineDtoAMC0016();
 
@@ -1425,10 +1388,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const vehicleArray = [];
 
       for (const vehi in vehicleType) {
-        console.log('v', vehicleType[vehi]);
-
         for (const fu in fuelType) {
-          console.log('fu', fuelType[fu]);
           const vehicle = new VehicleDtoAMC0016();
 
           for (const num in req) {
@@ -1501,33 +1461,22 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               }
             }
           }
-          //  vehicle.fuel = fuel;
           vehicleArray.push(vehicle);
         }
-
-        console.log('varry====', vehicleArray);
 
         baselineEmission.vehicle = vehicleArray;
 
         baselineEmission.year = year;
-        console.log('baselineObj===', baselineEmission);
-
-        // console.log(baselineEmission)
       }
       baseEmission.push(baselineEmission);
 
       return baseEmission;
     } else {
-      //fuel>>>>>>>>>>>>>>>>>
-      console.log('fuel>>>>>>>>>>');
-
       const vehicleArray = [];
       for (const fu in fuelType) {
-        console.log('fu', fu);
         const fuel = new FuelDtoAMC0016();
 
         for (const vehi in vehicleType) {
-          console.log('v', vehicleType[vehi]);
           const vehicle = new VehicleDtoAMC0016();
 
           for (const num in req) {
@@ -1608,7 +1557,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           }
         }
 
-        console.log('varry====', vehicleArray);
         baselineEmission.vehicle = vehicleArray;
         baselineEmission.year = year;
       }
@@ -1627,7 +1575,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     fuelType: any,
     year: number,
   ) {
-    console.log('===========AMC0016-Project================');
     const projectEmission = new ProjectDtoAMC0016();
 
     const x = Object.keys(vehicleType).length;
@@ -1637,16 +1584,10 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const vehicleArray = [];
 
       for (const vehi in vehicleType) {
-        console.log('v', vehicleType[vehi]);
-
         for (const fu in fuelType) {
-          console.log('fu', fuelType[fu]);
           const vehicle = new VehicleDtoAMC0016();
 
-          // let fuel = new FuelDtoAMC0016;
-
           for (const num in req) {
-            //---common section---
             let value: number;
             this.getValue(req[num], 'gwpch4') === -999
               ? (value = 1)
@@ -1711,22 +1652,15 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
       return vehicleArray;
     } else {
-      //fuel>>>>>>>>>>>>
-
       const vehicleArray = [];
 
       for (const fu in fuelType) {
-        console.log('fu', fuelType[fu]);
-
         const fuel = new FuelDtoAMC0016();
 
         for (const vehi in vehicleType) {
-          console.log('v', vehicleType[vehi]);
-
           const vehicle = new VehicleDtoAMC0016();
 
           for (const num in req) {
-            //---common section---
             let value: number;
             this.getValue(req[num], 'gwpch4') === -999
               ? (value = 1)
@@ -1801,7 +1735,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     fuelType: any,
     year: number,
   ) {
-    console.log('===========AMC0016-Leakage================');
     const leakEmission = [];
     const leakageEmission = new LeakageDtoAMC0016();
 
@@ -1812,16 +1745,11 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const vehicleArray = [];
 
       for (const vehi in vehicleType) {
-        console.log('v', vehicleType[vehi]);
-
         const vehicle = new VehicleDtoAMC0016();
         for (const fu in fuelType) {
-          console.log('fu', fuelType[fu]);
-
           const fuel = new FuelDtoAMC0016();
 
           for (const num in req) {
-            //---common section---
             let value: number;
             this.getValue(req[num], 'srsx') === -999
               ? (value = 1)
@@ -1934,14 +1862,9 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           vehicleArray.push(vehicle);
         }
 
-        console.log('varry====', vehicleArray);
-
         leakageEmission.vehicle = vehicleArray;
 
         leakageEmission.year = year;
-        console.log('projectObj===', leakageEmission);
-
-        // console.log(baselineEmission)
       }
       leakEmission.push(leakageEmission);
 
@@ -2061,8 +1984,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
           this.getValue(req[num], 'fuelUsed') === -999
             ? (value = 1)
             : (baselineEmission.fuelUsed = this.getValue(req[num], 'fuelUsed'));
-
-          // (req[num]['fuelType'] === "Electricity") ? vehicle.vehicleType = 2 : vehicle.vehicleType = 1;
         }
       }
       vehicle.fuel = fuel;
@@ -2166,7 +2087,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               vehicleType[vehi] === req[num]['vehical'] &&
               fuelType[fu] === req[num]['fuelType']
             ) {
-              // console.log(req[num]["vehical"])
               vehicle.vehicleType = req[num]['vehical'];
               this.getValue(req[num], 'n') === -999
                 ? (value = 1)
@@ -2207,8 +2127,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
                     req[num],
                     'vahicleSale',
                   ));
-              // (this.getValue(req[num], "pkm") === -999) ? value = 1 : baselineEmission.pkm = this.getValue(req[num], "pkm");
-
               if (
                 fuelType[fu] === req[num]['fuelType'] &&
                 fuelType[fu] === fueldata[fu]['type'] &&
@@ -2229,7 +2147,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       Object.keys(vehicleType).length == Object.keys(fuelType).length
     ) {
       for (const fu in fuelType) {
-        // for (let vehi in vehicleType) {
         const vehicle = new VehicleDtoICAT();
         for (const num in req) {
           let value: number;
@@ -2250,7 +2167,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             vehicleType[fu] === req[num]['vehical'] &&
             fuelType[fu] === req[num]['fuelType']
           ) {
-            // console.log(req[num]["vehical"])
             vehicle.vehicleType = req[num]['vehical'];
             this.getValue(req[num], 'distance') === -999
               ? (value = 1)
@@ -2280,22 +2196,15 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             this.getValue(req[num], 'n') === -999
               ? (value = 1)
               : (vehicle.n = this.getValue(req[num], 'n'));
-            // (this.getValue(req[num], "pkm") === -999) ? value = 1 : baselineEmission.pkm = this.getValue(req[num], "pkm");
-
             if (
               fuelType[fu] === req[num]['fuelType'] &&
               fuelType[fu] === fueldata[fu]['type']
             ) {
               vehicle.fuel = fueldata[fu];
             }
-            // else {
-            //     vehicle.electricity = fueldata[fu];
-
-            // }
           }
         }
         vehicleArray.push(vehicle);
-        console.log(vehicle);
 
         baselineEmission.vehicle = vehicleArray;
       }
@@ -2322,7 +2231,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               vehicleType[vehi] === req[num]['vehical'] &&
               fuelType[fu] === req[num]['fuelType']
             ) {
-              // console.log(req[num]["vehical"])
               vehicle.vehicleType = req[num]['vehical'];
               this.getValue(req[num], 'distance') === -999
                 ? (value = 1)
@@ -2358,30 +2266,20 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               this.getValue(req[num], 'n') === -999
                 ? (value = 1)
                 : (vehicle.n = this.getValue(req[num], 'n'));
-              // (this.getValue(req[num], "pkm") === -999) ? value = 1 : baselineEmission.pkm = this.getValue(req[num], "pkm");
-
               if (
                 fuelType[fu] === req[num]['fuelType'] &&
                 fuelType[fu] === fueldata[fu]['type']
               ) {
                 vehicle.fuel = fueldata[fu];
               }
-              // else {
-              //     vehicle.electricity = fueldata[fu];
-
-              // }
             }
           }
           vehicleArray.push(vehicle);
-          console.log(vehicle);
         }
 
         baselineEmission.vehicle = vehicleArray;
       }
     }
-
-    // baselineEmission.electricity = elec;
-    // baselineEmission.vehicle =vehicleArray;
     return baselineEmission;
   }
 
@@ -2417,7 +2315,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               vehicleType[vehi] === req[num]['vehical'] &&
               fuelType[fu] === req[num]['fuelType']
             ) {
-              // console.log(req[num]["vehical"])
               vehicle.vehicleType = req[num]['vehical'];
               this.getValue(req[num], 'n') === -999
                 ? (value = 1)
@@ -2482,7 +2379,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       Object.keys(vehicleType).length == Object.keys(fuelType).length
     ) {
       for (const fu in fuelType) {
-        // for (let vehi in vehicleType) {
         const vehicle = new VehicleDtoICAT();
         for (const num in req) {
           let value: number;
@@ -2499,7 +2395,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             vehicleType[fu] === req[num]['vehical'] &&
             fuelType[fu] === req[num]['fuelType']
           ) {
-            // console.log(req[num]["vehical"])
             vehicle.vehicleType = req[num]['vehical'];
             this.getValue(req[num], 'distance') === -999
               ? (value = 1)
@@ -2539,10 +2434,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             ) {
               vehicle.fuel = fueldata[fu];
             }
-            // else {
-            //     vehicle.electricity = fueldata[fu];
-
-            // }
           }
         }
         vehicleArray.push(vehicle);
@@ -2567,7 +2458,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               vehicleType[vehi] === req[num]['vehical'] &&
               fuelType[fu] === req[num]['fuelType']
             ) {
-              // console.log(req[num]["vehical"])
               vehicle.vehicleType = req[num]['vehical'];
               this.getValue(req[num], 'distance') === -999
                 ? (value = 1)
@@ -2613,22 +2503,14 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               ) {
                 vehicle.fuel = fueldata[fu];
               }
-              // else {
-              //     vehicle.electricity = fueldata[fu];
-
-              // }
             }
           }
           vehicleArray.push(vehicle);
-          console.log(vehicle);
         }
 
         baselineEmission.vehicle = vehicleArray;
       }
     }
-
-    // baselineEmission.electricity = elec;
-    // baselineEmission.vehicle =vehicleArray;
     return baselineEmission;
   }
 
@@ -2841,7 +2723,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const fuel = new FuelDtoAMSIII();
       fuel.type = _fu;
       for (const _req of req) {
-        // Common section
         if (_req['fuelType'] === 'Common') {
           let value: number;
           this.getValue(_req, 'efco2') === -999
@@ -3057,9 +2938,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       const fuel = new FuelDtoACM0017();
       fuel.type = _fu;
       for (const _req of req) {
-        // Common section
         if (_req['fuelType'] === 'Common') {
-          console.log('efco2 request', _req);
           let value: number;
           this.getValue(_req, 'lebr') === -999
             ? (value = 1)
@@ -3162,7 +3041,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     }
     dtoEmission.vehicle = vehicleArray;
     baseline.push(dtoEmission);
-    console.log('isBaseline', isBaseline, dtoEmission);
 
     return baseline;
   }
@@ -3256,7 +3134,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     if (!isProject) {
       dtoEmission.year = year;
     }
-    // console.log(dtoEmission.route, dtoEmission.route[0].vehicle, dtoEmission.route[0].vehicle[0].fuel, dtoEmission.route[0].vehicle[1].fuel)
 
     baseline.push(dtoEmission);
     return baseline;
@@ -3270,7 +3147,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
         let value: number;
         if (fueltype[fu] === req[num]['fuelType']) {
           fueldata.type = req[num]['fuelType'];
-          // fueldata.ef = this.getValue(req[num], "ef");
+
           this.getValue(req[num], 'ef') === -999
             ? (value = 1)
             : (fueldata.ef = this.getValue(req[num], 'ef'));
@@ -3344,12 +3221,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             ? (value = 1)
             : (fueldata.tdljy = this.getValue(req[num], 'tdljy'));
         }
-        // else if (fueltype[fu] === req[num]["fuelType"]) {
-        //     (this.getValue(req[num], "vkt") === -999) ? value = 1 : fueldata.vkt = this.getValue(req[num], "vkt");
-        //     (this.getValue(req[num], "sfc") === -999) ? value = 1 : fueldata.sfc = this.getValue(req[num], "sfc");
-        // }
       }
-      // console.log(fueldata)
       fuel.push(fueldata);
     }
     return fuel;
@@ -3381,30 +3253,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
     }
     return vehicle;
   }
-
-  // public getvehicle(req:any,vehitype:any, fuel:any){
-  //     let vehicle = new Array();
-  //     let vehicle = new Array();
-  //         let vehiData= new VehicleDto();
-  //         for(let num in req){
-  //             for(let fu in fuel){
-  //                 let value:number
-  //                 if(vehitype[vehi] === req[num]["vehical"] && fuel[fu]===req[num]["fuelType"]){
-  //                     vehiData.type = req[num]["vehical"];
-  //                     vehiData.fuel = fuel[fu];
-  //                     (this.getValue(req[num],"ef_pkm") === -999) ? value=1 : vehiData.ef_pkm =this.getValue(req[num],"ef_pkm");
-  //                     (this.getValue(req[num],"ef_km") === -999) ? value=1 : vehiData.ef_pkm =this.getValue(req[num],"ef_km");
-  //                     (this.getValue(req[num],"sfc") === -999) ? value=1 : vehiData.ef_pkm =this.getValue(req[num],"sfc");
-  //                     (this.getValue(req[num],"or") === -999) ? value=1 : vehiData.ef_pkm =this.getValue(req[num],"or");
-  //                     (this.getValue(req[num],"ms") === -999) ? value=1 : vehiData.ef_pkm =this.getValue(req[num],"ms");
-  //                 }
-  //             }
-
-  //         }
-  //         vehicle.push(vehiData);
-  //     }
-  //     return vehicle;
-  // }
 
   public getValue(req: any, code: string) {
     let value: number;

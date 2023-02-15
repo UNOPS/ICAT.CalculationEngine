@@ -21,7 +21,6 @@ export class DefaultValueController implements CrudController<DefaultValue> {
 
   @Post()
   public async createUnit(@Body() req: DefaultValue) {
-    console.log(req);
     this.service.crete(req);
   }
 }

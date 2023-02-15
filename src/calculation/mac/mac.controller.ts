@@ -13,7 +13,6 @@ export class MacController {
   public MacCalculation(
     @Body() req: MacCalculationReqDTO,
   ): MacCalculationResDTO {
-    // base=reference
     const response = new MacCalculationResDTO();
 
     const reduction_lev_invest = this.service.pmtCalculation(

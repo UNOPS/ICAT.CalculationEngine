@@ -20,7 +20,6 @@ export class UnitConversionController {
 
   @Post()
   public async createUnit(@Body() req: UnitConversion) {
-    console.log(req);
     this.service.crete(req);
   }
 }

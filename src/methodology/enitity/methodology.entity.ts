@@ -44,9 +44,6 @@ export class Methodology extends BaseTrackingEntity {
   @Column({ default: null })
   Documents: string;
 
-  //   @Column({ default: 0 })
-  //   isActive: number;
-
   @Column({ default: null })
   easenessOfDataCollection: string;
 

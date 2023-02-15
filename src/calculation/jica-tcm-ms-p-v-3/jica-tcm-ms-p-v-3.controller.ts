@@ -20,7 +20,6 @@ export class JicaTcmMsPV3Controller {
       let projectEmission = 0;
 
       const response = new ResponseDto();
-      // let emission =0;
       const emission = this.service.baselineEmission(
         req.projectEmission[arr],
         req.baselineEmission[arr],
@@ -69,7 +68,7 @@ export class JicaTcmMsPV3Controller {
             req.projectEmission[arr].traficCon[num],
             req.projectEmission[arr].fc[num],
           );
-          // console.log(emission);
+
           projectEmission += emission;
         }
       }

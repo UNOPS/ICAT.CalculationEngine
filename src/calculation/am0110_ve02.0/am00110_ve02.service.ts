@@ -18,7 +18,6 @@ export class AM0110VE02Service {
     }
 
     for (const j in req.projectEmission) {
-      // console.log("__________________",req.projectEmission[j])
       const pro = this.project(req.projectEmission[j]);
       pe += pro;
     }
@@ -44,8 +43,6 @@ export class AM0110VE02Service {
         ef_1 += ef_2;
       }
       ef = ef_1;
-      // }
-
       const be = bas.routs[j].distance * bas.routs[j].t_jy * ef * unit;
       base += be;
     }
@@ -84,17 +81,14 @@ export class AM0110VE02Service {
         ) {
           if (pro.rout[i].vehicle[j].sfc > 0) {
             SC += pro.rout[i].vehicle[j].sfc / pro.rout[i].vehicle[j].n;
-            console.log('1');
           } else if (pro.rout[i].vehicle[j].fuel.fc > 0) {
             SC +=
               pro.rout[i].vehicle[j].fuel.fc /
               (pro.rout[i].t_k *
                 pro.rout[i].distance *
                 pro.rout[i].vehicle[j].n);
-            console.log('2');
           } else {
             PE_cr += this.fosilFuelConsumtion(pro.rout[i].vehicle[j].fuel);
-            console.log('3');
           }
         }
       }
@@ -106,7 +100,6 @@ export class AM0110VE02Service {
               pro.rout[i].vehicle[j].vehicleType ===
                 VehicleTypeEnum.fuel_vehicle
             ) {
-              console.log('4');
               TAD += pro.rout[i].t_k * pro.rout[i].distance;
             }
           }
@@ -122,31 +115,18 @@ export class AM0110VE02Service {
             ) {
               if (pro.rout[i].vehicle[j].fuel.coef_volume > 0) {
                 PE_cr += fc * pro.rout[i].vehicle[j].fuel.coef_volume;
-                console.log('5');
               } else {
-                console.log('6');
                 PE_cr +=
                   fc *
                   pro.rout[i].vehicle[j].fuel.w *
                   pro.rout[i].vehicle[j].fuel.density *
                   carbon;
-                console.log(PE_cr);
               }
             }
           }
         }
       }
     }
-    console.log(
-      'PE_ec ',
-      PE_ec,
-      '  PE_ff ',
-      PE_ff,
-      '   PE_cr ',
-      PE_cr,
-      '   PE_cl ',
-      PE_cl * 100,
-    );
     PE = PE_ec + PE_ff + PE_cr + PE_cl * 100;
     return PE;
   }

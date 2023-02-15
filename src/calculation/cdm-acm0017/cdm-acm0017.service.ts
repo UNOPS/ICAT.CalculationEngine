@@ -12,13 +12,10 @@ export class CdmAcm0017Service {
   public ncvbf = 0;
 
   public ACM0017Emission(req: CdmAcm0017ReqMsg) {
-    console.log('ACM0017Emission');
     const response: CdmAcm0017ResMsg = new CdmAcm0017ResMsg();
     const responseArray = [];
 
     for (const arr in req.baseline) {
-      console.log(arr);
-
       const baseResponse = new ResponseDto();
       baseResponse.year = req.baseline[arr].year;
       baseResponse.baseLineEmission = this.baselineEmission(req.baseline[arr]);
@@ -38,7 +35,6 @@ export class CdmAcm0017Service {
 
   // calculate baseline emission
   public baselineEmission(baseline: BaselineDto) {
-    console.log(baseline);
     const pp = baseline.powerplant;
     const fuels = pp.fuel;
     let emission = 0;
@@ -119,26 +115,22 @@ export class CdmAcm0017Service {
 
   //Calculate leakage emission
   public leakageEmission(leakage: LeakageDto) {
-    console.log(leakage);
     let emission = 0;
     const fuel = leakage.fuel;
     let lemeoh = 0;
     let leff = 0;
 
     for (const _fuel of fuel) {
-      console.log(_fuel);
       if (_fuel.type === 'Methanol') {
         lemeoh = _fuel.fuelConsumption * _fuel.efmeoh;
       } else {
         leff += leakage.ncvbf * _fuel.efijx;
       }
     }
-    console.log(this.bfy, leakage.ncvbf, leff);
 
     const leffy = this.bfy * leff;
 
     emission += leakage.lebr + lemeoh - leffy;
-    console.log(emission);
 
     return emission;
   }

@@ -1,5 +1,4 @@
 import { Body, Controller, Post } from '@nestjs/common';
-// import { MacUnfcccAmsIIIBcReqMsg } from './message/mac-unfccc-ams-iii-bc-req-msg';
 import { UnfccAmsIIIBcReqMsg } from './message/unfccc-ams-iii-bc-req-msg';
 import { UnfcccAmsIIIBcResMsg } from './message/unfccc-ams-iii-bc-res-msg';
 import { UnfcccAmsIiiBcService } from './unfccc-ams-iii-bc.service';
@@ -46,33 +45,4 @@ export class UnfcccAmsIiiBcController {
 
     return responseArray;
   }
-
-  //Mac Calculations
-  // @Post('/mac')
-  // private macCalculation(@Body() req: MacUnfcccAmsIIIBcReqMsg) {
-  //project (reduction)
-  // const projecttotalInvestment = this.service.projecttotalInvestment(
-  //   req.generalInput,
-  // );
-  // const projectLevInvestment = this.service.pmtCalculation(
-  //   req.generalInput.discountRate,
-  //   req.fuelProject.projectLife,
-  //   projecttotalInvestment,
-  // );
-  // const projectAnualOAndM = this.service.annual_OM(req.generalInput);
-  // const projectAnnualFuelCost = this.service.annualFuelCost(req.fuelProject);
-  // //reference
-  // const referencetotalInvestment = 0;
-  // const referenceLevInvestment = 0;
-  // const referenceAnualOAndM = 0;
-  // const referenceAnnualFuelCost = this.service.referenceAnnualFuelCost(
-  //   req.fuelReference,
-  // );
-  // const increaseTotalInvestment =
-  //   projecttotalInvestment - referencetotalInvestment;
-  // const increaseLevInvestment = projectLevInvestment - referenceLevInvestment;
-  // const increaseAnualOAndM = projectAnualOAndM - referenceAnualOAndM;
-  // const increaseAnnualFuelCost =
-  //   projectAnnualFuelCost - referenceAnnualFuelCost;
-  // }
 }

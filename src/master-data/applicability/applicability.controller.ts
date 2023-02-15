@@ -23,7 +23,6 @@ export class ApplicabilityController
 
   @Post()
   public async createUnit(@Body() req: ApplicabilityEntity) {
-    console.log(req);
     this.service.crete(req);
   }
 

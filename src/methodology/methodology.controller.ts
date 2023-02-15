@@ -87,32 +87,24 @@ export class MethodologyController {
   @Get('')
   public async getall() {
     return this.service.getdatails();
-    // return details
   }
 
   @Post()
   public async createUnit(@Body() req: Methodology) {
-    console.log(req);
     this.service.crete(req);
   }
 
   @UseGuards(LocalAuthGuard)
   @Post('calculation')
   public async cal(@Body() requstpull: any) {
-    // console.log("reqpull----------", requstpull)
-    //console.log("reqpullbdoy----------", requstpull.body)
     const req = JSON.parse(requstpull.body);
-
-    // let req = requstpull;
-
     let methodologyCode = req[0]['methodologyCode'];
     let methnum = 0;
+
     while (methodologyCode == null) {
       methodologyCode = req[methnum]['methodologyCode'];
       methnum++;
     }
-
-    console.log('methCode------', methodologyCode);
 
     const methodologyVersion = req[0]['methodologyVersion'];
     const year = req[0]['AssessmentYear'];
@@ -138,7 +130,7 @@ export class MethodologyController {
         projectArray,
         'vehical',
       );
-      console.log('baselineVehicle======', projectVehicle);
+
       const projectFuel = this.service.selectParameterArray(
         projectArray,
         'fuelType',
@@ -157,9 +149,7 @@ export class MethodologyController {
         year,
       );
 
-      // return request
       const dd = this.ams_iii_s.ghgEmission(request);
-      //  return request
 
       response.year = dd[0]['year'];
 
@@ -225,7 +215,7 @@ export class MethodologyController {
         baseLineVehiDta,
         'baseline',
       );
-      // return baselinerout;
+
       request.projectEmission = this.service.routDta(
         projectArray,
         projectrout,
@@ -234,12 +224,10 @@ export class MethodologyController {
       );
 
       const dd = this.am01100.cal(request);
-      // return request
       response.year = year;
       response.baseLineEmission = dd.baseLineEmission;
       response.projectEmission = dd.projectEmission;
       response.emissionReduction = dd.emissionReduction;
-      console.log('calengineres--', response);
     } else if (methodologyCode == 'AM0031') {
       const request = new CdmAm0031ReqMsg();
       const baselineArray = this.service.selectArray(req, 'isBaseline');
@@ -296,14 +284,12 @@ export class MethodologyController {
         'isProject',
         leakageDta,
       );
-      // return request;
+
       const dd = this.cdmam0031.cal(request);
       response.baseLineEmission = (await dd).baseLineEmission;
       response.projectEmission = (await dd).projectEmission;
       response.leakegeEmission = (await dd).lecageEmission;
       response.emissionReduction = (await dd).emissionReduction;
-
-      // return request;
     } else if (
       methodologyCode == 'UNFCCC_AMS_III_BC' &&
       methodologyVersion == '1'
@@ -357,7 +343,6 @@ export class MethodologyController {
       response.projectEmission = dd[0]['projectEmission'];
       response.leakegeEmission = dd[0]['leakegeEmission'];
       response.emissionReduction = dd[0]['emissionReduction'];
-      console.log('calengineres--', response);
     } else if (methodologyCode == 'AMS-iii-C') {
       const request = new UnfcccAmsIIIC15ReqMsg();
 
@@ -370,9 +355,6 @@ export class MethodologyController {
         baselineArray,
         'vehical',
       );
-      // console.log("methCode------", baselineFuel)
-      // console.log("methCode------", methodologyCode)
-      // console.log("methCode------", baselineVehicle)
 
       const projectArray = this.service.selectArray(req, 'isProject');
       const projectVehicle = this.service.selectParameterArray(
@@ -396,9 +378,7 @@ export class MethodologyController {
         year,
       );
 
-      // return request;
       const dd = this.mas_iii_c.ghgEmission(request);
-      // return dd
 
       response.baseLineEmission = dd.response[0]['baseLineEmission'];
 
@@ -453,7 +433,6 @@ export class MethodologyController {
       response.projectEmission = dd[0]['projectEmission'];
       response.leakegeEmission = 0;
       response.emissionReduction = dd[0]['emissionReduction'];
-      console.log('calengineres--', response);
     }
     //AM0090--------------------
 
@@ -513,16 +492,13 @@ export class MethodologyController {
         leakageDta,
       );
 
-      //  return request1;
-
       const dd = await this.amc0016.ICATM3(request1);
-      console.log('+++++', dd);
+
       response.year = dd[0]['year'];
       response.baseLineEmission = dd[0]['baselineEmission'];
       response.projectEmission = dd[0]['projectEmission'];
       response.leakegeEmission = 0;
       response.emissionReduction = dd[0]['emissionReduction'];
-      // console.log("calengineres--", response)
     }
 
     //AMC0016-------------------
@@ -572,14 +548,12 @@ export class MethodologyController {
         methodologyCode,
       );
 
-      // return request;
       const result = this.jica.modalShift(request);
-      // return result
+
       response.baseLineEmission = result.response[0].baseLineEmission;
       response.leakegeEmission = result.response[0].leakegeEmission;
       response.projectEmission = result.response[0].projectEmission;
       response.emissionReduction = result.response[0].emissionReduction;
-      // return result.;
     } else if (methodologyCode == 'jica_railway_fr_modal') {
       const request = new JicaRailwayFreightReqMsg();
 
@@ -598,7 +572,7 @@ export class MethodologyController {
         methodologyCode,
       );
       request.projectEmission = this.service.assignpara(projectArray, year);
-      // return request;
+
       const re = this.jaca_freight.cal(request);
 
       response.baseLineEmission = re.baseLineEmission;
@@ -627,7 +601,7 @@ export class MethodologyController {
         methodologyCode,
       );
       request.projectEmission = this.service.assignpara(projectArray, year);
-      // return request;
+
       const re = this.jaca_freight.cal(request);
 
       response.baseLineEmission = re.baseLineEmission;
@@ -661,7 +635,7 @@ export class MethodologyController {
       request.projectEmission = this.service.assignpara(projectArray, year);
 
       const re = this.jaca_passenger.cal(request);
-      // return request;
+
       response.baseLineEmission = re.baseLineEmission;
       response.projectEmission = re.projectEmission;
       response.emissionReduction = re.emissionReduction;
@@ -684,7 +658,6 @@ export class MethodologyController {
         baselineArray,
         'fuelType',
       );
-      console.log(baselineFuel);
 
       const projectArray = this.service.selectArray(req, 'isProject');
       const projectFuel = this.service.selectParameterArray(
@@ -704,7 +677,7 @@ export class MethodologyController {
         year,
         fuel,
       );
-      // return requestICAT
+
       let re = new icatCATResponceMsg();
       re = await this.icat.calculate(requestICAT);
 
@@ -762,10 +735,8 @@ export class MethodologyController {
         year,
         fuelpr,
       );
-      // return requestICAT;
       let re = new icatCATResponceMsg();
       re = await this.icat.calculate(requestICAT);
-      // return requestICAT;
       response.baseLineEmission = re.baseLineEmission;
       response.leakegeEmission = re.leakegeEmission;
       response.projectEmission = re.projectEmission;
@@ -898,8 +869,6 @@ export class MethodologyController {
       response.projectEmission = dd.response[0]['projectEmission'];
       response.leakegeEmission = dd.response[0]['leakageEmission'];
       response.emissionReduction = dd.response[0]['emissionReduction'];
-
-      console.log('response', response);
     } else if (methodologyCode === 'CDM_ACM0017') {
       const request = new CdmAcm0017ReqMsg();
 
@@ -1074,7 +1043,6 @@ export class MethodologyController {
     );
     response.projectionResults = this.projection.projection(projectionRequest);
 
-    console.log('response========', response);
     return response;
   }
 }

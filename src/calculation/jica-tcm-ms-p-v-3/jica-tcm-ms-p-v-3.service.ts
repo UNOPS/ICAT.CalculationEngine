@@ -4,7 +4,6 @@ import { ProjectEmissionTypeEnum } from '../enum/project-emisson-type.enum';
 import { VehicleTypeEnum } from '../enum/vehicle-type.enum';
 import { FuelDto } from '../unfccc-ams-iii-s-v-4/dto/fuel.dto';
 import { BaseLineDto } from './dto/baseline.dto';
-// import { FuelDto } from './dto/fuel.dto';
 import { ResponseDto } from './dto/responce.dto';
 import { TraficCongestionDto } from './dto/trafic-congestion.dto';
 import { JicaTcmMsPV3ReqMsg } from './message/Jica-tcm-ms-p-v-3-req-msg';
@@ -21,7 +20,6 @@ export class JicaTcmMsPV3Service {
       let projectEmission = 0;
 
       const response = new ResponseDto();
-      // let emission =0;
       const emission = this.baselineEmission(
         req.projectEmission[arr],
         req.baselineEmission[arr],
@@ -70,7 +68,7 @@ export class JicaTcmMsPV3Service {
             req.projectEmission[arr].traficCon[num],
             req.projectEmission[arr].fc[num],
           );
-          // console.log(emission);
+
           projectEmission += emission;
         }
       }
@@ -83,7 +81,6 @@ export class JicaTcmMsPV3Service {
       response.emissionReduction = parseFloat(
         Number(baseLineEmission - projectEmission).toFixed(5),
       );
-      console.log(response);
 
       responceArray.push(response);
     }
@@ -105,7 +102,7 @@ export class JicaTcmMsPV3Service {
               baseline.vehicle[num].ef_pkm *
               baseline.vehicle[num].ms) /
             100;
-          console.log(emission);
+
           baselineEmission += emission;
         }
 
@@ -117,10 +114,9 @@ export class JicaTcmMsPV3Service {
               baseline.vehicle[num].ef_km) /
             (baseline.vehicle[num].or * 100);
           baselineEmission += emission;
-          // console.log(emission);
         }
       }
-      console.log(baselineEmission);
+
       return baselineEmission;
     }
 
@@ -129,8 +125,6 @@ export class JicaTcmMsPV3Service {
       let baselineEmission = 0;
 
       for (const num in baseline.vehicle) {
-        console.log('=================', baseline.vehicle);
-
         if (baseline.vehicle[num].ef_pkm != 0) {
           const emission =
             (project.passenger *
@@ -157,7 +151,7 @@ export class JicaTcmMsPV3Service {
                 baseline.vehicle[num].fuel.ncv *
                 baseline.vehicle[num].fuel.ef) /
               (baseline.vehicle[num].or * 100);
-            // console.log(emission);
+
             baselineEmission += emission;
           }
         }

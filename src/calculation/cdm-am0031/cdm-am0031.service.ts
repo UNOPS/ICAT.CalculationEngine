@@ -29,7 +29,7 @@ export class CDMAM0031Service {
     for await (const project of req.projectEmission) {
       for (const base of req.baseline) {
         const leakage = await this.leakageEmission(base, project);
-        console.log('be', leakage);
+
         le += await leakage;
       }
     }
@@ -38,7 +38,7 @@ export class CDMAM0031Service {
     res.projectEmission = parseFloat(Number(pe).toFixed(5));
     res.lecageEmission = parseFloat(Number(le).toFixed(5));
     res.emissionReduction = parseFloat(Number(be - pe - le).toFixed(5));
-    console.log('res++++++++++++', res);
+
     this.base_FC = 0;
     this.pro_FC = 0;
     return res;
@@ -87,7 +87,7 @@ export class CDMAM0031Service {
     }
 
     const be = (irpow * EF_pkm * SD) / unit;
-    // console.log("+++be",EF_pkm,SD)
+
     return be;
   }
 
@@ -160,8 +160,6 @@ export class CDMAM0031Service {
         }
       }
     }
-
-    // return 0;
   }
 
   public async leakageEmission(base: BaseLineDto, pro: ProjectDto) {
@@ -188,7 +186,7 @@ export class CDMAM0031Service {
                   pro.leakege.dd_tx +
                   pro.leakege.dd_cx);
             }
-            // console.log("ars+++be===",srs)
+
             const ars =
               (pro.leakege.bscr / vehi.nzx) * srs -
               (pro.leakege.rsx - pro.leakege.rsy) / pro.leakege.rsx;
@@ -203,7 +201,7 @@ export class CDMAM0031Service {
         if (projectVehi.vehicleName == baseVehi.vehicleName) {
           const roc_iy = projectVehi.or / projectVehi.cv; //project Average occupancy rate relative to capacity in category i in year y
           const roc_ix = baseVehi.or / baseVehi.cv; //baseline
-          // console.log("ars_y+++be===",roc_iy,roc_ix)
+
           let ef = projectVehi.ef_km;
           let nisy = projectVehi.nisy;
           let vd = baseVehi.d;
@@ -221,7 +219,7 @@ export class CDMAM0031Service {
                 projectVehi.ninx) /
               projectVehi.nzx;
           }
-          // console.log("ars_y+++be===",ars_y,projectVehi.vehicleName)
+
           if (
             ars_y <= 0 &&
             (projectVehi.vehicleName == 'Car' ||
@@ -261,7 +259,7 @@ export class CDMAM0031Service {
     }
 
     const LE_upA = await (this.pro_FC - this.base_FC);
-    console.log('======', this.pro_FC, this.base_FC);
+
     if (ars_y > 0) {
       LE_cong = 0;
     }
@@ -270,10 +268,7 @@ export class CDMAM0031Service {
       const le = LE_reb + LE_spy;
       LE_cong = Math.max(le, 0);
     }
-    console.log('LE_cong', LE_cong);
-    console.log('LE_lft', LE_lft);
-    console.log('LE_lfz', LE_lfz);
-    console.log('LE_up', LE_upA);
+
     LE_up = Math.max(LE_upA, 0);
     LE = LE_cong + LE_lft + LE_lfz + LE_up;
     return LE;

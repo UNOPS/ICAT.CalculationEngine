@@ -7,8 +7,6 @@ import { UnfcccAm0090V0110ResMsg } from './message/unfccc_am0090_v_01_1_0_res_ms
 @Injectable()
 export class UnfcccAm0090V0110Service {
   public ICATM2(req: UnfcccAm0090V0110ReqMsg) {
-    console.log('reqpull===', req);
-
     const responseArray = [];
 
     for (const num in req.baseline) {
@@ -37,9 +35,7 @@ export class UnfcccAm0090V0110Service {
       Efbl = this.efblHistorical(baseline);
     }
 
-    console.log('EFBL ' + Efbl);
     const BEy = baseline.ty * baseline.ad * Efbl * 0.000001;
-    console.log('BE ' + BEy);
 
     return BEy;
   }
@@ -48,25 +44,20 @@ export class UnfcccAm0090V0110Service {
     let Efbl = 0;
     let frtbl = 0;
     for (const num in baseline.vehicle) {
-      //    for (let f in baseline.vehicle[num].fuel) {
-
       if (baseline.frtbl) {
         frtbl = baseline.frtbl;
       } else {
         frtbl =
           (baseline.tx * baseline.ad) /
           (baseline.tx * baseline.ad + baseline.trtx * baseline.rtdx);
-        console.log('FRTBLv ' + frtbl);
       }
 
       const efbl_historic: number =
         baseline.vehicle[num].fuel.fcblix *
         baseline.vehicle[num].fuel.ncv *
         baseline.vehicle[num].fuel.efco2 *
-        frtbl; //*1000
+        frtbl;
       Efbl += efbl_historic;
-
-      //  }
     }
 
     return Efbl / (baseline.tx * baseline.ad);
@@ -74,23 +65,14 @@ export class UnfcccAm0090V0110Service {
 
   public projectEmission(project: projectDto) {
     const emissionfossilfuel: number = this.emissionFossilFuel(project);
-    // console.log("emissionfossilfuel=====", emissionfossilfuel)
-
     const emissionelectricity: number = this.emissionElectricity(project);
-    // console.log("emissionelectricity=====", emissionelectricity)
-
     const factornonemptyreturn: number = this.nonemptyReturns(project);
-    // console.log("factornonemptyreturn=====", factornonemptyreturn)
-
     const emissiontranspotationcargo: number =
       this.emissionTanspotationCargo(project);
-    // console.log("emissiontranspotationcargo=====", emissiontranspotationcargo)
-
     const projectemission: number =
       (emissionfossilfuel + emissionelectricity) * factornonemptyreturn +
       emissiontranspotationcargo;
 
-    console.log('PE==== ', projectemission);
     return projectemission;
   }
 
@@ -105,38 +87,24 @@ export class UnfcccAm0090V0110Service {
         project.vehicle[num].type == 'barges' ||
         project.vehicle[num].type == 'trains'
       ) {
-        console.log('sbt');
-
-        //  for (let f in project.vehicle[num].fuel) {
-        console.log('oooo===', project.vehicle[num].fuel);
-
         if (project.vehicle[num].fuel.type !== 'Electricity') {
           if (project.vehicle[num].fuel.coefiy > 0) {
-            console.log('tttttt');
             coefiy = project.vehicle[num].fuel.coefiy;
 
             pefcjy = coefiy * project.vehicle[num].fuel.fcijy; //*1000
 
-            console.log('pefcjy==', pefcjy);
-
             pefcjyt += pefcjy;
-
-            console.log('pefcjyt==', pefcjyt);
           } else if (
             project.vehicle[num].fuel.efco2 &&
             project.vehicle[num].fuel.ncv
           ) {
-            console.log('ncv');
-
             coefiy =
-              project.vehicle[num].fuel.ncv * project.vehicle[num].fuel.efco2; //devided by 1000000
-            console.log('coef==', coefiy);
+              project.vehicle[num].fuel.ncv * project.vehicle[num].fuel.efco2; //divided by 1000000
 
             pefcjy = coefiy * project.vehicle[num].fuel.fcijy; //*1000
-            console.log('pp==', pefcjy);
+
             pefcjyt += pefcjy;
           } else {
-            console.log('oooopppppps');
             if (project.vehicle[num].fuel.piy) {
               coefiy =
                 (project.vehicle[num].fuel.wciy *
@@ -147,7 +115,6 @@ export class UnfcccAm0090V0110Service {
               pefcjy = coefiy * project.vehicle[num].fuel.fcijy;
 
               pefcjyt += pefcjy;
-              console.log('oooopppppps2', pefcjyt);
             } else {
               coefiy = (project.vehicle[num].fuel.wciy * 44) / 12;
 
@@ -159,10 +126,8 @@ export class UnfcccAm0090V0110Service {
         } else {
           return 0;
         }
-        // }
       }
     }
-    console.log('Emission fossil fuel ' + pefcjyt);
 
     return pefcjyt;
   }
@@ -172,7 +137,6 @@ export class UnfcccAm0090V0110Service {
     let peecyt = 0;
 
     for (const num in project.vehicle) {
-      //  for (let f in project.vehicle[num].fuel) {
       if (project.vehicle[num].fuel.type == 'Electricity') {
         peecy =
           project.vehicle[num].fuel.fcijy *
@@ -180,17 +144,13 @@ export class UnfcccAm0090V0110Service {
           (1 + project.vehicle[num].fuel.tdljy / 100);
         peecyt += peecy;
       }
-      //}
     }
-    console.log('Emission Electricity ' + peecyt);
 
     return peecyt;
   }
 
   public nonemptyReturns(project: projectDto) {
     const frtpjy: number = project.ty / (project.ty + project.trty);
-
-    console.log('Non Empty returns ' + frtpjy);
 
     return frtpjy;
   }
@@ -200,18 +160,8 @@ export class UnfcccAm0090V0110Service {
     let coefiy: number;
     let pefcryt = 0;
 
-    console.log('-----------emissionTanspotationCargo------------');
     for (const num in project.vehicle) {
-      console.log(
-        '-----------emissionTanspotationCargo-11-----------',
-        project.vehicle[num],
-      );
-
       if (project.vehicle[num].type == 'trucks') {
-        console.log('jjjjj');
-
-        // for (let f in project.vehicle[num].fuel) {
-
         if (project.vehicle[num].fuel.efco2 && project.vehicle[num].fuel.ncv) {
           coefiy =
             (project.vehicle[num].fuel.ncv * project.vehicle[num].fuel.efco2) /
@@ -240,8 +190,6 @@ export class UnfcccAm0090V0110Service {
           }
         }
 
-        // }
-        console.log('Emission transport cargo ' + pefcryt);
         return pefcryt;
       } else {
         return 0;
@@ -269,8 +217,6 @@ export class UnfcccAm0090V0110Service {
           presentValueInterstFector) /
         (presentValueInterstFector - 1);
 
-      console.log('LevInvest ' + pmt);
-
       return pmt;
     }
   }
@@ -278,7 +224,7 @@ export class UnfcccAm0090V0110Service {
   public annual_OM(investment: number, anualOandM: number) {
     const presentage = 1000000;
     const annualoandm = (investment * anualOandM * presentage) / 100;
-    console.log('AnnualOandM ' + annualoandm);
+
     return annualoandm;
   }
 
@@ -290,7 +236,7 @@ export class UnfcccAm0090V0110Service {
   ) {
     const numOfTrucks = dailyActivity / occupancy;
     const anualoandm = (anualOandM * investmentInOneTruck * numOfTrucks) / 100;
-    console.log('Ref Annual O&M ' + anualoandm);
+
     return anualoandm;
   }
 
@@ -309,8 +255,6 @@ export class UnfcccAm0090V0110Service {
         365) /
       OneMile;
 
-    console.log('Anual Fuel Cost ' + annualfuelcost);
-
     return annualfuelcost;
   }
 
@@ -320,7 +264,6 @@ export class UnfcccAm0090V0110Service {
     dieselPrice: number,
   ) {
     const annualfuelcost = (dailyActivity * 365) / dieselConsumption;
-    console.log('Ref  Anual Fuel Cost ' + annualfuelcost);
 
     return annualfuelcost;
   }
@@ -331,8 +274,6 @@ export class UnfcccAm0090V0110Service {
     AnnuaFuelCost: number,
   ) {
     const totalAnualCost = LevInvestment + AnualOAndM + AnnuaFuelCost;
-
-    console.log('TotalAnualcost ' + totalAnualCost);
 
     return totalAnualCost;
   }

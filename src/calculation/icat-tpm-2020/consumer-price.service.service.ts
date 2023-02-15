@@ -12,7 +12,6 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
     countryCode: string,
     year: number,
   ): Promise<number> {
-    // console.log(countryCode)
     const y = year;
     const price = await this.repo
       .findOne({ where: { countryCode: countryCode, year: y } })
@@ -21,19 +20,10 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
           return valu.value;
         }
       });
-    // let price = ( await this.repo.findOne({ countryCode, year })).value;
-    // while (price == undefined) {
-    //     let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
-    //     y = y - 1;
-    // }
-    // if (price > 0) {
     return price;
-    // }
-    // else return -1;
   }
 
   async getConsumervalue(countryCode: string, year: number): Promise<number> {
-    // console.log(countryCode)
     let y = year;
     let price = await this.repo
       .findOne({ where: { countryCode: countryCode, year: y } })
@@ -42,7 +32,6 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
           return valu.value;
         }
       });
-    // let price = ( await this.repo.findOne({ countryCode, year })).value;
     while (price == undefined) {
       price = await this.repo
         .findOne({ where: { countryCode: countryCode, year: y } })
@@ -53,10 +42,8 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
         });
       y = y - 1;
     }
-    console.log('price+++++++', price);
+
     return price;
-    // }
-    // else return -1;
   }
 
   async ConsumeruploadOneValue(req: ConsumerPriceEntity): Promise<string> {
@@ -80,13 +67,9 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
     await wb.xlsx.readFile(filePath).then(function () {
       const sh = wb.getWorksheet('Data');
 
-      // sh.getRow(1).getCell(2).value = 32;
       columnCount = sh.columnCount;
       rowCunt = sh.rowCount;
-      console.log(columnCount);
     });
-
-    console.log(columnCount);
 
     for (let i = 5; i < rowCunt; i++) {
       for (let j = 5; j < columnCount; j++) {
@@ -99,18 +82,15 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
           ppp.year = parseInt(sh.getRow(4).getCell(j).value);
           ppp.value = sh.getRow(i).getCell(j).value;
 
-          console.log(columnCount);
           if (ppp.value != null) {
-            console.log(ppp);
             const price = await this.updateConsumervalue(
               ppp.countryCode,
               ppp.year,
             );
-            console.log(price);
+
             if (price < 0 || price == undefined || price == null) {
               await this.repo.save(ppp);
             }
-            // console.log(price + "console.log(columnCount)")
           }
         });
       }

@@ -30,7 +30,6 @@ export class JicaRailwayPassengerService {
       );
     }
 
-    console.log(responsemsg);
     return responsemsg;
   }
 

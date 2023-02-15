@@ -15,16 +15,12 @@ export class CdmAmsIIIATService {
     const responseArray = [];
 
     for (const arr in req.baseline) {
-      console.log(arr);
-
       const baseResponse = new ResponseDto();
       baseResponse.year = req.baseline[arr].year;
       baseResponse.baseLineEmission = this.baselineEmission(req.baseline[arr]);
       baseResponse.projectEmission = this.projectEmission(req.project[arr]);
       baseResponse.emissionReduction =
         baseResponse.baseLineEmission - baseResponse.projectEmission;
-
-      console.log(baseResponse);
 
       responseArray.push(baseResponse);
     }

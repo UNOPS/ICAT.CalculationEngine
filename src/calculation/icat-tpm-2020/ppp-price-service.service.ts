@@ -11,7 +11,6 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor> {
   }
 
   async uploadPPPvalue(countryCode: string, year: number): Promise<number> {
-    // console.log(countryCode)
     const years = year;
     const price = await this.repo
       .findOne({ where: { countryCode: countryCode, year: years } })
@@ -20,17 +19,10 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor> {
           return valu.value;
         }
       });
-    // let price = ( await this.repo.findOne({ countryCode, year })).value;
-    // console.log("+++++++++++", price)
-    // while (price == undefined) {
-    //     price = await this.repo.findOne({where: { countryCode: countryCode, year: years }}).then((valu) => { if (valu) { return valu.value } });
-    //     years = years - 1;
-    // }
     return price;
   }
 
   async getPPPvalue(countryCode: string, year: number): Promise<number> {
-    // console.log(countryCode)
     let years = year;
     let price = await this.repo
       .findOne({ where: { countryCode: countryCode, year: years } })
@@ -61,7 +53,6 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor> {
   }
 
   async PPPupload(name: string) {
-    // let service = IcatTpm2020Service;
     const Excel = require('exceljs');
     const mainData = [];
     let columnCount = 0;
@@ -73,11 +64,8 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor> {
 
     await wb.xlsx.readFile(filePath).then(function () {
       const sh = wb.getWorksheet('Data');
-
-      // sh.getRow(1).getCell(2).value = 32;
       columnCount = sh.columnCount;
       rowCunt = sh.rowCount;
-      console.log(columnCount);
     });
 
     for (let i = 5; i < rowCunt; i++) {
@@ -91,15 +79,11 @@ export class PPPPriceService extends TypeOrmCrudService<PppConversionFactor> {
           ppp.year = parseInt(sh.getRow(4).getCell(j).value);
           ppp.value = sh.getRow(i).getCell(j).value;
 
-          console.log(columnCount);
           if (ppp.value != null) {
-            console.log(ppp);
             const price = await this.uploadPPPvalue(ppp.countryCode, ppp.year);
-            // console.log( price)
             if (price < 0 || price == undefined || price == null) {
               await this.repo.save(ppp);
             }
-            // console.log(price + "console.log(columnCount)")
           }
         });
 
