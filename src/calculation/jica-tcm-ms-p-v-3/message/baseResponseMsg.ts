@@ -1,12 +1,8 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class BaseResponseMsg{
-     resStatus : number;
+export class BaseResponseMsg {
+  resStatus: number;
 
-
-     reason : string;
-   
-
-     
+  reason: string;
 }

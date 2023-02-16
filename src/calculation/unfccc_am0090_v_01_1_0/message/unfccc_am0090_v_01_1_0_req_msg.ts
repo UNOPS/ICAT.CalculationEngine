@@ -1,15 +1,8 @@
-import { projectDto } from "../dto/project.dto";
-import { baselineDto } from "../dto/baseline.dto";
+import { projectDto } from '../dto/project.dto';
+import { baselineDto } from '../dto/baseline.dto';
 
-export class UnfcccAm0090V0110ReqMsg{
+export class UnfcccAm0090V0110ReqMsg {
+  baseline: baselineDto[];
 
-
-    baseline: baselineDto[];
-
-    project: projectDto[];
-
-
-
-   
-
+  project: projectDto[];
 }

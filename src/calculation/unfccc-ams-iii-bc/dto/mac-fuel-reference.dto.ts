@@ -1,9 +1,8 @@
-import { MacVehicleDto } from "./mac-vahicle.dto";
+import { MacVehicleDto } from './mac-vahicle.dto';
 
 export class MacFuelReferenceDto {
+  projectLife: number;
 
-    projectLife:number;
-
-    vehicle:MacVehicleDto[];
-    usedInCalculations: number;
+  vehicle: MacVehicleDto[];
+  usedInCalculations: number;
 }

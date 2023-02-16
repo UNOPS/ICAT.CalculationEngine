@@ -1,32 +1,20 @@
-import { sourceDto } from "./source.dto";
+export class electrictyDto {
+  telix: number;
 
-export class electrictyDto{
+  efco2x: number;
+  secix: number;
 
+  pelix: number;
+  delix: number;
 
-    telix:number;
-   
-    efco2x:number;
-    secix: number;
-   
+  ecblky: number;
+  efelky: number;
+  tdlky: number;
 
-    pelix:number;
-    delix:number;
+  ecpjjy: number;
 
-    ecblky:number;
-    efelky:number;
-    tdlky:number;
-
-
-    ecpjjy:number;
-
-    secjny:number;//a
-    ddjny:number;//a
-    efefjy:number;
-    tdljy:number;
-
-
-    
-    
-    
-
+  secjny: number; //a
+  ddjny: number; //a
+  efefjy: number;
+  tdljy: number;
 }

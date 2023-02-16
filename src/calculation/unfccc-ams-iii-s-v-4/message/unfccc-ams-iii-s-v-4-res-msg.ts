@@ -1,8 +1,7 @@
-import { UnfcccAmsIIISV4RequestMsg } from "./unfccc-ams-iii-s-v-4-req-msg";
+import { UnfcccAmsIIISV4RequestMsg } from './unfccc-ams-iii-s-v-4-req-msg';
 
 export class UnfcccAmsIIISV4ResponseMsg {
+  response = [];
 
-    response= new Array();
-
-    metaData :UnfcccAmsIIISV4RequestMsg;
+  metaData: UnfcccAmsIIISV4RequestMsg;
 }

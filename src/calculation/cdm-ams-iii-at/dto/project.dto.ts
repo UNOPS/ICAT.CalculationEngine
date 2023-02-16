@@ -1,6 +1,5 @@
-import { VehicleDto } from "./vehicle.dto";
+import { VehicleDto } from './vehicle.dto';
 
-export class ProjectDto{
-    vehicle: VehicleDto[];
-
+export class ProjectDto {
+  vehicle: VehicleDto[];
 }

@@ -4,6 +4,6 @@ import { UnfcccAmsIiiBcService } from './unfccc-ams-iii-bc.service';
 
 @Module({
   controllers: [UnfcccAmsIiiBcController],
-  providers: [UnfcccAmsIiiBcService]
+  providers: [UnfcccAmsIiiBcService],
 })
-export class UnfcccAmsIiiBcModule { }
+export class UnfcccAmsIiiBcModule {}

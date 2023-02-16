@@ -1,8 +1,7 @@
 export class MileStoneParameterDto {
+  year: number;
 
-    year: number;
+  mileStoneValue: number; // population
 
-    mileStoneValue: number; // population
-
-    vahicleSale :number;
+  vahicleSale: number;
 }

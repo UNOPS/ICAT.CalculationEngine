@@ -1,12 +1,11 @@
 export class BaseYearParameterDto {
+  year: number;
 
-    year: number;
+  baselineEmission: number;
 
-    baselineEmission: number;
+  projectEmission: number;
 
-    projectEmission: number;
+  leakegeEmission: number;
 
-    leakegeEmission:number;
-
-    baseYearMileStone: number;
+  baseYearMileStone: number;
 }

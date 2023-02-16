@@ -7,7 +7,7 @@ import { DefaultValue } from './defaultValue.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([DefaultValue])],
   controllers: [DefaultValueController],
-  providers: [DefaultValueService,],
+  providers: [DefaultValueService],
   exports: [DefaultValueService],
 })
 export class DefaultValueModule {}

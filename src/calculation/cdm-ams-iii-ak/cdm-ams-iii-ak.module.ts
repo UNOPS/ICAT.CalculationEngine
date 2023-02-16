@@ -4,6 +4,6 @@ import { CdmAmsIiiAkController } from './cdm-ams-iii-ak.controller';
 
 @Module({
   controllers: [CdmAmsIiiAkController],
-  providers: [CdmAmsIiiAkService]
+  providers: [CdmAmsIiiAkService],
 })
 export class CdmAmsIiiAkModule {}

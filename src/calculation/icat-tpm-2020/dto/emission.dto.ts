@@ -1,5 +1,5 @@
-export class EmissionDto{
-    name:string;
-    fuel:number;
-    electricity:number;
+export class EmissionDto {
+  name: string;
+  fuel: number;
+  electricity: number;
 }

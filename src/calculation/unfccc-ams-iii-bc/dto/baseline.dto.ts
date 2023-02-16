@@ -1,11 +1,7 @@
-import { fuelDto } from "./fuel.dto";
-import { vehicleDto } from "./vehicle.dto";
-
+import { vehicleDto } from './vehicle.dto';
 
 export class baselineDto {
+  year: number;
 
-    year:number;
-
-    vehicle: vehicleDto[];
-
+  vehicle: vehicleDto[];
 }

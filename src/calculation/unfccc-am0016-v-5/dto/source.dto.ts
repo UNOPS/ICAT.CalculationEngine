@@ -1,8 +1,5 @@
-export class sourceDto{
-
-
-    ecblky:number;
-    efelky:number;
-    tdlky:number;
-    
+export class sourceDto {
+  ecblky: number;
+  efelky: number;
+  tdlky: number;
 }

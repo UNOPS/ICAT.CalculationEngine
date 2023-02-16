@@ -1,8 +1,6 @@
-import { fuelDto } from "./fuel.dto";
-
+import { fuelDto } from './fuel.dto';
 
 export class vehicleDto {
-
-    type:string;
-    fuel:fuelDto;
+  type: string;
+  fuel: fuelDto;
 }

@@ -1,13 +1,12 @@
-export class ResponseDto{
+export class ResponseDto {
+  baseLineEmission: number;
+  projectEmission: number;
 
-    baseLineEmission : number;
-    projectEmission : number;
+  leakegeEmission: number;
 
-    leakegeEmission :number;
+  emissionReduction: number;
 
-    emissionReduction : number;
+  projectionResults: any[];
 
-    projectionResults:any[];
-
-    year:number;
+  year: number;
 }

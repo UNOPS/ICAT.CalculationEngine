@@ -1,17 +1,12 @@
-import { MacFuelDto } from "./mac-fuel.dto";
+import { MacFuelDto } from './mac-fuel.dto';
 
-export class MacVehicleDto{
+export class MacVehicleDto {
+  fuel: MacFuelDto;
+  novehicles: number;
 
-    
-    fuel:MacFuelDto;
-    novehicles:number;
-
-    usedInCalculations:number;
-    testFailRate:number;//%
-    totVehicles:number;
-    shareOfVehicles:number;//%
-    percentageOfFuelVehicles:number;//%
-
-  
-    
+  usedInCalculations: number;
+  testFailRate: number; //%
+  totVehicles: number;
+  shareOfVehicles: number; //%
+  percentageOfFuelVehicles: number; //%
 }

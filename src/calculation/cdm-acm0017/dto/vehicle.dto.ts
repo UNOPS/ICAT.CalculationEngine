@@ -1,5 +1,1 @@
-
-
-export class VehicleDto{
-   
-}
+export class VehicleDto {}

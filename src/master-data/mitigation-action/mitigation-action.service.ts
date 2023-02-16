@@ -10,7 +10,7 @@ export class MitigationActionService extends TypeOrmCrudService<MitigationAction
   }
 
   public async crete(req: MitigationActionType) {
-    this.repo.save(req)
+    this.repo.save(req);
   }
 
   public async getdatails() {

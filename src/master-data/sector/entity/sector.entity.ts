@@ -1,16 +1,5 @@
 import { BaseTrackingEntity } from 'src/shared/entities/base.tracking.entity';
-import {
-  Entity,
-  ManyToMany,
-  JoinTable,
-  Column,
-  ManyToOne,
-  JoinColumn,
-  PrimaryGeneratedColumn,
-  OneToMany,
-} from 'typeorm';
-
-//import { ClimateChangeDataCategory } from '../cimate-change-data-category/climate.change.data.category.entity';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'sector' })
 export class Sector extends BaseTrackingEntity {
@@ -26,14 +15,6 @@ export class Sector extends BaseTrackingEntity {
   @Column({ default: 1 })
   sortOrder: number;
 
-  // @Column()
-  // emissionSummary: string;
-
-  // @Column()
-  // ndcDocuments: string;
-
   @Column({ default: null })
   uniqueIdentification: string;
-
-
 }

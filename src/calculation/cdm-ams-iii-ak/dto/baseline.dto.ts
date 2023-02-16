@@ -1,7 +1,6 @@
-import { PowerPlantDto } from "./powerplant.dto";
-import { VehicleDto } from "./vehicle.dto";
+import { PowerPlantDto } from './powerplant.dto';
 
-export class BaselineDto{
-    year: number;
-    powerplant: PowerPlantDto;
+export class BaselineDto {
+  year: number;
+  powerplant: PowerPlantDto;
 }

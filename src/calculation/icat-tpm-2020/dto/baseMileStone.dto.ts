@@ -1,7 +1,5 @@
 export class BaseMileStoneDto {
-    
-    baseYear: number;
+  baseYear: number;
 
-    baseMileStone: number;
-;
+  baseMileStone: number;
 }

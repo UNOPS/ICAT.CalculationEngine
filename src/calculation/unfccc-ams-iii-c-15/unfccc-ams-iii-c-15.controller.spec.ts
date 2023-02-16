@@ -9,7 +9,9 @@ describe('UnfcccAmsIiiC15Controller', () => {
       controllers: [UnfcccAmsIiiC15Controller],
     }).compile();
 
-    controller = module.get<UnfcccAmsIiiC15Controller>(UnfcccAmsIiiC15Controller);
+    controller = module.get<UnfcccAmsIiiC15Controller>(
+      UnfcccAmsIiiC15Controller,
+    );
   });
 
   it('should be defined', () => {

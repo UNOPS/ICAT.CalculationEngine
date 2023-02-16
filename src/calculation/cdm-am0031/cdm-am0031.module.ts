@@ -4,6 +4,6 @@ import { CDMAM0031Service } from './cdm-am0031.service';
 
 @Module({
   controllers: [CdmAm0031Controller],
-  providers: [CDMAM0031Service]
+  providers: [CDMAM0031Service],
 })
 export class CdmAm0031AkModule {}

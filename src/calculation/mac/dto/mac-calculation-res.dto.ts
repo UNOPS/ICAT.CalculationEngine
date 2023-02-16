@@ -1,13 +1,11 @@
 export class MacCalculationResDTO {
+  year: number;
 
-    year: number;
+  totalAnnualCost: number;
 
-    totalAnnualCost: number;
+  baseLineAnnualCost: number;
 
-    baseLineAnnualCost: number;
+  projecrAnnualCost: number;
 
-    projecrAnnualCost:number;
-    
-    mac: number;
-
+  mac: number;
 }

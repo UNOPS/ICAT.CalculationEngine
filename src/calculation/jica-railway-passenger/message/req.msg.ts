@@ -1,11 +1,8 @@
-import { ProjectDto } from "src/calculation/jica-railway-freight/dto/project.dto";
-import { BaseLineDto } from "../dto/baseline.dto";
+import { ProjectDto } from 'src/calculation/jica-railway-freight/dto/project.dto';
+import { BaseLineDto } from '../dto/baseline.dto';
 
 export class JicaRailwayPassengerReqMsg {
+  baselineEmission: BaseLineDto[];
 
-
-    baselineEmission: BaseLineDto[];
-
-    projectEmission: ProjectDto;
-
+  projectEmission: ProjectDto;
 }
