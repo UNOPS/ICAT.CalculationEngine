@@ -2820,7 +2820,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
     return baseEmission;
   }
-  /*CDM_ACM0017 project mapping*/
+  /* CDM_ACM0017 project mapping*/
   public assignParameters_ACM0017_2(
     req: any,
     fuelData: any,

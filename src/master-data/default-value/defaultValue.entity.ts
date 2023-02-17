@@ -3,9 +3,6 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class DefaultValue extends BaseTrackingEntity {
-  /**
-   *
-   */
   constructor() {
     super();
   }
