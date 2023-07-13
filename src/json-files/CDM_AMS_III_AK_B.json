@@ -1,0 +1,870 @@
+{
+    "methodology": {
+        "id": "2",
+        "name": "CDM_AMS_III_AK_B",
+        "code": "CDM_AMS_III_AK_B",
+        "versionnumber": "1",
+        "documentdate": "",
+        "description": "",
+        "parameters": [
+            {
+                "id": "1",
+                "name": "year",
+                "code": "year",
+                "description": "year",
+                "category": "baseline",
+                "type": "local value",
+                "multyselect": "true",
+                "defaultvalue": "",
+                "parameters": [],
+                "dimensions": []
+            },
+            {
+                "id": "2",
+                "name": "power plant",
+                "code": "pp",
+                "description": "power plant",
+                "category": "baseline",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "power plant type",
+                        "type": "power plant",
+                        "code": "pp",
+                        "fuelid": "-99",
+                        "vehicletypeid": "1",
+                        "routid": "-99",
+                        "powerplantid": "1",
+                        "orderid": "2",
+                        "multyselect": "false",
+                        "description": "power plant type",
+                        "values": [], 
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Net calorific value of biofuel produced in year",
+                                "code": "ncvbf",
+                                "type": "country value",
+                                "unit": [
+                                    "GJ/t"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "Production of biofuel",
+                                "code": "pbf",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "3",
+                                "name": "Quantity of biofuel consumed",
+                                "code": "pbfsite",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "4",
+                                "name": "Quantity of biofuel produced with other alcohols",
+                                "code": "pbfother",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "5",
+                                "name": "Consumption of (blended) biofuel",
+                                "code": "cbf",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "6",
+                                "name": "Fraction of blending",
+                                "code": "fpj",
+                                "type": "country value",
+                                "unit": ["-"],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "7",
+                                "name": "Blending fraction of fuel",
+                                "code": "fff",
+                                "type": "country value",
+                                "unit": ["-"],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2",
+                        "name": "fuel type",
+                        "type": "fuel",
+                        "code": "fuel",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "false",
+                        "description": "fuel type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Diesel",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Petrol",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "CO₂ emission factor",
+                                "code": "efCO₂",
+                                "type": "country value",
+                                "unit": [
+                                    "tCO₂/GJ"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "feedstock type",
+                "code": "fs",
+                "description": "feedstock type",
+                "category": "project",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "vehicle type",
+                        "type": "vehicle",
+                        "code": "vehicle",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "vehicle type ",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Van",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Car",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "CO₂ emission factor",
+                                "code": "efCO₂",
+                                "type": "local value",
+                                "unit": [
+                                    "t CO₂/GJ"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "Return trip distance",
+                                "code": "df",
+                                "type": "local value",
+                                "unit": [
+                                    "km"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "3",
+                                "name": "Total mass of freight transported ",
+                                "code": "fr",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2",
+                        "name": "fuel type",
+                        "type": "fuel",
+                        "code": "fuel",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "fuel type ",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Diesel",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Project emissions from combustion",
+                                        "code": "pefc",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tCO₂"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Project emissions from the consumptions",
+                                        "code": "pebshf",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tCO₂e"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2",
+                                "name": "Methanol",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Quantity of methanol consumed",
+                                        "code": "fuelConsumption",
+                                        "type": "local value",
+                                        "unit": [
+                                            "t"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Carbon emission factor of methanol",
+                                        "code": "efcm",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tC/t MeOH"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "3",
+                                "name": "Electricity",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Project emissions from electricity consumption",
+                                        "code": "peec",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tCO₂"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Project emissions from the consumptions",
+                                        "code": "pebshe",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tCO₂e"
+                                        ],
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3",
+                        "name": "soil type",
+                        "type": "soil",
+                        "code": "soil",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "soil type ",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Limestone",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Dolomite",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Urea",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Rate of application of soil amendment",
+                                "code": "qsa",
+                                "type": "local value",
+                                "unit": [
+                                    "t/ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "Area of land",
+                                "code": "asa",
+                                "type": "local value",
+                                "unit": [
+                                    "ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "3",
+                                "name": "Emission factor for CO₂ emissions from application of soil amendmnet ",
+                                "code": "efsa",
+                                "type": "country value",
+                                "unit": [
+                                    "ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "4",
+                        "name": "stratum type",
+                        "type": "stratum",
+                        "code": "stratum",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "stratum type ",
+                        "values": [],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Area of land stratum",
+                                "code": "asoc",
+                                "type": "local value",
+                                "unit": [
+                                    "ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "Reference SOC stock applicable",
+                                "code": "socref",
+                                "type": "local value",
+                                "unit": [
+                                    "t C/ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "3",
+                                "name": "Reletive stock change factor for land-use in the basline in stratum",
+                                "code": "flub",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "4",
+                                "name": "Relative stock change factor for land management in the baseline stratum",
+                                "code": "fmgb",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "5",
+                                "name": "Relative stock change factor for input in the baseline stratum",
+                                "code": "finb",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "6",
+                                "name": "Reletive stock change factor for land-use in the project in stratum",
+                                "code": "flup",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "7",
+                                "name": "Relative stock change factor for land management in the project stratum",
+                                "code": "fmgp",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "8",
+                                "name": "Relative stock change factor for input in the project stratum",
+                                "code": "finp",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "9",
+                                "name": " Area of stratum of land subjected to clearance or fire",
+                                "code": "afr",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "10",
+                                "name": "Fuel biomass consumption per hectare in sratum",
+                                "code": "b",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "11",
+                                "name": "Root-shoot ratio for sratum",
+                                "code": "r",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "5",
+                        "name": "feedstock type",
+                        "type": "feedstock",
+                        "code": "feedstock",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "feedstock type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Fresh palm fruit bunches",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Cassava roots",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Jatropa nuts",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Soyabeans",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "5",
+                                "name": "Corn seed",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "6",
+                                "name": "Sugarcrane",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "7",
+                                "name": "Pongamia",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Project emissions from anaerobic treatment of waste/waste water",
+                                "code": "peww",
+                                "type": "local value",
+                                "unit": [
+                                    "tCO₂"
+                                ],
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "Length of the first crediting period of the project",
+                                "code": "t",
+                                "type": "local value",
+                                "unit": [
+                                    "Years"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "3",
+                                "name": "Rate of nitrogen applied",
+                                "code": "qn",
+                                "type": "local value",
+                                "unit": [
+                                    "t N/ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "4",
+                                "name": "Area of land subjected to soil fertilization and management ",
+                                "code": "aftm",
+                                "type": "local value",
+                                "unit": [
+                                    "ha"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "5",
+                                "name": "Aggregate emission factor for N2O and CO₂ emissions ",
+                                "code": "efft",
+                                "type": "local value",
+                                "unit": [
+                                    "t CO₂e/(t N)"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "6",
+                                "name": "Amount of biofuel produced with feedstock",
+                                "code": "fpbf",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "7",
+                                "name": "Allocation factor for the land cultivation of feedstock",
+                                "code": "af2",
+                                "type": "local value",
+                                "unit": ["-"],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "8",
+                                "name": "Market price per ton of main product",
+                                "code": "mpmp",
+                                "type": "local value",
+                                "unit": [
+                                    "$/tonne"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "9",
+                                "name": "Mass of main product",
+                                "code": "mmp",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "10",
+                                "name": "Market price per ton of dry co-product ",
+                                "code": "mpbp",
+                                "type": "local value",
+                                "unit": [
+                                    "$/tonne"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "11",
+                                "name": "Mass of co-product",
+                                "code": "mbp",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "name": "fuel type",
+                "code": "fuel",
+                "description": "fuel type",
+                "category": "leakage",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "fuel type",
+                        "type": "fuel",
+                        "code": "fuel",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "true",
+                        "description": "fuel type ",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Diesel",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Emission factor for upstream emission",
+                                        "code": "efijx",
+                                        "type": "local value",
+                                        "unit": [
+                                            "t CO₂e/TJ"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2",
+                                "name": "Methanol",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Pre-combustion emissons factor",
+                                        "code": "efmeoh",
+                                        "type": "local value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Quantity of methanol consumed",
+                                        "code": "fuelConsumption",
+                                        "type": "local value",
+                                        "unit": [
+                                            "t"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "3",
+                                "name": "Common",
+                                "defaultvalue": "false",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "CO₂ emission factor for most carbon intensive fossil fuel",
+                                        "code": "efCO₂",
+                                        "type": "country value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Net calorific value of biofuel produced in year",
+                                        "code": "ncvbf",
+                                        "type": "local value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            }
+
+                        ],
+                        "parameter": []
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "residue type",
+                "code": "residue",
+                "description": "residue type",
+                "category": "leakage",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "residue type",
+                        "type": "residue",
+                        "code": "residue",
+                        "fueltypeid": "2",
+                        "vehicletypeid": "-99",
+                        "routid": "3",
+                        "powerplantid": "-99",
+                        "orderid": "1",
+                        "multyselect": "false",
+                        "description": "residue type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Agricultural crop residues",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Forestry residues",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Municipal waste",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Quantity of biomass residues",
+                                "code": "brpjn",
+                                "type": "local value",
+                                "unit": [
+                                    "t"
+                                ],
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "NCV of the biomass residues",
+                                "code": "ncvn",
+                                "type": "local value",
+                                "unit": [
+                                    "GJ/t"
+                                ],
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

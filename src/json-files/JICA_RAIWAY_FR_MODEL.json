@@ -1,0 +1,192 @@
+{
+    "methodology": {
+      "id": "2",
+      "name": "jica_railway_fr_modal",
+      "code": "jica_railway_fr_modal",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+          "id": "1",
+          "name": "year",
+          "code": "year",
+          "description": "year",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameters": [
+            
+          ],
+          "dimensions": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "name": "baseline parameter",
+          "code": "baseline",
+          "description": " pasengerShare",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Train",
+                  "defaultvalue": "false"
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Share of freight",
+                  "code": "ms",
+                  "type": "local value",
+                  "unit": [
+                    "%"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                    "id": "2",
+                    "name": "CO₂ emission factor of transport mode",
+                    "code": "ef_km",
+                    "type": "local value",
+                    "unit": [
+                      "t-CO₂/t-km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+               
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "project parameter",
+          "code": "project",
+          "description": " project parameter traffic Congestion Mitigation",
+          "category": "project",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Train",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                    "id": "1",
+                    "name": "Increased freight transportation activity/volume",
+                    "code": "btkm",
+                    "type": "local value",
+                    "unit": [
+                      "t-km/y"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                    
+                    ]
+                  },
+              {
+                  "id": "2",
+                  "name": "Electricity consumption",
+                  "code": "ec",
+                  "type": "local value",
+                  "unit": [
+                    "MWh/y"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                  
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "",
+                  "parameter": [
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "t-CO₂/MWh"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

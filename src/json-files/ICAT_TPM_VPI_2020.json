@@ -1,0 +1,407 @@
+{
+    "methodology": {
+      "id": "3",
+      "name": "ICAT transport pricing guidance",
+      "code": "ICAT_TPM_VPI_2020",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+          "id": "1",
+          "name": "year",
+          "code": "year",
+          "description": "year",
+          "category": "baseline",
+          "type": "local value",
+          "multyselect": "true",
+          "defaultvalue": "",
+          "parameters": [
+            
+          ],
+          "dimensions": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "name": "baseline details",
+          "code": "baseline",
+          "description": " baseline vehicle details",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [                   
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "car",
+                  "defaultvalue": "false",
+                  "parameter": [                                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "bus",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Train",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                }
+                
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Specific fuel consumption",
+                  "code": "sfc",
+                  "type": "local value",
+                  "unit": [
+                    "L per VKT",
+                    "kWh per VKT"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Vehicle kilometres travelled",
+                  "code": "vkt",
+                  "type": "local value",
+                  "unit": [
+                    "VKT"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Occupancy rate",
+                  "code": "or",
+                  "type": "local value",
+                  "unit": [
+                    "person per vehicle"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "Average km per vehicle",
+                  "code": "distance",
+                  "type": "country value",
+                  "unit": [
+                    "km"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+             
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/Gg"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "Density of Diesel",
+                      "code": "density",
+                      "type": "country value",
+                      "unit": [
+                        "Kg/m3"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value of Petrol",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/Gg"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "Density of Petrol",
+                      "code": "density",
+                      "type": "country value",
+                      "unit": [
+                        "Kg/m3"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "tCO₂/TJ", "tCO₂/kWh"
+                  ],
+                  "defaultvalue": "",
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [                    
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter ",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+          "parameter": [                   
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "car",
+                  "defaultvalue": "false",
+                  "parameter": [                                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "bus",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Train",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "Common",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Default Beta Value",
+                      "code": "beta",
+                      "type": "country value",
+                      "unit": [
+                        "-"
+                      ],
+                      "defaultvalue": "0.03",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }]
+                }
+                
+              ],
+              "parameter": [
+               
+                {
+                  "id": "1",
+                  "name": "Vehicle Previous tax",
+                  "code": "prevuiousTax",
+                  "type": "country value",
+                  "unit": [
+                    "price"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Vehicle new tax",
+                  "code": "newTax",
+                  "type": "country value",
+                  "unit": [
+                    "price"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Vehicle Retail price",
+                  "code": "price",
+                  "type": "country value",
+                  "unit": [
+                    "price"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "New Vehicle sale",
+                  "code": "vahicleSale",
+                  "type": "country value",
+                  "unit": [
+                    "-"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+             
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    
+                  ]
+                }
+              ],
+              "parameter": [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
