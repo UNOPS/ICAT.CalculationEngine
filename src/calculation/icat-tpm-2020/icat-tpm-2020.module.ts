@@ -10,25 +10,9 @@ import { IcatTpm2020Service } from './icat-tpm-2020.service';
 import { PPPPriceService } from './ppp-price-service.service';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([
-      PppConversionFactor,
-      ConsumerPriceEntity,
-      Methodology,
-    ]),
-  ],
-  controllers: [IcatTpm2020Controller],
-  providers: [
-    IcatTpm2020Service,
-    ConsumerPriceService,
-    MethodologyService,
-    PPPPriceService,
-  ],
-  exports: [
-    IcatTpm2020Service,
-    ConsumerPriceService,
-    MethodologyService,
-    PPPPriceService,
-  ],
+    imports:[TypeOrmModule.forFeature([PppConversionFactor,ConsumerPriceEntity,Methodology])],
+    controllers:[IcatTpm2020Controller],
+    providers:[IcatTpm2020Service,ConsumerPriceService,MethodologyService,PPPPriceService],
+    exports:[IcatTpm2020Service,ConsumerPriceService,MethodologyService,PPPPriceService]
 })
 export class IcatTpm2020Module {}

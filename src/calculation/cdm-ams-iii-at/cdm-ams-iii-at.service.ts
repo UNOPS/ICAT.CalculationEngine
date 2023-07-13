@@ -7,74 +7,76 @@ import { CdmAmsIIIATResMsg } from './message/cdm-ams-iii-at-res-msg';
 
 @Injectable()
 export class CdmAmsIIIATService {
-  public bfy = 0;
-  public ncvbf = 0;
+    public bfy = 0;
+    public ncvbf = 0;
 
-  public AMSIIIATEmission(req: CdmAmsIIIATReqMsg) {
-    const response: CdmAmsIIIATResMsg = new CdmAmsIIIATResMsg();
-    const responseArray = [];
+    public AMSIIIATEmission(req: CdmAmsIIIATReqMsg){
+        let response: CdmAmsIIIATResMsg = new CdmAmsIIIATResMsg();
+        let responseArray = new Array();
+    
+        for (let arr in req.baseline){
+            console.log(arr)
+    
+          let baseResponse = new ResponseDto();
+          baseResponse.year = req.baseline[arr].year;
+          baseResponse.baseLineEmission = this.baselineEmission(req.baseline[arr]);
+          baseResponse.projectEmission = this.projectEmission(req.project[arr]);
+          baseResponse.emissionReduction = baseResponse.baseLineEmission - baseResponse.projectEmission;
 
-    for (const arr in req.baseline) {
-      const baseResponse = new ResponseDto();
-      baseResponse.year = req.baseline[arr].year;
-      baseResponse.baseLineEmission = this.baselineEmission(req.baseline[arr]);
-      baseResponse.projectEmission = this.projectEmission(req.project[arr]);
-      baseResponse.emissionReduction =
-        baseResponse.baseLineEmission - baseResponse.projectEmission;
-
-      responseArray.push(baseResponse);
-    }
-    response.response = responseArray;
-    response.metaData = req;
-    return response;
-  }
-
-  // calculate baseline emission
-  public baselineEmission(baseline: BaselineDto) {
-    let emission = 0;
-    const vehicle = baseline.vehicle;
-
-    let befv = 0;
-    let bepv = 0;
-    for (const _vehicle of vehicle) {
-      if (_vehicle.dpfv && _vehicle.pfv) {
-        let distEmissionfv = 0;
-        let beffv = 0;
-        for (const _fuel of _vehicle.fuel) {
-          distEmissionfv +=
-            _vehicle.dfv * _vehicle.nbl * _fuel.ncv * _fuel.efco2;
+    
+          responseArray.push(baseResponse);
         }
-        beffv = distEmissionfv / (_vehicle.pfvb * _vehicle.dpfvb);
-        befv += _vehicle.pfv * beffv * _vehicle.dpfv;
-      } else {
-        const befpv =
-          _vehicle.nbl * _vehicle.fuel[0].ncv * _vehicle.fuel[0].efco2;
-        bepv += _vehicle.npv * _vehicle.adpv * befpv;
-      }
+        response.response = responseArray;
+        response.metaData = req;
+        return response;
     }
-    emission = befv + bepv;
-    return emission;
-  }
 
-  // calculate project emission
-  public projectEmission(project: ProjectDto) {
-    let emission = 0;
-    const vehicle = project.vehicle;
+    // calculate baseline emission
+    public baselineEmission(baseline: BaselineDto) {
+        let emission = 0;
+        let vehicle = baseline.vehicle;
 
-    let pefv = 0;
-    let pepv = 0;
-    for (const _vehicle of vehicle) {
-      if (_vehicle.fcfv) {
-        for (const _fuel of _vehicle.fuel) {
-          pefv += _vehicle.fcfv * _fuel.ncv * _fuel.efco2;
+        let befv = 0;
+        let bepv = 0;
+        for (let _vehicle of vehicle){
+            if (_vehicle.dpfv && _vehicle.pfv) {
+                let distEmissionfv = 0;
+                let beffv = 0;
+                for (let _fuel of _vehicle.fuel){
+                    distEmissionfv += _vehicle.dfv * _vehicle.nbl * _fuel.ncv * _fuel.efco2;
+                }
+                beffv = distEmissionfv / (_vehicle.pfvb * _vehicle.dpfvb);
+                befv += _vehicle.pfv * beffv * _vehicle.dpfv;
+            } else {
+                let befpv = _vehicle.nbl * _vehicle.fuel[0].ncv * _vehicle.fuel[0].efco2;   
+                bepv += _vehicle.npv *  _vehicle.adpv * befpv;
+            }
         }
-      } else {
-        for (const _fuel of _vehicle.fuel) {
-          pepv += _vehicle.fcpv * _fuel.ncv * _fuel.efco2;
-        }
-      }
+        emission = befv + bepv;
+        return emission;
+
     }
-    emission = pefv + pepv;
-    return emission;
-  }
+
+    // calculate project emission
+    public projectEmission(project: ProjectDto) {
+        let emission = 0;
+        let vehicle = project.vehicle;
+
+        let pefv = 0;
+        let pepv = 0;
+        for (let _vehicle of vehicle){
+            if (_vehicle.fcfv) {
+                for (let _fuel of _vehicle.fuel){
+                    pefv += _vehicle.fcfv * _fuel.ncv * _fuel.efco2;
+                }
+                
+            } else {
+                for (let _fuel of _vehicle.fuel){
+                    pepv += _vehicle.fcpv * _fuel.ncv * _fuel.efco2;
+                }
+            }
+        }
+        emission = pefv + pepv;
+        return emission;
+    }
 }

@@ -6,92 +6,70 @@ import { MacUnfcccAm0090V0110ReqMsg } from './message/mac_unfccc_am0090_v_01_1_0
 
 @Controller('icatm1')
 export class UnfcccAm0090V0110Controller {
-  constructor(public service: UnfcccAm0090V0110Service) {}
 
-  @Post('/icatm1')
-  public ICATM1(@Body() req: UnfcccAm0090V0110ReqMsg) {
-    const responseArray = [];
+    constructor(public service: UnfcccAm0090V0110Service) { }
 
-    for (const num in req.baseline) {
-      const response = new UnfcccAm0090V0110ResMsg();
+    @Post('/icatm1')
+    public ICATM1(@Body() req: UnfcccAm0090V0110ReqMsg) {
 
-      response.year = req.baseline[num].year;
+        console.log("reqpull===",req)
 
-      response.baselineEmission = this.service.baselineEmission(
-        req.baseline[num],
-      );
+        var responseArray = new Array();
 
-      response.projectEmission = this.service.projectEmission(req.project[num]);
+        for (let num in req.baseline) {
 
-      response.emissionReduction =
-        response.baselineEmission - response.projectEmission;
+            var response = new UnfcccAm0090V0110ResMsg();
 
-      responseArray.push(response);
+            response.year = req.baseline[num].year;
+
+            response.baselineEmission = this.service.baselineEmission(req.baseline[num]);
+
+            response.projectEmission = this.service.projectEmission(req.project[num]);
+
+            response.emissionReduction = response.baselineEmission - response.projectEmission;
+
+
+            responseArray.push(response);
+        }
+        return responseArray;
     }
-    return responseArray;
-  }
 
-  @Post('/mac_unfccc_am0090_v_01_1_0')
-  private macCalculation(@Body() req: MacUnfcccAm0090V0110ReqMsg) {
-    const projecttotalInvestment = 0;
 
-    const projectLevInvestment = this.service.pmtCalculation(
-      req.generalInput.discountRate,
-      req.fuelProject.projectLife,
-      projecttotalInvestment,
-    );
+    @Post('/mac_unfccc_am0090_v_01_1_0')
+    private macCalculation(@Body() req: MacUnfcccAm0090V0110ReqMsg) {
 
-    const projectAnualOAndM = this.service.annual_OM(
-      req.fuelProject.investmentTrain,
-      req.fuelProject.annualOAndM,
-    );
+        let projecttotalInvestment = 0;
 
-    const projectAnnuaFuelCost = this.service.annualFuelCost(
-      req.generalInput.dailyActivity,
-      req.fuelProject.specificDieselConsumption,
-      req.fuelProject.oneUsGalon,
-      req.fuelProject.OneMile,
-      req.fuelProject.dieselPrice,
-    );
+        let projectLevInvestment = this.service.pmtCalculation(req.generalInput.discountRate, req.fuelProject.projectLife, projecttotalInvestment);
 
-    const projectTotalAnualCost = this.service.totalAnualCost(
-      projectLevInvestment,
-      projectAnualOAndM,
-      projectAnnuaFuelCost,
-    );
+        let projectAnualOAndM = this.service.annual_OM(req.fuelProject.investmentTrain, req.fuelProject.annualOAndM);
 
-    const referencetotalInvestment = 0;
 
-    const referenceLevInvestment = this.service.pmtCalculation(
-      req.fuelReference.discountRate,
-      req.fuelReference.projectLife,
-      referencetotalInvestment,
-    );
+        let projectAnnuaFuelCost = this.service.annualFuelCost(req.generalInput.dailyActivity, req.fuelProject.specificDieselConsumption,
+            req.fuelProject.oneUsGalon, req.fuelProject.OneMile, req.fuelProject.dieselPrice);
 
-    const referenceAnualOAndM = this.service.reference_annual_OM(
-      req.fuelReference.annualOAndM,
-      req.fuelReference.investmentInOneTruck,
-      req.generalInput.dailyActivity,
-      req.fuelReference.occupancy,
-    );
+        let projectTotalAnualCost = this.service.totalAnualCost(projectLevInvestment, projectAnualOAndM, projectAnnuaFuelCost);
 
-    const referenceAnnuaFuelCost = this.service.reference_annualFuelCost(
-      req.generalInput.dailyActivity,
-      req.fuelReference.dieselConsumption,
-      req.fuelReference.dieselPrice,
-    );
+        let referencetotalInvestment = 0;
 
-    const referenceTotalAnualCost = this.service.totalAnualCost(
-      referenceLevInvestment,
-      referenceAnualOAndM,
-      referenceAnnuaFuelCost,
-    );
+        let referenceLevInvestment = this.service.pmtCalculation(req.fuelReference.discountRate, req.fuelReference.projectLife, referencetotalInvestment);
 
-    const increse_totalAnnualCost =
-      projectTotalAnualCost - referenceTotalAnualCost;
+        let referenceAnualOAndM = this.service.reference_annual_OM(req.fuelReference.annualOAndM, req.fuelReference.investmentInOneTruck, req.generalInput.dailyActivity, req.fuelReference.occupancy);
 
-    const mac = increse_totalAnnualCost / 67;
+        let referenceAnnuaFuelCost = this.service.reference_annualFuelCost(req.generalInput.dailyActivity, req.fuelReference.dieselConsumption, req.fuelReference.dieselPrice);
 
-    return mac;
-  }
+        let referenceTotalAnualCost = this.service.totalAnualCost(referenceLevInvestment, referenceAnualOAndM, referenceAnnuaFuelCost);
+
+        let increase_totalInvestment = projecttotalInvestment - referencetotalInvestment;
+        let increase_levInvestment = projectLevInvestment - referenceLevInvestment;
+        let increase_annualOAndM = projectAnualOAndM - referenceAnualOAndM;
+        let increase_annualFuelCost = projectAnnuaFuelCost - referenceAnnuaFuelCost;
+        let increse_totalAnnualCost = projectTotalAnualCost - referenceTotalAnualCost;
+
+        let mac = increse_totalAnnualCost / 67;
+
+        return mac;
+
+
+    }
 }

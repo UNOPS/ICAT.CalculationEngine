@@ -1,0 +1,577 @@
+{
+  "methodology": {
+    "id": "2",
+    "name": "cdm_ams_iii_s",
+    "code": "cdm_ams_iii_s",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameters": [
+          
+        ],
+        "dimensions": [
+          
+        ]
+      },
+      {
+        "id": "2",
+        "name": "baseline vehicle details",
+        "code": "vehicle",
+        "description": " baseline vehicle details",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type ",
+            "values": [
+              {
+                "id": "1",
+                "name": "Jeepneys",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "2",
+                "name": "Bus",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "3",
+                "name": "Van",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "4",
+                "name": "Tricycles",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "The annual average distance of transportation per person",
+                "code": "dp",
+                "type": "local value",
+                "unit": [
+                  "km"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Total annual distance",
+                    "code": "d",
+                    "type": "local value",
+                    "unit": [
+                      "km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Total annual passengers transported",
+                "code": "p",
+                "type": "local value",
+                "unit": [
+                  "passengers"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Fuel efficiency",
+                "code": "n",
+                "type": "country value",
+                "unit": [
+                  "fuel/km"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "CO₂ emission factor",
+                "code": "ef",
+                "type": "country value",
+                "unit": [
+                  "t-CO₂/TJ"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "true",
+                "alternativeparameters": [
+                  
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "rout type",
+            "type": "rout",
+            "code": "rout",
+            "fueltypeid": "2",
+            "vehicletypeid": "1",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "3",
+            "multyselect": "false",
+            "description": "vehicle type ",
+            "values": [
+              {
+                "id": "1",
+                "name": " rout name",
+                "defaultvalue": ""
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter ",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type ",
+            "values": [
+              {
+                "id": "1",
+                "name": "Jeepneys",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "2",
+                "name": "Bus",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "3",
+                "name": "Van",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "4",
+                "name": "Tricycles",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "The annual average distance of transportation per person",
+                "code": "dp",
+                "type": "local value",
+                "unit": [
+                  "km" 
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Fuel efficiency",
+                    "code": "n",
+                    "type": "local value",
+                    "unit": [
+                      "fuel/km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Total annual distance",
+                    "code": "d",
+                    "type": "local value",
+                    "unit": [
+                      "km"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Consumption of fuel",
+                "code": "fc",
+                "type": "local value",
+                "unit": [
+                  "t/y",
+                  "t-CO₂/MWh"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Total annual passengers transported",
+                "code": "p",
+                "type": "local value",
+                "unit": [
+                  "passengers"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/MWh"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "4",
+                "name": "CNG",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "5",
+                "name": "LNG",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "6",
+                "name": "LPG",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          },
+          {
+            "id": "3",
+            "name": "rout type",
+            "type": "rout",
+            "code": "rout",
+            "fueltypeid": "2",
+            "vehicletypeid": "1",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "3",
+            "multyselect": "true",
+            "description": "vehicle type ",
+            "values": [
+              
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

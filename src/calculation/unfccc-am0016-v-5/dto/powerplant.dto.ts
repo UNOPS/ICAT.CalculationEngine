@@ -1,1 +1,5 @@
-export class powerPlantDto {}
+export class powerPlantDto{
+
+
+    
+}

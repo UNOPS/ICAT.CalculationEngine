@@ -1,14 +1,28 @@
-import { LeakageDto } from 'src/calculation/cdm-am0031/dto/leakage.dto';
-import { vehicleDto } from './vehicle.dto';
 
-export class projecteDto {
-  year: number;
+import { LeakageDto } from "src/calculation/cdm-am0031/dto/leakage.dto";
+import { electrictyDto } from "./electricity.dto";
+import { fuelDto } from "./fuel.dto";
+import { vehicleDto } from "./vehicle.dto";
 
-  vehicle: vehicleDto[]; // bus and trucks and other
+export class projecteDto{
 
-  gwpch4: number;
 
-  leakege: LeakageDto;
+    year:number;
+    
+    vehicle:vehicleDto[]; // bus and trucks and other
 
-  py: number;
+    gwpch4:number;
+
+    leakege:LeakageDto;
+
+
+    py:number;
+    
+  
+
+    
+
+   
+
+
 }

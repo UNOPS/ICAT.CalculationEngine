@@ -15,16 +15,19 @@ export class PowerplantDto {
                         the applicability conditions in year y (t)
                         */
 
-  /*projectDto*/
-  prfuel: FuelDto;
-  feedstock: FeedstockDto[];
-  stratum: StratumDto[];
+    /*projectDto*/
+    prfuel: FuelDto;
+    feedstock: FeedstockDto[];
+    stratum: StratumDto[];
 
-  af1: number; // Allocation factor for the production of biofuel in year
-  pebp: number; // Project emissions resulting from the biomass processing facility and from the biodiesel production plant (tCO2e)
-  pebt: number; /*Project emissions resulting from the transportation of biomass from the cultivation site to the 
+    af1: number; // Allocation factor for the production of biofuel in year
+    pebp: number; // Project emissions resulting from the biomass processing facility and from the biodiesel production plant (tCO2e)
+    pebt: number; /*Project emissions resulting from the transportation of biomass from the cultivation site to the 
                     biomass processing facility, and from the biomass processing facility to the biodiesel production plant (tCO2e)*/
-  af2: number; // Allocation factor for the land cultivation in year y (fraction)
+    af2: number; // Allocation factor for the land cultivation in year y (fraction)
 
-  t: number; // Length of the first crediting period
+    t: number; // Length of the first crediting period
+
+    
+    
 }

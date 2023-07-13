@@ -1,0 +1,495 @@
+{
+    "methodology": {
+      "id": "2",
+      "name": "AM0110",
+      "code": "AM0110",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+            "id": "1",
+            "name": "year",
+            "code": "year",
+            "description": "year",
+            "category": "baseline",
+            "type": "local value",
+            "multyselect": "true",
+            "defaultvalue": "",
+            "parameters": [
+              
+            ],
+            "dimensions": [
+              
+            ]
+          }, 
+          {
+            "id": "2",
+            "name": "baseline vehicle details",
+            "code": "vehicle",
+            "description": " baseline vehicle details",
+            "category": "baseline",
+            "type": "local value",
+            "defaultvalue": "",
+            "parameter": [
+              
+            ],
+            "dimensions": [
+                {
+                    "id": "1",
+                    "name": "vehicle type",
+                    "type": "vehicle",
+                    "code": "ve",
+                    "fueltypeid": "2",
+                    "vehicletypeid": "-99",
+                    "routid": "3",
+                    "powerplantid": "-99",
+                    "orderid": "1",
+                    "multyselect": "false",
+                    "description": "vehicle type",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": "Truck",
+                        "defaultvalue": "false"
+                      },
+                      {
+                        "id": "2",
+                        "name": "Pipeline",
+                        "defaultvalue": "false"
+                      }
+                    ],
+                    "parameter": [
+                        {
+                            "id": "1",
+                            "name": "Amount of liquid fuel tranported",
+                            "code": "t",
+                            "type": "local value",
+                            "unit": [
+                              "tonne"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": [
+                                
+                            ]
+                        },
+                        {
+                            "id": "2",
+                            "name": "Amount of fuel consumed by tranported",
+                            "code": "fc",
+                            "type": "local value",
+                            "unit": [
+                              "l", "m3"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        }
+                              
+                    ]
+                },
+                {
+                    "id": "2",
+                    "name": "fuel type",
+                    "type": "fuel",
+                    "code": "fu",
+                    "fuelid": "1",
+                    "vehicletypeid": "-99",
+                    "routid": "-99",
+                    "powerplantid": "-99",
+                    "orderid": "2",
+                    "multyselect": "true",
+                    "description": "fuel type",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": "Diesel",
+                        "defaultvalue": "false",
+                        "parameter": [                   
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Petrol",
+                        "defaultvalue": "false",
+                        "parameter": [
+                        ]
+                      }
+                    ],
+                    "parameter": [
+                        {
+                            "id": "1",
+                            "name": "Net calorific value",
+                            "code": "ncv",
+                            "type": "country value",
+                            "unit": [
+                              "GJ/l","GJ/m3"
+                            ],
+                            "defaultvalue": "",
+                            "usedefaultvalue": "true",
+                            "alternativeparameters": [                              
+                            ]
+                        },
+                        {
+                            "id": "2",
+                            "name": "CO₂ emission factor",
+                            "code": "ef",
+                            "type": "country value",
+                            "unit": [
+                            "g-CO₂/GJ"
+                            ],
+                            "defaultvalue": "",
+                            "usedefaultvalue": "true",
+                            "alternativeparameters": [                          
+                            ]
+                        }
+                    ]
+                  },
+                {
+                    "id": "3",
+                    "name": "rout type",
+                    "type": "rout",
+                    "code": "rout",
+                    "fueltypeid": "2",
+                    "vehicletypeid": "1",
+                    "routid": "3",
+                    "powerplantid": "-99",
+                    "orderid": "3",
+                    "multyselect": "false",
+                    "description": "vehicle type",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": " rout name",
+                        "defaultvalue": ""
+                      }
+                    ],
+                    "parameter": [                       
+                        
+                        {
+                          "id": "1",
+                          "name": "Distance",
+                          "code": "distance",
+                          "type": "local value",
+                          "unit": [
+                            "km"
+                          ],
+                          "defaultvalue": "",
+                          "usedefaultvalue": "false",
+                          "alternativeparameters": [                            
+                          ]
+                      } ,
+                      {
+                        "id": "2",
+                        "name": "Amount of liquid fuel tranported by the pipeline",
+                        "code": "t_jy",
+                        "type": "local value",
+                        "unit": [
+                          "tonne"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [                              
+                        ]
+                    }    
+                    ]
+                  }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "project parameter",
+            "code": "project",
+            "description": " project parameter ",
+            "category": "project",
+            "type": "local value",
+            "defaultvalue": "",
+            "parameter": [
+              
+            ],
+            "dimensions": [
+                {
+                    "id": "1",
+                    "name": "vehicle type",
+                    "type": "vehicle",
+                    "code": "ve",
+                    "fueltypeid": "2",
+                    "vehicletypeid": "-99",
+                    "routid": "3",
+                    "powerplantid": "-99",
+                    "orderid": "1",
+                    "multyselect": "false",
+                    "description": "vehicle type ",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": "Truck",
+                        "defaultvalue": "false",
+                        "parameter":[
+                            {
+                                "id": "2",
+                                "name": "Specific fuel consumption",
+                                "code": "sfc",
+                                "type": "local value",
+                                "unit": [
+                                  "dm3/tonne.km"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": [                              
+                                ]
+                            },
+                            {
+                                "id": "3",
+                                "name": "Total number of sampled trips delivering fuel",
+                                "code": "n",
+                                "type": "local value",
+                                "unit": ["-"
+                                ],
+                                "usedefaultvalue": "false",
+                                "alternativeparameters": []
+                            }
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Pipeline",
+                        "defaultvalue": "false"
+                      }
+                    ],
+                    "parameter": [
+                        {
+                            "id": "1",
+                            "name": "Quantity of fuel combusted in process",
+                            "code": "fc",
+                            "type": "local value",
+                            "unit": [
+                              "tonne", "m3","MWH/yr"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        }
+                     
+                              
+                    ]
+                },
+                {
+                    "id": "2",
+                    "name": "fuel type",
+                    "type": "fuel",
+                    "code": "fu",
+                    "fuelid": "1",
+                    "vehicletypeid": "-99",
+                    "routid": "-99",
+                    "powerplantid": "-99",
+                    "orderid": "2",
+                    "multyselect": "true",
+                    "description": "fuel type",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": "Diesel",
+                        "defaultvalue": "false",
+                        "parameter": [ 
+                            {
+                                "id": "1",
+                                "name": "CO₂ emission coefficient",
+                                "code": "coef",
+                                "type": "country value",
+                                "unit": [
+                                  "t-CO₂/tonne","t-CO₂/m3"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": [   
+                                    {
+                                        "id": "1",
+                                        "name": "Weighted avarage mass fraction",
+                                        "code": "w",
+                                        "type": "country value",
+                                        "unit": [
+                                          "t-CO₂/tonne"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": [                              
+                                        ]
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Weighted avarage density",
+                                        "code": "density",
+                                        "type": "country value",
+                                        "unit": [
+                                          "GJ/l","GJ/m3"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": [                              
+                                        ]
+                                    }                         
+                                ]
+                            }                 
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Petrol",
+                        "defaultvalue": "false",
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "CO₂ emission coefficient",
+                                "code": "coef",
+                                "type": "country value",
+                                "unit": [
+                                  "t-CO₂/tonne","t-CO₂/m3"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": [   
+                                    {
+                                        "id": "1",
+                                        "name": "Weighted avarage mass fraction",
+                                        "code": "w",
+                                        "type": "country value",
+                                        "unit": [
+                                          "t-CO₂/tonne"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": [                              
+                                        ]
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Weighted avarage density",
+                                        "code": "density",
+                                        "type": "country value",
+                                        "unit": [
+                                          "GJ/l","GJ/m3"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "true",
+                                        "alternativeparameters": [                              
+                                        ]
+                                    }                         
+                                ]
+                            }
+                        ]
+                      },
+                      {
+                        "id": "3",
+                        "name": "Electricity",
+                        "defaultvalue": "false",
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Average technical transmission and distribution losses",
+                                "code": "tdl",
+                                "type": "country value",
+                                "unit": ["-"],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": [                              
+                                ]
+                            } 
+                        ]
+                    }
+                    ],
+                    "parameter": [                       
+                        {
+                            "id": "1",
+                            "name": "CO₂ emission factor",
+                            "code": "ef",
+                            "type": "country value",
+                            "unit": [
+                            "t-CO₂/TJ","t-CO₂/MWh"
+                            ],
+                            "defaultvalue": "",
+                            "usedefaultvalue": "true",
+                            "alternativeparameters": [                          
+                            ]
+                        }
+                    ]
+                  },
+                {
+                    "id": "3",
+                    "name": "rout type",
+                    "type": "rout",
+                    "code": "rout",
+                    "fueltypeid": "2",
+                    "vehicletypeid": "1",
+                    "routid": "3",
+                    "powerplantid": "-99",
+                    "orderid": "3",
+                    "multyselect": "false",
+                    "description": "vehicle type",
+                    "values": [
+                      {
+                        "id": "1",
+                        "name": " rout name",
+                        "defaultvalue": ""
+                      }
+                    ],
+                    "parameter": [
+                        {
+                            "id": "1",
+                            "name": "Amount of fuel transported complementary",
+                            "code": "t_k",
+                            "type": "local value",
+                            "unit": [
+                              "tonne"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        },
+                        {
+                            "id": "2",
+                            "name": "Distance of the complementary",
+                            "code": "distance",
+                            "type": "local value",
+                            "unit": [
+                              "Km"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        },
+                        {
+                            "id": "3",
+                            "name": "Length deforested for segmant",
+                            "code": "L",
+                            "type": "local value",
+                            "unit": [
+                              "km"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        },
+                        {
+                            "id": "4",
+                            "name": "Width deforested for segmant",
+                            "code": "W",
+                            "type": "local value",
+                            "unit": [
+                              "km"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        },
+                        {
+                            "id": "5",
+                            "name": "Aboveground biomass of land be deforested for segmant",
+                            "code": "M",
+                            "type": "local value",
+                            "unit": [
+                              "tonne.d.m/ha"
+                            ],
+                            "usedefaultvalue": "false",
+                            "alternativeparameters": []
+                        }
+                    ]
+                  }
+            ]
+        }
+      ]
+    }
+}
