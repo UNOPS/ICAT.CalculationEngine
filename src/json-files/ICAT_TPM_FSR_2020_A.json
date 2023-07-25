@@ -1,0 +1,249 @@
+{
+  "methodology": {
+    "id": "1",
+    "name": "ICAT transport pricing guidance",
+    "code": "ICAT_TPM_FSR_2020_A",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameters": [
+          
+        ],
+        "dimensions": [
+          
+        ]
+      },
+      {
+        "id": "2",
+        "name": "baseline vehicle details",
+        "code": "baseline",
+        "description": " baseline vehicle details",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Common",
+                "defaultvalue": "true",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Total fuel used for ground transport(Fuel mix)",
+                    "code": "fuelUsed",
+                    "type": "local value",
+                    "unit": [
+                      "TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "true",
+                "parameter": [
+                  
+                  {
+                    "id": "1",
+                    "name": "Share of fuel ",
+                    "code": "fuelShare",
+                    "type": "local value",
+                    "unit": [
+                      "%"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ] 
+              },
+              {
+                "id": "3",
+                "name": "Diesel",
+                "defaultvalue": "true",
+                "parameter": [
+                  
+                  {
+                    "id": "1",
+                    "name": "Share of fuel type",
+                    "code": "fuelShare",
+                    "type": "local value",
+                    "unit": [
+                      "%"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter ",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Fuel Mix",
+                "defaultvalue": "true",
+                "parameter": [
+                  
+                ]
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Fuel mix own - price elasticity",
+                "code": "fuelMixPriceElasticity",
+                "type": "country value",
+                "unit": [
+                  "-"
+                ],
+                "defaultvalue": "-0.24",
+                "usedefaultvalue": "true",
+                "alternativeparameters": [
+                 
+                  {
+                    "id": "1",
+                    "name": "Actual fuel mix price in local currency for the assessment year",
+                    "code": "mixFuelPrice",
+                    "type": "country value",
+                    "unit": [
+                      "price per liter"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Actual per capita income in local currency for the assessment year",
+                    "code": "capitalIncome",
+                    "type": "country value",
+                    "unit": [
+                      "price per capita"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Relative fuel mix price increase",
+                "code": "fuelMixPriceIncrease",
+                "type": "country value",
+                "unit": [
+                  "%"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              }
+            ]
+          }
+        ],
+        "parameter": [
+          
+        ]
+      }
+    ]
+  }
+}

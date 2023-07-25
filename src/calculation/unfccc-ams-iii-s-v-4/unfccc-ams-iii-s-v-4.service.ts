@@ -6,87 +6,82 @@ import { UnfcccAmsIIISV4RequestMsg } from './message/unfccc-ams-iii-s-v-4-req-ms
 
 @Injectable()
 export class UnfcccAmsIIISV4Service {
-  public ghgEmission(req: UnfcccAmsIIISV4RequestMsg) {
-    const responseArray = [];
 
-    for (const arr in req.baseline) {
-      let projectEmission = 0;
-      let baseLineEmission = 0;
+    public ghgEmission(req: UnfcccAmsIIISV4RequestMsg) {
 
-      const baseResponse = new ResponseDto();
 
-      for (const num in req.baseline[arr].vehicle) {
-        const baseline = this.baselineEmission(
-          req.baseline[arr].vehicle[num],
-          req.project[arr].vehicle[num],
-        );
-        baseLineEmission += baseline;
-      }
+        var responseArray = new Array();
 
-      for (const num in req.project[arr].vehicle) {
-        const emission = this.projectEmission(req.project[arr].vehicle[num]);
-        projectEmission += emission;
-      }
+        for (let arr in req.baseline) {
+            let projectEmission = 0;
+            let baseLineEmission = 0;
 
-      baseResponse.year = req.baseline[arr].year;
-      baseResponse.projectEmission = parseFloat(
-        Number(projectEmission).toFixed(2),
-      );
-      baseResponse.baseLineEmission = parseFloat(
-        Number(baseLineEmission).toFixed(2),
-      );
-      baseResponse.leakegeEmission = null;
-      baseResponse.emissionReduction = parseFloat(
-        Number(baseLineEmission - projectEmission).toFixed(2),
-      );
+            var baseResponse = new ResponseDto();
 
-      responseArray.push(baseResponse);
+            for (let num in req.baseline[arr].vehicle) {
+                let baseline = this.baselineEmission(req.baseline[arr].vehicle[num], req.project[arr].vehicle[num]);
+                baseLineEmission += baseline;
+            }
+
+            for (let num in req.project[arr].vehicle) {
+                let emission = this.projectEmission(req.project[arr].vehicle[num]);
+                projectEmission += emission;
+            }
+
+            baseResponse.year = req.baseline[arr].year;
+            baseResponse.projectEmission = parseFloat(Number(projectEmission).toFixed(2));
+            baseResponse.baseLineEmission = parseFloat(Number(baseLineEmission).toFixed(2));
+            baseResponse.leakegeEmission = null;
+            baseResponse.emissionReduction = parseFloat(Number(baseLineEmission - projectEmission).toFixed(2));
+
+
+            responseArray.push(baseResponse);
+
+
+        }
+
+        return responseArray;
     }
 
-    return responseArray;
-  }
+    public baselineEmission(baselineVehicle: VehicleDto, projectVehicle: VehicleDto) {
+        let baseLineDP = baselineVehicle.dp; 
+        let projectDP = projectVehicle.dp;
+        let bsd=baselineVehicle.d;
+        if (baseLineDP ===0 || baseLineDP==undefined  || baseLineDP ===null) {
+            baseLineDP = baselineVehicle.d / baselineVehicle.p;
+        }
+        if (projectDP=== 0 || projectDP==undefined || projectDP==null) {
+            projectDP = projectVehicle.d / projectVehicle.p;
+        }
+        if(bsd==0 || bsd==null){
+            bsd=baseLineDP*baselineVehicle.p;
+        }
 
-  public baselineEmission(
-    baselineVehicle: VehicleDto,
-    projectVehicle: VehicleDto,
-  ) {
-    let baseLineDP = baselineVehicle.dp;
-    let projectDP = projectVehicle.dp;
-    let bsd = baselineVehicle.d;
-    if (baseLineDP === 0) {
-      baseLineDP = baselineVehicle.d / baselineVehicle.p;
-    }
-    if (projectDP === 0) {
-      projectDP = projectVehicle.d / projectVehicle.p;
-    }
-    if (bsd == 0) {
-      bsd = baseLineDP * baselineVehicle.p;
+        return bsd* baselineVehicle.n * baselineVehicle.fuel.ncv * baselineVehicle.fuel.ef * projectVehicle.p * projectDP / (baselineVehicle.p * baseLineDP);
     }
 
-    return (
-      (bsd *
-        baselineVehicle.n *
-        baselineVehicle.fuel.ncv *
-        baselineVehicle.fuel.ef *
-        projectVehicle.p *
-        projectDP) /
-      (baselineVehicle.p * baseLineDP)
-    );
-  }
+    public projectEmission(vehicle: VehicleDto) {
 
-  public projectEmission(vehicle: VehicleDto) {
-    if (vehicle.vehicleType === VehicleTypeEnum.fuel_vehicle) {
-      if (vehicle.fuel.fc > 0) {
-        return vehicle.fuel.fc * vehicle.fuel.ncv * vehicle.fuel.ef;
-      } else {
-        return vehicle.d * vehicle.n * vehicle.fuel.ncv * vehicle.fuel.ef;
-      }
-    } else if (vehicle.vehicleType === VehicleTypeEnum.electric_vehicle) {
-      if (vehicle.fuel.fc > 0) {
-        return vehicle.fuel.fc * vehicle.fuel.ef;
-      } else {
-        return vehicle.d * vehicle.n * vehicle.fuel.ef;
-      }
+        if (vehicle.vehicleType === VehicleTypeEnum.fuel_vehicle) {
+            if (vehicle.fuel.fc > 0) {
+                return vehicle.fuel.fc * vehicle.fuel.ncv * vehicle.fuel.ef;
+            }
+            else {
+                return vehicle.d * vehicle.n * vehicle.fuel.ncv * vehicle.fuel.ef;
+                
+            }
+
+        }
+        else if (vehicle.vehicleType === VehicleTypeEnum.electric_vehicle) {
+            if (vehicle.fuel.fc > 0) {
+                return vehicle.fuel.fc * vehicle.fuel.ef
+                
+            }
+            else {
+                return vehicle.d * vehicle.n * vehicle.fuel.ef;
+            }
+
+        }
     }
-  }
+
 }

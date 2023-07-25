@@ -74,10 +74,8 @@ import { MethodologyDataController } from './master-data/methodology-data/method
 import { MethodologyDataService } from './master-data/methodology-data/methodology-data.service';
 import { CdmAm0031AkModule } from './calculation/cdm-am0031/cdm-am0031.module';
 import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
-
 @Module({
-  imports: [
-    SampleModule,
+  imports: [SampleModule,
     TypeOrmModule.forFeature([
       Sample,
       PppConversionFactor,

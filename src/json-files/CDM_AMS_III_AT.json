@@ -1,0 +1,465 @@
+{
+    "methodology": {
+        "id": "2",
+        "name": "CDM_AMS_III_AT",
+        "code": "CDM_AMS_III_AT",
+        "versionnumber": "1",
+        "documentdate": "",
+        "description": "",
+        "parameters": [
+            {
+                "id": "1",
+                "name": "year",
+                "code": "year",
+                "description": "year",
+                "category": "baseline",
+                "type": "local value",
+                "multyselect": "true",
+                "defaultvalue": "",
+                "parameters": [],
+                "dimensions": []
+            },
+            {
+                "id": "2",
+                "name": "vehicle",
+                "code": "vehicle",
+                "description": "vehicle",
+                "category": "baseline",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "vehicle type",
+                        "type": "vehicle",
+                        "code": "vehicle",
+                        "fuelid": "-99",
+                        "vehicletypeid": "1",
+                        "routid": "-99",
+                        "powerplantid": "1",
+                        "orderid": "2",
+                        "multyselect": "false",
+                        "description": "vehicle type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Lorry",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Total annual distance travelled under baseline conditions",
+                                        "code": "dfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Total annual weight of goods transported under baseline ",
+                                        "code": "pfvb",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tonnes"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "3",
+                                        "name": "Total annual weight of goods transported on each traceable route",
+                                        "code": "pfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tonnes"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "4",
+                                        "name": "The annual average distance of transportation per tonne of freight under baseline conditions",
+                                        "code": "dpfvb",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "5",
+                                        "name": "Annual average distance of transportation per tonne of goods",
+                                        "code": "dpfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2",
+                                "name": "Truck",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Total annual distance travelled under baseline conditions",
+                                        "code": "dfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Total annual weight of goods transported under baseline ",
+                                        "code": "pfvb",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tonnes"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "3",
+                                        "name": "Total annual weight of goods transported on each traceable route",
+                                        "code": "pfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "tonnes"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "4",
+                                        "name": "The annual average distance of transportation per tonne of freight under baseline conditions",
+                                        "code": "dpfvb",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "5",
+                                        "name": "The annual average distance of transportation per tonne",
+                                        "code": "dpfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "3",
+                                "name": "Bus",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Number of operating project commercial passenger transport vehicle",
+                                        "code": "npv",
+                                        "type": "local value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Annual average distance of project commercial passenger transport vehicle",
+                                        "code": "adpv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "km"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "4",
+                                "name": "Car",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Number of operating project commercial passenger transport vehicle",
+                                        "code": "npv",
+                                        "type": "local value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    },
+                                    {
+                                        "id": "2",
+                                        "name": "Annual average distance of project commercial passenger transport vehicle",
+                                        "code": "adpv",
+                                        "type": "local value",
+                                        "unit": ["-"],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            }
+                        ], 
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Fuel efficiency of vehicle",
+                                "code": "nbl",
+                                "type": "country value",
+                                "unit": [
+                                    "qty of fuel/km",
+                                    "t/km"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": "1",
+                        "name": "fuel type",
+                        "type": "fuel",
+                        "code": "fuel",
+                        "fuelid": "-99",
+                        "vehicletypeid": "1",
+                        "routid": "-99",
+                        "powerplantid": "1",
+                        "orderid": "2",
+                        "multyselect": "false",
+                        "description": "fuel type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Diesel",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Petrol",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Net calorific value",
+                                "code": "ncv",
+                                "type": "country value",
+                                "unit": [
+                                    "MJ/t",
+                                    "MJ/Unit qty of fuel"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "CO₂ emission factor",
+                                "code": "efco2",
+                                "type": "country value",
+                                "unit": [
+                                    "tCO₂/MJ",
+                                    "tCO₂/energy content of fuel"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }     
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "vehicle",
+                "code": "vehicle",
+                "description": "vehicle",
+                "category": "project",
+                "type": "local value",
+                "defaultvalue": "",
+                "parameter": [],
+                "dimensions": [
+                    {
+                        "id": "1",
+                        "name": "vehicle type",
+                        "type": "vehicle",
+                        "code": "vehicle",
+                        "fuelid": "-99",
+                        "vehicletypeid": "1",
+                        "routid": "-99",
+                        "powerplantid": "1",
+                        "orderid": "2",
+                        "multyselect": "false",
+                        "description": "vehicle type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Lorry",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Fuel Consumption",
+                                        "code": "fcfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "quantity of fuel"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "2",
+                                "name": "Truck",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Fuel Consumption",
+                                        "code": "fcfv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "quantity of fuel"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "3",
+                                "name": "Bus",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Fuel Consumption",
+                                        "code": "fcpv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "quantity of fuel"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "4",
+                                "name": "Car",
+                                "defaultvalue": "true",
+                                "parameter": [
+                                    {
+                                        "id": "1",
+                                        "name": "Fuel Consumption",
+                                        "code": "fcpv",
+                                        "type": "local value",
+                                        "unit": [
+                                            "quantity of fuel"
+                                        ],
+                                        "defaultvalue": "",
+                                        "usedefaultvalue": "false",
+                                        "alternativeparameters": []
+                                    }
+                                ]
+                            }
+                        ], 
+                        "parameter": []
+                    },
+                    {
+                        "id": "1",
+                        "name": "fuel type",
+                        "type": "fuel",
+                        "code": "fuel",
+                        "fuelid": "-99",
+                        "vehicletypeid": "1",
+                        "routid": "-99",
+                        "powerplantid": "1",
+                        "orderid": "2",
+                        "multyselect": "false",
+                        "description": "fuel type",
+                        "values": [
+                            {
+                                "id": "1",
+                                "name": "Diesel",
+                                "defaultvalue": "false"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Petrol",
+                                "defaultvalue": "false"
+                            }
+                        ],
+                        "parameter": [
+                            {
+                                "id": "1",
+                                "name": "Net calorific value",
+                                "code": "ncv",
+                                "type": "country value",
+                                "unit": [
+                                    "MJ/t",
+                                    "MJ/Unit qty of fuel"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            },
+                            {
+                                "id": "2",
+                                "name": "CO₂ emission factor",
+                                "code": "efco2",
+                                "type": "country value",
+                                "unit": [
+                                    "tCO₂/energy content of fuel"
+                                ],
+                                "defaultvalue": "",
+                                "usedefaultvalue": "true",
+                                "alternativeparameters": []
+                            }     
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

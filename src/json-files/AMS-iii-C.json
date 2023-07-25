@@ -1,0 +1,528 @@
+{
+    "methodology": {
+      "id": "2",
+      "name": "AMS-iii-C",
+      "code": "AMS-iii-C",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+          "id": "1",
+          "name": "year",
+          "code": "year",
+          "description": "year",
+          "category": "baseline",
+          "type": "local value",
+          "multyselect": "true",
+          "defaultvalue": "",
+          "parameters": [
+            
+          ],
+          "dimensions": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "name": "baseline vehicle details",
+          "code": "vehicle",
+          "description": " baseline vehicle details",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "3",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type",
+              "values": [
+                {
+                  "id": "1",
+                    "name": "Common",
+                    "defaultvalue": "false",
+                    "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Technology improvement factor",
+                      "code": "ir",
+                      "type": "country value",
+                      "unit": [
+                        "-"
+                      ],
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },  {
+                      "id": "2",
+                      "name": "Annual average distance",
+                      "code": "distance",
+                      "type": "local value",
+                      "unit": [
+                        "km"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Truck",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Lorry",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "Bus",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Specific fuel consumption",
+                  "code": "sfc",
+                  "type": "local value",
+                  "unit": [
+                    "g/km"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Number of operational project vehicles",
+                  "code": "n",
+                  "type": "country value",
+                  "unit": [
+                    "-"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                  
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Net calorific value",
+                  "code": "ncv",
+                  "type": "country value",
+                  "unit": [
+                    "J/g"
+                  ],
+                  "defaultvalue": "",
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "gCO₂/J"
+                  ],
+                  "defaultvalue": "",
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "project parameter",
+          "code": "project",
+          "description": "project parameter",
+          "category": "project",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "3",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Common",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Annual average distance",
+                      "code": "distance",
+                      "type": "local value",
+                      "unit": [
+                        "km"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Truck",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   ]
+                },
+                {
+                  "id": "3",
+                  "name": "Lorry",
+                  "defaultvalue": "false",
+                  "parameter": []
+                },
+                {
+                  "id": "4",
+                  "name": "Bus",
+                  "defaultvalue": "false",
+                  "parameter": []
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Number of operational project vehicles",
+                  "code": "n",
+                  "type": "local value",
+                  "unit": [
+                    "-"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Specific fuel consumption",
+                  "code": "sfc",
+                  "type": "local value",
+                  "unit": [
+                    "g/km","kWh/km"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Average technical transmission and distribution losses",
+                  "code": "tdl",
+                  "type": "local value",
+                  "unit": [
+                    "%"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "J/g"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "gCO₂/J"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "J/g"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "gCO₂/J"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "kgCO₂/kwh"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "CNG",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "J/g"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "gCO₂/J"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "5",
+                  "name": "LNG",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "J/g"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "gCO₂/J"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                   
+                  ]
+                },
+                {
+                  "id": "6",
+                  "name": "LPG",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "J/g"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "CO₂ emission factor",
+                      "code": "ef",
+                      "type": "country value",
+                      "unit": [
+                        "gCO₂/J"
+                      ],
+                      "defaultvalue": "",
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                    
+                  ]
+                }
+              ],
+              "parameter": [
+                
+                
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
