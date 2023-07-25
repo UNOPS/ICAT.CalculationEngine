@@ -2,8 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { ConsumerPriceEntity } from './entity/consumer-price.entity';
-import { PppConversionFactor } from './entity/ppp-conversion-factor.entity';
-import { IcatTpm2020Service } from './icat-tpm-2020.service';
 
 const readXlsxFile = require('read-excel-file/node');
 @Injectable()
@@ -58,11 +56,7 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
 
             columnCount = sh.columnCount
             rowCunt = sh.rowCount;
-            console.log(columnCount)
         });
-
-        console.log(columnCount)
-
 
         for (let i = 5; i < rowCunt; i++) {
             for (let j = 5; j < columnCount; j++) {
@@ -76,12 +70,8 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
                     ppp.year = parseInt(sh.getRow(4).getCell(j).value)
                     ppp.value = sh.getRow(i).getCell(j).value
 
-
-                    console.log(columnCount)
                     if (ppp.value != null) {
-                        console.log(ppp)
                         let price = await this.updateConsumervalue(ppp.countryCode, ppp.year);
-                        console.log( price)
                         if (price < 0 || price==undefined || price==null) {
                             await this.repo.save(ppp);
                         }

@@ -163,7 +163,7 @@ export class CDMAM0031Service {
         for (let projectVehi of pro.vehicle) {
             for await (let baseVehi of base.vehicle) {
                 if (projectVehi.vehicleName == baseVehi.vehicleName) {
-                    let roc_iy = projectVehi.or / projectVehi.cv; //project Average occupancy rate relative to capacity in category i in year y
+                    let roc_iy = projectVehi.or / projectVehi.cv; 
                     let roc_ix = baseVehi.or / baseVehi.cv; 
                     let ef = projectVehi.ef_km;
                     let nisy = projectVehi.nisy;
@@ -214,7 +214,6 @@ export class CDMAM0031Service {
         }
 
         let LE_upA = await (this.pro_FC - this.base_FC);
-        console.log("======", this.pro_FC, this.base_FC)
         if (ars_y > 0) {
             LE_cong = 0;
         }
@@ -223,10 +222,6 @@ export class CDMAM0031Service {
             let le = LE_reb + LE_spy;
             LE_cong = Math.max(le, 0);
         }
-        console.log("LE_cong", LE_cong)
-        console.log("LE_lft", LE_lft)
-        console.log("LE_lfz", LE_lfz)
-        console.log("LE_up", LE_upA)
         LE_up = Math.max(LE_upA, 0);
         LE = LE_cong + LE_lft + LE_lfz + LE_up;
         return LE;

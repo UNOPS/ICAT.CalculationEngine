@@ -1,9 +1,9 @@
 import {
-  Body,
-  Controller,
-  Post,
-  UseInterceptors,
-  UploadedFile,
+    Body,
+    Controller,
+    Post,
+    UseInterceptors,
+    UploadedFile,
 } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { ProjectTypeEnum } from '../enum/project_type.enum';
@@ -91,19 +91,15 @@ export class IcatTpm2020Controller {
 
 
         if (req.projectType.baseLineApproch > 0) {
-            console.log(req.projectType.baseLineApproch)
-
             if (req.projectType.baseLineApproch === ProjectTypeEnum.baseLineApproch_A) {
                 for (let num in req.baseline.vehicle) {
                     let emission = 0
                     if (req.baseline.fuelUsed > 0) {
                         emission = this.service.baseLineEmission(req.baseline.fuelUsed, req.baseline.vehicle[num].fuel.fuelShare, req.baseline.vehicle[num].fuel.ef);
                     }
-
                     baseLineEmission += emission;
                 }
                 response.baseLineEmission = baseLineEmission;
-
             }
 
             else if (req.projectType.baseLineApproch === ProjectTypeEnum.baseLineApproch_B) {
@@ -144,7 +140,6 @@ export class IcatTpm2020Controller {
             }
         }
 
-
         if (req.projectType.projectApproch > 0) {
 
             if (req.projectType.projectApproch === ProjectTypeEnum.projectApproch_A) {
@@ -154,14 +149,10 @@ export class IcatTpm2020Controller {
                 }
                 else {
                     const countriFuelPrice = await this.pppService.getPPPvalue(req.project.special.countryCode, req.project.special.year);
-
                     fuelElasticity = await this.service.elesticPrice(req.project.special.priceElasticity.mixFuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year);
                 }
-
                 let ghgEmission = this.service.AnticipatedCalculation(fuelElasticity, req.project.fuelMixPriceIncrease, baseLineEmission);
-
                 let fuelUse = this.service.AnticipatedCalculation(fuelElasticity, req.project.fuelMixPriceIncrease, req.baseline.fuelUsed);
-
                 ghgImpact = ghgEmission - baseLineEmission;
 
             }
@@ -172,29 +163,22 @@ export class IcatTpm2020Controller {
                     if (req.project.fuel[num].priceElasticity > 0) {
                         fuelElasticity = req.project.fuel[num].priceElasticity;
                     }
-
                     else if (req.baseline.vehicle[num].fuel.type != "diesel") {
                         const countriFuelPrice = await this.pppService.getPPPvalue(req.project.special.countryCode, req.project.special.year);
-
                         fuelElasticity = await this.service.elesticPrice(req.project.fuel[num].fuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year);
                     }
-
                     else {
                         const countriFuelPrice = await this.pppService.getPPPvalue(req.project.special.countryCode, req.project.special.year);
                         fuelElasticity = await this.service.elesticPriceWithdiesel(req.project.fuel[num].fuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year);
-
                     }
 
                     let emission = this.service.baseLineEmissoioB(req.baseline.vehicle[num].fuel.used_weight, req.baseline.vehicle[num].fuel.used_liters, req.baseline.vehicle[num].fuel.density, req.baseline.vehicle[num].fuel.ncv, req.baseline.vehicle[num].fuel.ef);
                     let ghgEmission = this.service.AnticipatedCalculation(fuelElasticity, req.project.fuel[num].priceIncrease, emission);
                     ghgImpact += ghgEmission;
                 }
-
-
             }
 
             else if (req.projectType.projectApproch === ProjectTypeEnum.projectApproch_C) {
-
                 for (let num in req.baseline.vehicle) {
                     let crosePriseElasticity = 0;
                     if (req.project.fuel[num].priceElasticity > 0) {
@@ -205,21 +189,15 @@ export class IcatTpm2020Controller {
                         crosePriseElasticity = await this.service.crossElesticPriceWithdiesel(req.project.special.priceElasticity.mixFuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year, req.baseline.vehicle[num].vehicleType);
                     }
 
-
                     let pasengerTransport = this.service.pkmCalculation(req.baseline.vehicle[num].or, req.baseline.vehicle[num].fuel.vkt);
-
                     let anticipatedPKM = this.service.AnticipatedCalculation(crosePriseElasticity, req.baseline.vehicle[num].fuel.priceIncrease, pasengerTransport);
-
                     let projetEmission = this.service.projectEmission(baseLineEmission, anticipatedPKM, pasengerTransport);
 
                     ghgImpact += projetEmission;
                 }
-
             }
 
-          
             else if (req.projectType.projectApproch === ProjectTypeEnum.roadpricingSimlified) {
-
                 let fuelEmission = 0;
                 let fuelElasticity = 0;
                 if (req.project.fuelMixPriceElasticity > 0) {
@@ -227,23 +205,19 @@ export class IcatTpm2020Controller {
                 }
                 else {
                     const countriFuelPrice = await this.pppService.getPPPvalue(req.project.special.countryCode, req.project.special.year);
-
                     fuelElasticity = await this.service.elesticPrice(req.project.special.priceElasticity.mixFuelPrice, req.project.special.priceElasticity.capitalIncome, countriFuelPrice, req.project.special.year);
                 }
 
                 for (let num in req.baseline.vehicle) {
-
                     let vkt = this.service.changeVehicleTravel(req.baseline.vehicle[num].fuel.vkt, fuelElasticity, req.project.special.priceElasticity.mixFuelPrice, req.baseline.vehicle[num].fuelEconomy, req.project.special.toilIncrease, req.project.special.existingToil);
                     let fuelEnergy = this.service.fuelEnergyWithVKT(vkt, req.baseline.vehicle[num].fuel.sfc, req.baseline.vehicle[num].fuel.density, req.baseline.vehicle[num].fuel.ncv, req.baseline.vehicle[num].fuel.ef);
                     fuelEmission += fuelEnergy;
                 }
                 ghgImpact = fuelEmission;
-
             }
 
             else if (req.projectType.projectApproch === ProjectTypeEnum.cordonPricing) {
                 let fuelEmission = 0;
-
                 for (let num in req.baseline.vehicle) {
                     let vkt = this.service.reduction(req.baseline.vehicle[num].fuel.vkt, req.baseline.vehicle[num].percentageReduction);
                     let fuelEnergy = this.service.fuelEnergyWithVKT(vkt, req.baseline.vehicle[num].fuel.sfc, req.baseline.vehicle[num].fuel.density, req.baseline.vehicle[num].fuel.ncv, req.baseline.vehicle[num].fuel.ef);
@@ -260,6 +234,4 @@ export class IcatTpm2020Controller {
 
         return response;
     }
-
-
 }

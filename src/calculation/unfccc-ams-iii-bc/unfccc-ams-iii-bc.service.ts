@@ -13,80 +13,76 @@ import { UnfcccAmsIIIBcResMsg } from './message/unfccc-ams-iii-bc-res-msg';
 @Injectable()
 export class UnfcccAmsIiiBcService {
 
+    public ICATM1(req: UnfccAmsIIIBcReqMsg) {
 
-///---------------
-public ICATM1(req: UnfccAmsIIIBcReqMsg) {
+        var response = new UnfcccAmsIIIBcResMsg();
+        for (let num in req.baseline) {
+            var responseArray = new Array();
 
-    var response = new UnfcccAmsIIIBcResMsg();
-    for (let num in req.baseline) {
-        
+            let baselineEmissionHeavy = this.baselineEmissionHeavy(req.baseline[num]);
 
-    var responseArray = new Array();
+            let baselineEmissionOther = this.baselineEmissionOther(req.baseline[num]);
 
-    let baselineEmissionHeavy = this.baselineEmissionHeavy(req.baseline[num]);
+            let projectEmissionHeay = this.projectEmissionHeavy(req.project[num]);
 
-    let baselineEmissionOther = this.baselineEmissionOther(req.baseline[num]);
+            let projectEmissionOther = this.projectEmissionOther(req.project[num]);
 
-    let projectEmissionHeay = this.projectEmissionHeavy(req.project[num]);
+            response.year = req.baseline[num].year;
 
-    let projectEmissionOther = this.projectEmissionOther(req.project[num]);
+            response.baselineEmission = baselineEmissionHeavy + baselineEmissionOther;
 
-    response.year = req.baseline[num].year;
+            response.projectEmission = projectEmissionHeay + projectEmissionOther;
 
-    response.baselineEmission = baselineEmissionHeavy + baselineEmissionOther;
+            response.leakegeEmission = 0;
 
-    response.projectEmission =  projectEmissionHeay + projectEmissionOther;
+            response.emissionReduction = response.baselineEmission - response.projectEmission;
 
-    response.leakegeEmission =  0;
-
-    response.emissionReduction = response.baselineEmission -  response.projectEmission;
-
-    responseArray.push(response);
+            responseArray.push(response);
 
 
-    
+
+        }
+
+        return responseArray;
+
     }
-
-    return responseArray;
-
-}
 
     public baselineEmissionHeavy(baseline: baselineDto) {
 
         let BEyt: number = 0;
-        let beftkmixy:number=0;
+        let beftkmixy: number = 0;
         let BEy: number;
-        let altkmixy:number;
-        
+        let altkmixy: number;
+
         for (let num in baseline.vehicle) {
 
-            if(baseline.vehicle[num].type == VehicleTypeEnum.heavy_duty){
+            if (baseline.vehicle[num].type == VehicleTypeEnum.heavy_duty) {
 
-                if(baseline.vehicle[num].altkmixy>0){
+                if (baseline.vehicle[num].altkmixy > 0) {
                     altkmixy = baseline.vehicle[num].altkmixy;
                 }
-                else{
-    
-                    altkmixy = baseline.vehicle[num].avgweightbyvehicle*baseline.vehicle[num].totaldistancetravel;
+                else {
+
+                    altkmixy = baseline.vehicle[num].avgweightbyvehicle * baseline.vehicle[num].totaldistancetravel;
                 }
 
-            if(baseline.vehicle[num].beftkmixy>0){
-                beftkmixy = baseline.vehicle[num].beftkmixy;
+                if (baseline.vehicle[num].beftkmixy > 0) {
+                    beftkmixy = baseline.vehicle[num].beftkmixy;
+
+                }
+                else {
+
+                    beftkmixy = baseline.vehicle[num].sfcblixy * baseline.vehicle[num].fuel.ncv *
+                        baseline.vehicle[num].fuel.efco2xy / baseline.vehicle[num].awblixy;
+
+                }
+
+                BEy = beftkmixy * altkmixy * 0.000001;
+                BEyt += BEy;
 
             }
-            else{
-
-                beftkmixy = baseline.vehicle[num].sfcblixy * baseline.vehicle[num].fuel.ncv *
-                            baseline.vehicle[num].fuel.efco2xy / baseline.vehicle[num].awblixy;
-                            
-            }
-
-            BEy = beftkmixy * altkmixy *  0.000001;
-            BEyt += BEy;
-            
         }
-        }
-        
+
         return BEyt;
     }
 
@@ -94,40 +90,38 @@ public ICATM1(req: UnfccAmsIIIBcReqMsg) {
 
         let BEyt: number = 0;
         let BEy: number;
-        let befkmixy:number=0;
-        let alkmixy:number;
+        let befkmixy: number = 0;
+        let alkmixy: number;
         for (let num in baseline.vehicle) {
 
-            if(baseline.vehicle[num].type == VehicleTypeEnum.light_duty){
+            if (baseline.vehicle[num].type == VehicleTypeEnum.light_duty) {
 
-                if(baseline.vehicle[num].altkmixy){
+                if (baseline.vehicle[num].altkmixy) {
                     alkmixy = baseline.vehicle[num].altkmixy;
 
                 }
-                else{
-    
-                    alkmixy = baseline.vehicle[num].avgweightbyvehicle*baseline.vehicle[num].totaldistancetravel;
+                else {
+
+                    alkmixy = baseline.vehicle[num].avgweightbyvehicle * baseline.vehicle[num].totaldistancetravel;
 
                 }
-           
-                if(baseline.vehicle[num].beftkmixy>0){
+
+                if (baseline.vehicle[num].beftkmixy > 0) {
                     befkmixy = baseline.vehicle[num].beftkmixy;
 
 
                 }
-                else{
+                else {
 
                     befkmixy = baseline.vehicle[num].sfcblixy * baseline.vehicle[num].fuel.ncv * baseline.vehicle[num].fuel.efco2xy;
 
                 }
 
-            BEy = befkmixy * alkmixy * 0.000001;
-            console.log("baselinelight--",BEy)
+                BEy = befkmixy * alkmixy * 0.000001;
+                BEyt += BEy;
 
-            BEyt += BEy;
-
+            }
         }
-    }
 
         return BEyt;
 
@@ -138,191 +132,128 @@ public ICATM1(req: UnfccAmsIIIBcReqMsg) {
 
         let PEyt: number = 0;
         let PEy: number;
-        let beftkmixy:number=0;
-        let altkmixy:number=0;
+        let beftkmixy: number = 0;
+        let altkmixy: number = 0;
         for (let num in project.vehicle) {
-            
-            if(project.vehicle[num].type == VehicleTypeEnum.heavy_duty){
 
-                if(project.vehicle[num].altkmixy){
+            if (project.vehicle[num].type == VehicleTypeEnum.heavy_duty) {
+                if (project.vehicle[num].altkmixy) {
                     altkmixy = project.vehicle[num].altkmixy;
                 }
-                else{
-    
-                    altkmixy = project.vehicle[num].avgweightbyvehicle*project.vehicle[num].totaldistancetravel;
+                else {
+                    altkmixy = project.vehicle[num].avgweightbyvehicle * project.vehicle[num].totaldistancetravel;
                 }
 
-                if(project.vehicle[num].beftkmixy>0){
+                if (project.vehicle[num].beftkmixy > 0) {
                     beftkmixy = project.vehicle[num].beftkmixy;
-
                 }
-                else{
-
+                else {
                     beftkmixy = project.vehicle[num].sfcblixy * project.vehicle[num].fuel.ncv *
-                                 project.vehicle[num].fuel.efco2xy / project.vehicle[num].awblixy;
+                        project.vehicle[num].fuel.efco2xy / project.vehicle[num].awblixy;
                 }
 
-           
-            PEy =  beftkmixy * altkmixy * 0.000001;
-
-            PEyt += PEy;
-
+                PEy = beftkmixy * altkmixy * 0.000001;
+                PEyt += PEy;
+            }
         }
-    }
         return PEyt;
-
-
     }
 
     public projectEmissionOther(project: projectDto) {
 
         let PEyt: number = 0;
         let PEy: number;
-        let befkmixy:number=0;
-        let alkmixy:number;
+        let befkmixy: number = 0;
+        let alkmixy: number;
         for (let num in project.vehicle) {
-
-            if(project.vehicle[num].type == VehicleTypeEnum.light_duty){
-
-                
-                if(project.vehicle[num].altkmixy){
+            if (project.vehicle[num].type == VehicleTypeEnum.light_duty) {
+                if (project.vehicle[num].altkmixy) {
                     alkmixy = project.vehicle[num].altkmixy;
                 }
-                else{
-    
-                    alkmixy = project.vehicle[num].avgweightbyvehicle*project.vehicle[num].totaldistancetravel;
+                else {
+                    alkmixy = project.vehicle[num].avgweightbyvehicle * project.vehicle[num].totaldistancetravel;
                 }
-           
-                if(project.vehicle[num].beftkmixy>0){
+
+                if (project.vehicle[num].beftkmixy > 0) {
                     befkmixy = project.vehicle[num].beftkmixy;
-
                 }
-                else{
-
+                else {
                     befkmixy = project.vehicle[num].sfcblixy * project.vehicle[num].fuel.ncv * project.vehicle[num].fuel.efco2xy;
                 }
-            
-
-            PEy = befkmixy *alkmixy * 0.000001;
-            PEyt += PEy;
-
+                PEy = befkmixy * alkmixy * 0.000001;
+                PEyt += PEy;
+            }
         }
-    }
-
         return PEyt;
-
     }
 
 
     public projecttotalInvestment(totalinvestmet: MacFuelGeneraInputlDto) {
-
         let projecttotalinvestment = totalinvestmet.annualActivity * totalinvestmet.investmentPerTestCenter;
-
         return projecttotalinvestment;
-
     }
 
     public pmtCalculation(discount_rate: number, project_life: number, totalInvestment: number) {
-
         let presentage = 100;
         if (project_life == 0) { return 0; }
 
         else {
             var presentValueInterstFector = Math.pow((1 + (discount_rate / presentage)), project_life);
             var pmt = (discount_rate / presentage) * totalInvestment * (presentValueInterstFector) / (presentValueInterstFector - 1);
-
-
             return pmt;
-
         }
     }
 
-    public annual_OM(annualom:MacFuelGeneraInputlDto){
-
-        let annualoandm = annualom.annualActivity*annualom.investmentPerTestCenter*annualom.annualOAndMOfTestCenter;
-        
+    public annual_OM(annualom: MacFuelGeneraInputlDto) {
+        let annualoandm = annualom.annualActivity * annualom.investmentPerTestCenter * annualom.annualOAndMOfTestCenter;
         return annualoandm;
-
-
     }
 
-    public annualFuelCost(vehicle:MacFuelProjectDto){
-
+    public annualFuelCost(vehicle: MacFuelProjectDto) {
         for (let num in vehicle.vehicle) {
+            let tafc: number = 0;
+            let afc: number;
+            let annualTestFailuresVehicles: number;
+            let totAnnualTravelOfAboveVehicles: number;
+            let annualFuelConsumption: number;
+            let tspecificFuelConsumption: number;
 
-        let tafc:number = 0;
-        let afc:number;
-
-        let annualTestFailuresVehicles:number;
-        let totAnnualTravelOfAboveVehicles:number;
-        let annualFuelConsumption:number;
-        
-        let tspecificFuelConsumption:number;
-
-
-        annualTestFailuresVehicles = this.annualTestFailuresVehicles(vehicle.vehicle[num]);
-
-        totAnnualTravelOfAboveVehicles = annualTestFailuresVehicles*vehicle.vehicle[num].novehicles/1000000;
-
-        tspecificFuelConsumption = vehicle.vehicle[num].fuel.SpecificFuelConsumption*(1+vehicle.vehicle[num].fuel.fuelSavingMaintenance/100);
-
-        annualFuelConsumption = totAnnualTravelOfAboveVehicles/tspecificFuelConsumption;
-
-        afc = annualFuelConsumption*vehicle.vehicle[num].fuel.price;
-
-        tafc += afc;
-
-        return tafc;
-    }
-    }
-
-    public annualTestFailuresVehicles(vehicle:MacVehicleDto){
-       
-        let atfr :number;
-        if(vehicle.usedInCalculations === 1){
-            atfr =  vehicle.testFailRate*vehicle.totVehicles*vehicle.shareOfVehicles*vehicle.percentageOfFuelVehicles/1000000;
-
-        }
-        else{
-         atfr = 0;
-
-        }
-    return atfr;
-
-    
-
-    
-    }
-
-    public referenceAnnualFuelCost(vehicle:MacFuelReferenceDto){
-
-        for (let num in vehicle.vehicle) {
-
-            let tafc:number = 0;
-            let afc:number;
-    
-            let annualTestFailuresVehicles:number;
-            let totAnnualTravelOfAboveVehicles:number;
-            let annualFuelConsumption:number;
-            
-            let tspecificFuelConsumption:number;
-    
-    
             annualTestFailuresVehicles = this.annualTestFailuresVehicles(vehicle.vehicle[num]);
-    
-            totAnnualTravelOfAboveVehicles = annualTestFailuresVehicles*vehicle.vehicle[num].novehicles/1000000;
-    
-    
-            annualFuelConsumption = totAnnualTravelOfAboveVehicles/vehicle.vehicle[num].fuel.SpecificFuelConsumption;
-    
-            afc = annualFuelConsumption*vehicle.vehicle[num].fuel.price;
-    
+            totAnnualTravelOfAboveVehicles = annualTestFailuresVehicles * vehicle.vehicle[num].novehicles / 1000000;
+            tspecificFuelConsumption = vehicle.vehicle[num].fuel.SpecificFuelConsumption * (1 + vehicle.vehicle[num].fuel.fuelSavingMaintenance / 100);
+            annualFuelConsumption = totAnnualTravelOfAboveVehicles / tspecificFuelConsumption;
+            afc = annualFuelConsumption * vehicle.vehicle[num].fuel.price;
             tafc += afc;
-    
             return tafc;
         }
-
-
     }
 
+    public annualTestFailuresVehicles(vehicle: MacVehicleDto) {
+        let atfr: number;
+        if (vehicle.usedInCalculations === 1) {
+            atfr = vehicle.testFailRate * vehicle.totVehicles * vehicle.shareOfVehicles * vehicle.percentageOfFuelVehicles / 1000000;
+        }
+        else {
+            atfr = 0;
+        }
+        return atfr;
+    }
+
+    public referenceAnnualFuelCost(vehicle: MacFuelReferenceDto) {
+        for (let num in vehicle.vehicle) {
+            let tafc: number = 0;
+            let afc: number;
+            let annualTestFailuresVehicles: number;
+            let totAnnualTravelOfAboveVehicles: number;
+            let annualFuelConsumption: number;
+            let tspecificFuelConsumption: number;
+
+            annualTestFailuresVehicles = this.annualTestFailuresVehicles(vehicle.vehicle[num]);
+            totAnnualTravelOfAboveVehicles = annualTestFailuresVehicles * vehicle.vehicle[num].novehicles / 1000000;
+            annualFuelConsumption = totAnnualTravelOfAboveVehicles / vehicle.vehicle[num].fuel.SpecificFuelConsumption;
+            afc = annualFuelConsumption * vehicle.vehicle[num].fuel.price;
+            tafc += afc;
+            return tafc;
+        }
+    }
 }

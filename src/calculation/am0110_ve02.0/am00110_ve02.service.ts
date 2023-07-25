@@ -41,15 +41,12 @@ export class AM0110VE02Service {
         ef_1 += ef_2;
       }
       ef = ef_1;
-
-
-
       let be = bas.routs[j].distance * bas.routs[j].t_jy * ef * unit;
       base += be;
     }
-
     return base;
   }
+
   public project(pro: ProjectDto) {
     let PE = 0, PE_ec = 0, PE_ff = 0, PE_cr = 0, PE_cl = 0;
 
@@ -99,28 +96,24 @@ export class AM0110VE02Service {
                 PE_cr += fc * pro.rout[i].vehicle[j].fuel.coef_volume;
               }
               else {
-                console.log("6")
                 PE_cr += fc * pro.rout[i].vehicle[j].fuel.w * pro.rout[i].vehicle[j].fuel.density * carbon;
               }
 
             }
           }
         }
-
-
-
       }
-      console.log("PE_ec ", PE_ec, "  PE_ff ", PE_ff, "   PE_cr ", PE_cr, "   PE_cl ", PE_cl * 100)
       PE = PE_ec + PE_ff + PE_cr + (PE_cl * 100);
       return PE;
     }
   }
+
   public electricityConsumtion(fuel: FuelDto) {
     return fuel.fc * fuel.ef * (1 + fuel.tdl);
   }
+
   public fosilFuelConsumtion(fuel: FuelDto) {
     let carbon = 44 / 12;
-
     if (fuel.fc > 0) {
       if (fuel.coef_volume > 0) {
         return fuel.fc * fuel.coef_volume;
@@ -134,6 +127,7 @@ export class AM0110VE02Service {
       else return fuel.fc_mass * fuel.w * fuel.density * carbon;
     }
   }
+  
   public tranport() {
 
   }

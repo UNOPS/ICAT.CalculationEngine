@@ -934,7 +934,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
                 : (vehicle.awblixy = this.getValue(req[num], 'awblixy'));
               this.getValue(req[num], 'sfcblixy') === -999
                 ? (value = 1)
-                : (vehicle.sfcblixy = this.getValue(req[num], 'sfcblixy')); //avgweightbyvehicle//totaldistancetravel
+                : (vehicle.sfcblixy = this.getValue(req[num], 'sfcblixy')); 
               this.getValue(req[num], 'avgweightbyvehicle') === -999
                 ? (value = 1)
                 : (vehicle.avgweightbyvehicle = this.getValue(
@@ -2031,7 +2031,7 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
       this.getValue(req[num], 'beta') === -999
         ? (value = 1)
         : (special.beta = this.getValue(req[num], 'beta'));
-      special.year = year; //this.getValue(req[num], "year");
+      special.year = year; 
     }
 
     projectEmission.fuel = fuel;
