@@ -15,16 +15,16 @@ export class ConsumerPriceService extends TypeOrmCrudService<ConsumerPriceEntity
     }
     async updateConsumervalue(countryCode: string, year: number): Promise<number> {
         let y = year;
-        let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({ where:{ countryCode: countryCode, year: y} }).then((valu) => { if (valu) { return valu.value } });
             return price;
     }
 
 
     async getConsumervalue(countryCode: string, year: number): Promise<number> {
         let y = year;
-        let price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+        let price = await this.repo.findOne({ where:{ countryCode: countryCode, year: y} }).then((valu) => { if (valu) { return valu.value } });
         while (price == undefined) {
-             price = await this.repo.findOne({ countryCode: countryCode, year: y }).then((valu) => { if (valu) { return valu.value } });
+             price = await this.repo.findOne({ where:{countryCode: countryCode, year: y }}).then((valu) => { if (valu) { return valu.value } });
             y = y - 1;
         }
             return price;
