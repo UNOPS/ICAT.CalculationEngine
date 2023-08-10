@@ -45,13 +45,12 @@ export class JicaRailwayFreightService {
     }
 
      public projectEmission(project: ProjectDto) {
-        if(project.ef >0){return project.ec * project.ef;}
 
-        else if (project.efpkm>0) {
+        if (project.efpkm>0) {
             return project.btkm * project.efpkm;
         }
-        else {
+        else if  (project.efpkm ==0 || project.efpkm ==null || project.efpkm ==undefined) {
            return project.fc * project.ncv *project.ef /1000000;
         }
-        
+        else if(project.ef >0 && project.ec >0){return project.ec * project.ef;}
     }}
