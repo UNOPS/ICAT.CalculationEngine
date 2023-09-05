@@ -104,7 +104,7 @@ This application provides API service to CountryPortalService, CountryScheduler,
 The complete dependency diagram of TraCAD Country and PMU applications:
 
 <p align="left">
-  <img src="https://lucid.app/publicSegments/view/9a6fb822-be5a-47d7-ad67-0434a4025234/image.png" width="800" alt="TraCAD Diagram" /></a>
+  <img src="https://lucid.app/publicSegments/view/7e56ab6c-3c14-428b-be1d-63dfd33760be/image.png" width="800" alt="TraCAD Diagram" /></a>
 </p>
 
 ## License
