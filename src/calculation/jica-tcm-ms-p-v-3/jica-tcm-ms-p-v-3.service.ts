@@ -24,7 +24,6 @@ export class JicaTcmMsPV3Service {
         for (let arr in req.baselineEmission) {
             let baseLineEmission = 0;
             let projectEmission = 0;
-
             let response = new  ResponseDto();
             let emission = this.baselineEmission(req.projectEmission[arr],req.baselineEmission[arr] );
 
@@ -94,22 +93,22 @@ export class JicaTcmMsPV3Service {
 
         }
 
-        else if (project.distance === 0 || project.distance === null) {
+        else {
             let baselineEmission = 0;
 
             for (let num in baseline.vehicle) {
 
-                if (baseline.vehicle[num].ef_pkm != 0 || baseline.vehicle[num].ef_pkm != null) {
+                if (baseline.vehicle[num].ef_pkm != 0 && baseline.vehicle[num].ef_pkm != null) {
                     const emission = project.passenger * project.btdp * baseline.vehicle[num].ef_pkm * baseline.vehicle[num].ms /100;
                     baselineEmission += emission;
                 }
-                else if (baseline.vehicle[num].ef_pkm === 0 || baseline.vehicle[num].ef_pkm === null) {
-                    if (baseline.vehicle[num].ef_km != 0) {
+                else  {
+                    if (baseline.vehicle[num].ef_km != 0) {                        
                         const emission = project.passenger * project.btdp * baseline.vehicle[num].ms * baseline.vehicle[num].ef_km / (baseline.vehicle[num].or *100);
                         baselineEmission += emission;
                     }
 
-                    else if (baseline.vehicle[num].ef_km == 0 || baseline.vehicle[num].ef_km == null) {
+                    else  {
                         const emission = project.passenger * project.btdp * baseline.vehicle[num].ms * baseline.vehicle[num].sfc * baseline.vehicle[num].fuel.ncv * baseline.vehicle[num].fuel.ef / (baseline.vehicle[num].or *100);
                         
                         baselineEmission += emission;
