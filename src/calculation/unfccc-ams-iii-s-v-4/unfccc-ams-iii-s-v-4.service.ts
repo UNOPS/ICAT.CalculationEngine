@@ -57,7 +57,14 @@ export class UnfcccAmsIIISV4Service {
             bsd=baseLineDP*baselineVehicle.p;
         }
 
-        return bsd* baselineVehicle.n * baselineVehicle.fuel.ncv * baselineVehicle.fuel.ef * projectVehicle.p * projectDP / (baselineVehicle.p * baseLineDP);
+
+        let denom = (baselineVehicle.p * baseLineDP)
+        if (denom === 0){
+            return 0
+        } else {
+            return bsd* baselineVehicle.n * baselineVehicle.fuel.ncv * baselineVehicle.fuel.ef * projectVehicle.p * projectDP / (baselineVehicle.p * baseLineDP);
+        }
+
     }
 
     public projectEmission(vehicle: VehicleDto) {
