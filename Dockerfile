@@ -2,7 +2,7 @@
 # BUILD FOR LOCAL DEVELOPMENT
 ###################
 
-FROM node:18-alpine As development
+FROM node:16-alpine As development
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 # Create app directory
 WORKDIR /usr/src/app
@@ -25,7 +25,7 @@ USER node
 # BUILD FOR PRODUCTION
 ###################
 
-FROM node:18-alpine As build
+FROM node:16-alpine As build
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 WORKDIR /usr/src/app
@@ -52,12 +52,14 @@ USER node
 # PRODUCTION
 ###################
 
-FROM node:18-alpine As production
+FROM node:16-alpine As production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 # Copy the bundled code from the build stage to the production image
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
+COPY --chown=node:node --from=build /usr/src/app/json-files ./json-files
+COPY --chown=node:node --from=build /usr/src/app/public ./public
 
 # Start the server using the production build
 CMD [ "node", "dist/main.js" ]
