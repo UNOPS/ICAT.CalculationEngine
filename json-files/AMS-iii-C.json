@@ -75,13 +75,43 @@
               },
               {
                 "id": "3",
-                "name": "Lorry",
+                "name": "Car",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "4",
                 "name": "Bus",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "5",
+                "name": "Jeepneys",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "6",
+                "name": "commuter Van",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "7",
+                "name": "Taxi",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "8",
+                "name": "Motor Cycle",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "8",
+                "name": "tricycle",
                 "defaultvalue": "false",
                 "parameter": []
               }
@@ -205,13 +235,43 @@
               },
               {
                 "id": "3",
-                "name": "Lorry",
+                "name": "Car",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "4",
                 "name": "Bus",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "5",
+                "name": "Jeepneys",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "6",
+                "name": "commuter Van",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "7",
+                "name": "Taxi",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "8",
+                "name": "Motor Cycle",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "8",
+                "name": "tricycle",
                 "defaultvalue": "false",
                 "parameter": []
               }
