@@ -110,8 +110,20 @@
                 "parameter": []
               },
               {
-                "id": "8",
+                "id": "9",
                 "name": "tricycle",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "10",
+                "name": "SUVs",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "11",
+                "name": "Pickups",
                 "defaultvalue": "false",
                 "parameter": []
               }
@@ -270,8 +282,20 @@
                 "parameter": []
               },
               {
-                "id": "8",
+                "id": "9",
                 "name": "tricycle",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "10",
+                "name": "SUVs",
+                "defaultvalue": "false",
+                "parameter": []
+              },
+              {
+                "id": "11",
+                "name": "Pickups",
                 "defaultvalue": "false",
                 "parameter": []
               }
