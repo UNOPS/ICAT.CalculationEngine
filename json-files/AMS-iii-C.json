@@ -93,7 +93,7 @@
               },
               {
                 "id": "6",
-                "name": "commuter Van",
+                "name": "Commuter Van",
                 "defaultvalue": "false",
                 "parameter": []
               },
@@ -111,19 +111,19 @@
               },
               {
                 "id": "9",
-                "name": "tricycle",
+                "name": "Tricycle",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "10",
-                "name": "SUVs",
+                "name": "SUV",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "11",
-                "name": "Pickups",
+                "name": "Pickup",
                 "defaultvalue": "false",
                 "parameter": []
               }
@@ -265,7 +265,7 @@
               },
               {
                 "id": "6",
-                "name": "commuter Van",
+                "name": "Commuter Van",
                 "defaultvalue": "false",
                 "parameter": []
               },
@@ -283,19 +283,19 @@
               },
               {
                 "id": "9",
-                "name": "tricycle",
+                "name": "Tricycle",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "10",
-                "name": "SUVs",
+                "name": "SUV",
                 "defaultvalue": "false",
                 "parameter": []
               },
               {
                 "id": "11",
-                "name": "Pickups",
+                "name": "Pickup",
                 "defaultvalue": "false",
                 "parameter": []
               }
