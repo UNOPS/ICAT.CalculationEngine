@@ -399,9 +399,10 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
             vehicle.fuel = fueldata[fu];
 
-            vehicleType[vehi] === 'Pipeline'
-              ? (vehicle.vehiclety = VehicleTypeEnum.pipline)
-              : (vehicle.vehiclety = 0);
+            if(vehicleType[vehi] === 'Pipeline'){
+              vehicle.vehiclety = VehicleTypeEnum.pipline
+            }
+             
             req[num]['fuelType'] === 'Electricity'
               ? (vehicle.vehicleType = VehicleTypeEnum.electric_vehicle)
               : (vehicle.vehicleType = VehicleTypeEnum.fuel_vehicle);
