@@ -236,6 +236,15 @@
                     "unit": ["km"],
                     "usedefaultvalue": "false",
                     "alternativeparameters": []
+                  },
+                  {
+                    "id": "2",
+                    "name": "Average technical transmission and distribution losses",
+                    "code": "tdl",
+                    "type": "local value",
+                    "unit": ["%"],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
                   }
                 ]
               },
@@ -311,23 +320,15 @@
                 "alternativeparameters": []
               },
               {
-                "id": "3",
+                "id": "2",
                 "name": "Specific fuel consumption",
                 "code": "sfc",
                 "type": "local value",
                 "unit": ["g/km", "kWh/km"],
                 "usedefaultvalue": "false",
                 "alternativeparameters": []
-              },
-              {
-                "id": "3",
-                "name": "Average technical transmission and distribution losses",
-                "code": "tdl",
-                "type": "local value",
-                "unit": ["%"],
-                "usedefaultvalue": "false",
-                "alternativeparameters": []
               }
+            
             ]
           },
           {

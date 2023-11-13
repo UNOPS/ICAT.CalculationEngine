@@ -399,9 +399,10 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
 
             vehicle.fuel = fueldata[fu];
 
-            vehicleType[vehi] === 'Pipeline'
-              ? (vehicle.vehiclety = VehicleTypeEnum.pipline)
-              : (vehicle.vehiclety = 0);
+            if(vehicleType[vehi] === 'Pipeline'){
+              vehicle.vehiclety = VehicleTypeEnum.pipline
+            }
+             
             req[num]['fuelType'] === 'Electricity'
               ? (vehicle.vehicleType = VehicleTypeEnum.electric_vehicle)
               : (vehicle.vehicleType = VehicleTypeEnum.fuel_vehicle);
@@ -800,12 +801,12 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
         baseEmission.push(baselineEmission);
       }
     } else {
+      const baselineEmission = new BaseLineEmissionDtoAMS();
+      const vehicleArray = [];
       for (const fu in fueldata) {
-        const baselineEmission = new BaseLineEmissionDtoAMS();
-        const vehicleArray = [];
+        const vehicle = new VehicleDtoAMS();        
         for (const vehi in vehicledata) {
-          const fuel = new FuelDtoAMS();
-          const vehicle = new VehicleDtoAMS();
+          const fuel = new FuelDtoAMS();        
           for (const num in req) {
             let value: number;
             this.getValue(req[num], 'distance') === -999
@@ -874,14 +875,12 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
             }
           }
           vehicle.fuel = fuel;
-
           vehicleArray.push(vehicle);
-        }
-
-        baselineEmission.vehicle = vehicleArray;
-        baselineEmission.year = year;
-        baseEmission.push(baselineEmission);
+        }       
+        baselineEmission.year = year;        
       }
+      baselineEmission.vehicle = vehicleArray;
+      baseEmission.push(baselineEmission);
     }
 
     return baseEmission;

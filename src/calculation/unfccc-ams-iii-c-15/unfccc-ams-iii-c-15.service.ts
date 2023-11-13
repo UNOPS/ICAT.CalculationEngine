@@ -53,7 +53,7 @@ export class UnfcccAmsIiiC15Service {
                         let baseEmission = emissioFactor * baseline.distance * baseline.vehicle[num].n / unitConversion;
                         emission += baseEmission;
                     }
-                    else if (baseline.vehicle[num].vehicleType === VehicleTypeEnum.electric_vehicle) {
+                    else if (pro.vehicleType === VehicleTypeEnum.electric_vehicle) {
                         let baseEmission = emissioFactor * pro.fuel.fc / (pro.sfc * unitConversion);
                         emission += baseEmission;
                     }
