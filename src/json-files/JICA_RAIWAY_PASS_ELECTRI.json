@@ -1,0 +1,223 @@
+{
+    "methodology": {
+      "id": "2",
+      "name": "jica_railway_pass_electric",
+      "code": "jica_railway_pass_electric",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+          "id": "1",
+          "name": "year",
+          "code": "year",
+          "description": "year",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameters": [
+            
+          ],
+          "dimensions": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "name": "baseline parameter",
+          "code": "baseline",
+          "description": " pasengerShare",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Train",
+                  "defaultvalue": "false"
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Consumption of fuel",
+                  "code": "fc",
+                  "type": "local value",
+                  "unit": [
+                    "t/year"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+               
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [                    
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [                   
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "t-CO₂/TJ"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                    "id": "2",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/t"
+                    ],
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "project parameter",
+          "code": "project",
+          "description": " project parameter",
+          "category": "project",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Train",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  {
+                      "id": "1",
+                      "name": "Electricity consumption",
+                      "code": "ec",
+                      "type": "local value",
+                      "unit": [
+                        "MWh/y"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [
+                      
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameter": [
+                
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "",
+                  "parameter": [
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "t-CO₂/MWh"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

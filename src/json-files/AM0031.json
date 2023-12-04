@@ -1,0 +1,977 @@
+{
+  "methodology":{
+     "id":"1",
+     "name":"AM0031",
+     "code":"AM0031",
+     "versionnumber":"1",
+     "documentdate":"",
+     "description":"",
+     "parameters":[
+        {
+           "id":"1",
+           "name":"year",
+           "code":"year",
+           "description":"year",
+           "category":"baseline",
+           "type":"local value",
+           "multyselect":"true",
+           "defaultvalue":"",
+           "parameters":[
+              
+           ],
+           "dimensions":[
+              
+           ]
+        },
+        {
+           "id":"2",
+           "name":"baseline vehicle details",
+           "code":"vehicle",
+           "description":" baseline vehicle details",
+           "category":"baseline",
+           "type":"local value",
+           "defaultvalue":"",
+           "parameter":[
+              
+           ],
+           "dimensions":[
+              {
+                 "id":"1",
+                 "name":"vehicle type",
+                 "type":"vehicle",
+                 "code":"ve",
+                 "fueltypeid":"2",
+                 "vehicletypeid":"-99",
+                 "routid":"3",
+                 "powerplantid":"-99",
+                 "orderid":"1",
+                 "multyselect":"false",
+                 "description":"vehicle type",
+                 "values":[
+                    {
+                       "id":"0",
+                       "name":"Common",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Number of (passenger/passenger-kilometres) travelled by the project system",
+                             "code":"p",
+                             "type":"local value",
+                             "unit":[
+                                "-"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"1",
+                       "name":"Car",
+                       "defaultvalue":"false"
+                    },
+                    {
+                       "id":"2",
+                       "name":"Motorcycle",
+                       "defaultvalue":"false"
+                    },
+                    {
+                       "id":"3",
+                       "name":"Taxi",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Average capacity",
+                             "code":"cv",
+                             "type":"local value",
+                             "unit":[
+                                "passengers"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"4",
+                       "name":"Bus",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"0",
+                             "name":"Average capacity",
+                             "code":"cv",
+                             "type":"local value",
+                             "unit":[
+                                "passengers"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"1",
+                             "name":"Total distance driven by small (S) buses",
+                             "code":"dd_s",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"2",
+                             "name":"Total distance driven by medium (M) buses",
+                             "code":"dd_m",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"3",
+                             "name":"Total distance driven by large (L) buses",
+                             "code":"dd_l",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"5",
+                       "name":"Rail based urban transit",
+                       "defaultvalue":"false"
+                    }
+                 ],
+                 "parameter":[
+                    {
+                       "id":"1",
+                       "name":"Specific fuel consumption",
+                       "code":"sfc",
+                       "type":"local value",
+                       "unit":[
+                          "g/km"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    
+                    {
+                      "id":"2",
+                      "name":"Emissions factor per kilometer",
+                      "code":"ef_km",
+                      "type":"local value",
+                      "unit":[
+                         "gCO₂/km"
+                      ],
+                      "usedefaultvalue":"false",
+                      "alternativeparameters":[
+                        {
+                          "id":"1",
+                          "name":"Number of (vehicle-kilometres/vehicles) in this category using this fuel type",
+                          "code":"ninx",
+                          "type":"local value",
+                          "unit":[
+                             "-"
+                          ],
+                          "usedefaultvalue":"false",
+                          "alternativeparameters":[
+                             
+                          ]
+                       }
+                      ]
+                   },
+                    {
+                       "id":"2",
+                       "name":"Number of (vehicle/vehicle-kilometres) of this category driven in year ",
+                       "code":"nzx",
+                       "type":"local value",
+                       "unit":[
+                          "-"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"3",
+                       "name":"Average trip distance",
+                       "code":"d",
+                       "type":"local value",
+                       "unit":[
+                          "km"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"4",
+                       "name":"Technology improvement factor",
+                       "code":"ir",
+                       "type":"local value",
+                       "unit":[
+                          "%"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"5",
+                       "name":"Time difference",
+                       "code":"t",
+                       "type":"local value",
+                       "unit":[
+                          "-"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"6",
+                       "name":"Crediting year",
+                       "code":"y",
+                       "type":"local value",
+                       "unit":[
+                          "-"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"7",
+                       "name":"Share of passenger-kilometres who shifted from electricity-based or road- based vehicle",
+                       "code":"sd",
+                       "type":"local value",
+                       "unit":[
+                          "%"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          {
+                             "id":"1",
+                             "name":"Share of passengers who shifted from electricity-based or road- based vehicle",
+                             "code":"ms",
+                             "type":"local value",
+                             "unit":[
+                                "%"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"9",
+                       "name":"Average occupancy",
+                       "code":"or",
+                       "type":"local value",
+                       "unit":[
+                          "passengers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"10",
+                       "name":"Average speed",
+                       "code":"v",
+                       "type":"local value",
+                       "unit":[
+                          "km/h"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"11",
+                       "name":"Total number of passengers tranported  per annum by electricity based vehicle",
+                       "code":"p",
+                       "type":"local value",
+                       "unit":[
+                          "passengers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"12",
+                       "name":"Total consumption of fuel/electricity",
+                       "code":"fc",
+                       "type":"local value",
+                       "unit":[
+                          "tonne",
+                          "L",
+                          "kWh"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    }
+                    
+                 ]
+              },
+              {
+                 "id":"2",
+                 "name":"fuel type",
+                 "type":"fuel",
+                 "code":"fu",
+                 "fuelid":"1",
+                 "vehicletypeid":"-99",
+                 "routid":"-99",
+                 "powerplantid":"-99",
+                 "orderid":"2",
+                 "multyselect":"true",
+                 "description":"fuel type",
+                 "values":[
+                    {
+                       "id":"1",
+                       "name":"Diesel",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Net calorific value",
+                             "code":"ncv",
+                             "type":"country value",
+                             "unit":[
+                                "TJ/Gg"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"2",
+                       "name":"Petrol",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Net calorific value",
+                             "code":"ncv",
+                             "type":"country value",
+                             "unit":[
+                                "TJ/Gg"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"3",
+                       "name":"Electricity",
+                       "defaultvalue":"false",
+                       "parameter":[
+                        {
+                          "id":"1",
+                          "name":"Average technical transmission and distribution losses for providing electricity",
+                          "code":"tdl",
+                          "type":"country value",
+                          "unit":[
+                             "-"
+                          ],
+                          "defaultvalue":"",
+                          "usedefaultvalue":"true",
+                          "alternativeparameters":[
+                             
+                          ]
+                       }
+                       ]
+                    }
+                 ],
+                 "parameter":[
+                    {
+                       "id":"2",
+                       "name":"CO₂ emission factor",
+                       "code":"ef",
+                       "type":"country value",
+                       "unit":[
+                          "tCO₂/TJ",
+                          "gCO₂/kWh"
+                       ],
+                       "defaultvalue":"",
+                       "usedefaultvalue":"true",
+                       "alternativeparameters":[
+                          
+                       ]
+                    }
+                 ]
+              }
+           ]
+        },
+        {
+           "id":"3",
+           "name":"project parameter",
+           "code":"project",
+           "description":" project parameter",
+           "category":"project",
+           "type":"local value",
+           "defaultvalue":"",
+           "parameter":[
+              
+           ],
+           "dimensions":[
+              {
+                 "id":"1",
+                 "name":"vehicle type",
+                 "type":"vehicle",
+                 "code":"ve",
+                 "fueltypeid":"2",
+                 "vehicletypeid":"-99",
+                 "routid":"3",
+                 "powerplantid":"-99",
+                 "orderid":"1",
+                 "multyselect":"false",
+                 "description":"vehicle type",
+                 "values":[
+                    {
+                       "id":"1",
+                       "name":"Car",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"2",
+                             "name":"Average speed",
+                             "code":"v",
+                             "type":"local value",
+                             "unit":[
+                                "k/h"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"2",
+                       "name":"Motorcycle",
+                       "defaultvalue":"false"
+                    },
+                    {
+                       "id":"3",
+                       "name":"Bus",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"3",
+                             "name":"Average capacity",
+                             "code":"cv",
+                             "type":"local value",
+                             "unit":[
+                                "passengers"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"4",
+                       "name":"Taxi",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Average capacity",
+                             "code":"cv",
+                             "type":"local value",
+                             "unit":[
+                                "passengers"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"2",
+                             "name":"Average speed",
+                             "code":"v",
+                             "type":"local value",
+                             "unit":[
+                                "k/h"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"5",
+                       "name":"Rail based urban transit",
+                       "defaultvalue":"false"
+                    }
+                 ],
+                 "parameter":[
+                    {
+                       "id":"1",
+                       "name":"Total consumption of fuel/electricity",
+                       "code":"fc",
+                       "type":"local value",
+                       "unit":[
+                          "tonne",
+                          "L",
+                          "kWh"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          {
+                             "id":"1",
+                             "name":"Specific fuel/electricity consumed",
+                             "code":"sfc",
+                             "type":"local value",
+                             "unit":[
+                                "tonne",
+                                "L",
+                                "kWh/km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"1",
+                             "name":"Emissions factor per kilometer",
+                             "code":"ef_km",
+                             "type":"local value",
+                             "unit":[
+                                "gCO₂/km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"2",
+                       "name":"Total distance driven",
+                       "code":"d",
+                       "type":"local value",
+                       "unit":[
+                          "km"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"4",
+                       "name":"Average occupancy",
+                       "code":"or",
+                       "type":"local value",
+                       "unit":[
+                          "passengers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"6",
+                       "name":"Number of vehicles in vehicle category i per annum not used anymore due to mode shift to the BRT",
+                       "code":"nisy",
+                       "type":"local value",
+                       "unit":[
+                          "-"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          {
+                             "id":"4",
+                             "name":"Share of passengers transported",
+                             "code":"ms",
+                             "type":"local value",
+                             "unit":[
+                                "%"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"7",
+                       "name":"Total number of vehicle",
+                       "code":"nzx",
+                       "type":"local value",
+                       "unit":[
+                          "passengers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    }
+                 ]
+              },
+              {
+                 "id":"2",
+                 "name":"fuel type",
+                 "type":"fuel",
+                 "code":"fu",
+                 "fuelid":"1",
+                 "vehicletypeid":"-99",
+                 "routid":"-99",
+                 "powerplantid":"-99",
+                 "orderid":"2",
+                 "multyselect":"true",
+                 "description":"fuel type",
+                 "values":[
+                    {
+                       "id":"1",
+                       "name":"Diesel",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Net calorific value",
+                             "code":"ncv",
+                             "type":"country value",
+                             "unit":[
+                                "TJ/Gg"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"2",
+                             "name":"Global warming potential of the CH₄",
+                             "code":"gwp",
+                             "type":"country value",
+                             "unit":[
+                                "tCO₂e/tCH₄"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"3",
+                             "name":"CH₄ emission factor for gaseous fuel",
+                             "code":"ef_ch4",
+                             "type":"country value",
+                             "unit":[
+                                "tCH₄/TJ"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"4",
+                             "name":"Density",
+                             "code":"density",
+                             "type":"country value",
+                             "unit":[
+                                "t/L"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"2",
+                       "name":"Petrol",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Net calorific value",
+                             "code":"ncv",
+                             "type":"country value",
+                             "unit":[
+                                "TJ/Gg"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"2",
+                             "name":"Global warming potential of the CH₄",
+                             "code":"gwp",
+                             "type":"country value",
+                             "unit":[
+                                "tCO₂e/tCH₄"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"3",
+                             "name":"CH₄ emission factor for gaseous fuel",
+                             "code":"ef_ch4",
+                             "type":"country value",
+                             "unit":[
+                                "tCH₄/TJ"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"4",
+                             "name":"Density",
+                             "code":"density",
+                             "type":"country value",
+                             "unit":[
+                                "t/L"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    },
+                    {
+                       "id":"3",
+                       "name":"Electricity",
+                       "defaultvalue":"false",
+                       "parameter":[
+                          {
+                             "id":"1",
+                             "name":"Average technical transmission and distribution losses",
+                             "code":"tdl",
+                             "type":"country value",
+                             "unit":[
+                                "-"
+                             ],
+                             "defaultvalue":"",
+                             "usedefaultvalue":"true",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    }
+                 ],
+                 "parameter":[
+                    {
+                       "id":"2",
+                       "name":"CO₂ emission factor",
+                       "code":"ef",
+                       "type":"country value",
+                       "unit":[
+                          "tCO₂/TJ",
+                          "gCO₂/kWh"
+                       ],
+                       "defaultvalue":"",
+                       "usedefaultvalue":"true",
+                       "alternativeparameters":[
+                          
+                       ]
+                    }
+                 ]
+              }
+           ]
+        },
+        {
+           "id":"3",
+           "name":"leakage parameter",
+           "code":"leakage",
+           "description":" leakage parameter",
+           "category":"leakage",
+           "type":"local value",
+           "defaultvalue":"",
+           "parameter":[
+              
+           ],
+           "dimensions":[
+              {
+                 "id":"1",
+                 "name":"vehicle type",
+                 "type":"vehicle",
+                 "code":"ve",
+                 "fueltypeid":"2",
+                 "vehicletypeid":"-99",
+                 "routid":"3",
+                 "powerplantid":"-99",
+                 "orderid":"1",
+                 "multyselect":"false",
+                 "description":"vehicle type",
+                 "values":[
+                    {
+                       "id":"1",
+                       "name":"All vehicle",
+                       "defaultvalue":"false"
+                    }
+                 ],
+                 "parameter":[
+                    {
+                       "id":"1",
+                       "name":"Cumulative bus units displaced by the BRT on the trunk lanes as a  result of the project",
+                       "code":"bscr",
+                       "type":"local value",
+                       "unit":[
+                          "-"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"2",
+                       "name":"Total road space available in year",
+                       "code":"rsx",
+                       "type":"local value",
+                       "unit":[
+                          "kilometers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"3",
+                       "name":"Total available road space due to the project",
+                       "code":"rsy",
+                       "type":"local value",
+                       "unit":[
+                          "kilometers"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          
+                       ]
+                    },
+                    {
+                       "id":"4",
+                       "name":"Share of road space used by public transport",
+                       "code":"src",
+                       "type":"local value",
+                       "unit":[
+                          "%"
+                       ],
+                       "usedefaultvalue":"false",
+                       "alternativeparameters":[
+                          {
+                             "id":"1",
+                             "name":"Total distance driven by public transport buses",
+                             "code":"dd_zx",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"1",
+                             "name":"Total distance driven in kilometers by taxis",
+                             "code":"dd_tx",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          },
+                          {
+                             "id":"1",
+                             "name":"Total distance driven in by passenger cars",
+                             "code":"dd_cx",
+                             "type":"local value",
+                             "unit":[
+                                "km"
+                             ],
+                             "usedefaultvalue":"false",
+                             "alternativeparameters":[
+                                
+                             ]
+                          }
+                       ]
+                    }
+                 ]
+              }
+           ]
+        }
+     ]
+  }
+}

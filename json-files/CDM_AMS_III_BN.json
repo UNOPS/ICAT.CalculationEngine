@@ -1,0 +1,372 @@
+{
+  "methodology": {
+    "id": "2",
+    "name": "CDM_AMS_III_BN",
+    "code": "CDM_AMS_III_BN",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameters": [],
+        "dimensions": []
+      },
+      {
+        "id": "2",
+        "name": "rout",
+        "code": "rout",
+        "description": "route",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "vehicle",
+            "fuelid": "-99",
+            "vehicletypeid": "1",
+            "routid": "-99",
+            "powerplantid": "1",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "vehicle type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Bus",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Total amount of fossil fuel consumed by the buses three years prior to the start date of the project activity",
+                    "code": "fuelConsumption",
+                    "type": "local value",
+                    "unit": ["liter", "m³", "tonne", "kg"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "name": "Electric bus",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Total amount of electricity consumed by the buses three years prior to the start date of the project activity",
+                    "code": "ecConsumption",
+                    "type": "local value",
+                    "unit": ["kWh"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fuel",
+            "fuelid": "-99",
+            "vehicletypeid": "1",
+            "routid": "-99",
+            "powerplantid": "1",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": ["GJ/t"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": ["GJ/t"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Average technical transmission and distribution losses for providing electricity to grid",
+                    "code": "tdlgrid",
+                    "type": "local value",
+                    "unit": ["%"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  }
+                ]
+              }
+            ],
+            "parameter": []
+          },
+          {
+            "id": "3",
+            "name": "rout type",
+            "type": "rout",
+            "code": "rout",
+            "fueltypeid": "2",
+            "vehicletypeid": "1",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "3",
+            "multyselect": "false",
+            "description": "rout type ",
+            "values": [],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Total passenger-kilometres transported three years prior to the start date of the project activity",
+                "code": "pk",
+                "type": "local value",
+                "unit": ["passenger-kilometres"],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "rout",
+        "code": "rout",
+        "description": "route",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "vehicle",
+            "fuelid": "-99",
+            "vehicletypeid": "1",
+            "routid": "-99",
+            "powerplantid": "1",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "vehicle type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Bus",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Total amount of fossil fuel consumed by the buses",
+                    "code": "fuelConsumption",
+                    "type": "local value",
+                    "unit": ["liter", "m³", "tonne", "kg"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "1",
+                "name": "Electric bus",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Total amount of electricity consumed by the buses",
+                    "code": "ecConsumption",
+                    "type": "local value",
+                    "unit": ["kWh"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fuel",
+            "fuelid": "-99",
+            "vehicletypeid": "1",
+            "routid": "-99",
+            "powerplantid": "1",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": ["GJ/t"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2",
+                    "type": "country value",
+                    "unit": ["tCO₂/GJ"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": ["GJ/t"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2",
+                    "type": "country value",
+                    "unit": ["tCO₂/GJ"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Average technical transmission and distribution losses for providing electricity to grid",
+                    "code": "tdlgrid",
+                    "type": "local value",
+                    "unit": ["%"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": []
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor of the electric grid",
+                    "code": "efkgrid",
+                    "type": "country value",
+                    "unit": ["tCO₂e/MWh"],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": []
+                  }
+                ]
+              }
+            ],
+            "parameter": []
+          },
+          {
+            "id": "3",
+            "name": "rout type",
+            "type": "rout",
+            "code": "rout",
+            "fueltypeid": "2",
+            "vehicletypeid": "1",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "3",
+            "multyselect": "false",
+            "description": "rout type ",
+            "values": [],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Total passenger transported",
+                "code": "p",
+                "type": "local value",
+                "unit": ["passenger"],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": []
+              },
+              {
+                "id": "3",
+                "name": "Average distance travelled by the passengers",
+                "code": "avdk",
+                "type": "local value",
+                "unit": ["km"],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

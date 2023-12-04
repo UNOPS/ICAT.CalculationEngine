@@ -1,0 +1,416 @@
+{
+    "methodology": {
+      "id": "2",
+      "name": "jica_tcm_ms_p_v_3",
+      "code": "jica_tcm_ms_p_v_3",
+      "versionnumber": "1",
+      "documentdate": "",
+      "description": "",
+      "parameters": [
+        {
+          "id": "1",
+          "name": "year",
+          "code": "year",
+          "description": "year",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameters": [
+            
+          ],
+          "dimensions": [
+            
+          ]
+        },
+        {
+          "id": "2",
+          "name": "pasengerShare",
+          "code": "emps",
+          "description": " pasengerShare",
+          "category": "baseline",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "car",
+                  "defaultvalue": "false"
+                },
+                {
+                  "id": "2",
+                  "name": "bus",
+                  "defaultvalue": "false"
+                },
+                {
+                  "id": "3",
+                  "name": "van",
+                  "defaultvalue": "false"
+                },
+                {
+                  "id": "4",
+                  "name": "Threewheel",
+                  "defaultvalue": "false"
+                },
+                {
+                  "id": "5",
+                  "name": "Motor Cycle",
+                  "defaultvalue": "false"
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor of transport mode",
+                  "code": "ef_km",
+                  "type": "local value",
+                  "unit": [
+                    "t-CO₂/km"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    {
+                      "id": "1",
+                      "name": "Fuel consumption rate of transportation mode",
+                      "code": "sfc",
+                      "type": "local value",
+                      "unit": [
+                        "t/km"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [ ]
+                    }
+                  ]
+                },
+               
+                {
+                  "id": "2",
+                  "name": "Average occupation rate of transport mode",
+                  "code": "or",
+                  "type": "local value",
+                  "unit": [
+                    "passenger/vehicle"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Share of passengers by transport mode",
+                  "code": "ms",
+                  "type": "local value",
+                  "unit": [
+                    "%"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/t"
+                      ],
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/t"
+                      ],
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "t-CO₂/MWh",
+                    "t-CO₂/TJ"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "project parameter",
+          "code": "project",
+          "description": " project parameter traffic Congestion Mitigation",
+          "category": "project",
+          "type": "local value",
+          "defaultvalue": "",
+          "parameter": [
+            
+          ],
+          "dimensions": [
+            {
+              "id": "1",
+              "name": "vehicle type",
+              "type": "vehicle",
+              "code": "ve",
+              "fueltypeid": "2",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "1",
+              "multyselect": "false",
+              "description": "vehicle type ",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Common",
+                  "defaultvalue": "false",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "No of passenger transported by the project per year",
+                      "code": "passenger",
+                      "type": "local value",
+                      "unit": [
+                        "passenger/y"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [
+                        
+                      ]
+                    },
+                    {
+                      "id": "2",
+                      "name": "Average trip distance of the passenger of the project activity in year y",
+                      "code": "btdp",
+                      "type": "local value",
+                      "unit": [
+                        "km"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "1",
+                  "name": "car",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "bus",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "van",
+                  "defaultvalue": "false",
+                  "parameter": [
+                   
+                  ]
+                },
+                {
+                  "id": "4",
+                  "name": "Threewheel",
+                  "defaultvalue": "false",
+                  "parameter": [
+                  ]
+                },
+                {
+                  "id": "5",
+                  "name": "Motor Cycle",
+                  "defaultvalue": "false",
+                  "parameter": [
+             
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "Fuel consumption",
+                  "code": "fc",
+                  "type": "local value",
+                  "unit": [
+                    "t/y","MWh/y"
+                  ],
+                  "usedefaultvalue": "false",
+                  "alternativeparameters": [
+                    {
+                      "id": "1",
+                      "name": "Fuel consumption rate of transportation mode",
+                      "code": "sfc",
+                      "type": "local value",
+                      "unit": [
+                        "t/km"
+                      ],
+                      "usedefaultvalue": "false",
+                      "alternativeparameters": [ ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "name": "fuel type",
+              "type": "fuel",
+              "code": "fu",
+              "fuelid": "1",
+              "vehicletypeid": "-99",
+              "routid": "-99",
+              "powerplantid": "-99",
+              "orderid": "2",
+              "multyselect": "true",
+              "description": "fuel type",
+              "values": [
+                {
+                  "id": "1",
+                  "name": "Diesel",
+                  "defaultvalue": "",
+                  "parameter": [
+                   
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/t"
+                      ],
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "2",
+                  "name": "Petrol",
+                  "defaultvalue": "",
+                  "parameter": [
+                    {
+                      "id": "1",
+                      "name": "Net calorific value",
+                      "code": "ncv",
+                      "type": "country value",
+                      "unit": [
+                        "TJ/t"
+                      ],
+                      "usedefaultvalue": "true",
+                      "alternativeparameters": [
+                        
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "3",
+                  "name": "Electricity",
+                  "defaultvalue": "",
+                  "parameter": [
+                  ]
+                }
+              ],
+              "parameter": [
+                {
+                  "id": "1",
+                  "name": "CO₂ emission factor",
+                  "code": "ef",
+                  "type": "country value",
+                  "unit": [
+                    "t-CO₂/MWh",
+                    "t-CO₂/TJ"
+                  ],
+                  "usedefaultvalue": "true",
+                  "alternativeparameters": [
+                    
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

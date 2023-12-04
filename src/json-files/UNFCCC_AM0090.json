@@ -1,0 +1,562 @@
+{
+  "methodology": {
+    "id": "2",
+    "name": "UNFCCC_AM0090",
+    "code": "UNFCCC_AM0090",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameters": [
+          
+        ],
+        "dimensions": [
+          
+        ]
+      },
+      {
+        "id": "2",
+        "name": "baseline vehicle details",
+        "code": "vehicle",
+        "description": " baseline vehicle details",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type",
+            "values": [
+              {
+                "id": "1",
+                "name": "truck",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Distance of the baseline trip route",
+                "code": "ad",
+                "type": "local value",
+                "unit": [
+                  "Km"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Amount of cargo transported by the project transportation mode",
+                "code": "ty",
+                "type": "local value",
+                "unit": [
+                  "tonne"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Baseline emission factor(EFBL)",
+                "code": "cdefault",
+                "type": "country value",
+                "unit": [
+                  "gCO₂/tonne.km"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  {
+                    "id": "1",
+                    "name": "Amount of fuel consumption",
+                    "code": "fcblix",
+                    "type": "local value",
+                    "unit": [
+                      "litter",
+                      "m3"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Amount of cargo transported in trucks",
+                    "code": "tx",
+                    "type": "local value",
+                    "unit": [
+                      "tonne"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "Factor to account for non-empty return trips",
+                    "code": "frtbl",
+                    "type": "local value",
+                    "unit": [
+                      "fraction"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "4",
+                    "name": "Amount of cargo transported in trucks in the return trips",
+                    "code": "trtx",
+                    "type": "local value",
+                    "unit": [
+                      "tonne"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "5",
+                    "name": "Distance of the return trip route",
+                    "code": "rtdx",
+                    "type": "local value",
+                    "unit": [
+                      "Km"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "GJ/mass",
+                      "volume unit"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2",
+                    "type": "country value",
+                    "unit": [
+                      "tCO₂/GJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Gasolin",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "GJ/mass",
+                      "volume unit"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "efco2",
+                    "type": "country value",
+                    "unit": [
+                      "tCO₂/GJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "3",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type",
+            "values": [
+              {
+                "id": "1",
+                "name": "ships",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "2",
+                "name": "barges",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "3",
+                "name": "trains",
+                "defaultvalue": "false"
+              },
+              {
+                "id": "4",
+                "name": "trucks",
+                "defaultvalue": "false"
+              }
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Amount of cargo transported by the project transportation mode",
+                "code": "ty",
+                "type": "local value",
+                "unit": [
+                  "tonne"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Amount of cargo transported by the project transportation mode in the return trips",
+                "code": "trty",
+                "type": "local value",
+                "unit": [
+                  "tonne"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Quantity of fuel combusted",
+                "code": "fcijy",
+                "type": "local value",
+                "unit": [
+                  "m3",
+                  "MWh"
+                ],
+                "usedefaultvalue": "false",
+                "alternativeparameters": [
+                  
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "true",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "CO₂ emission coefficient",
+                    "code": "coefiy",
+                    "type": "country value",
+                    "unit": [
+                      "tCO₂"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      {
+                        "id": "1",
+                        "name": "Weighted average net calorific",
+                        "code": "ncv",
+                        "type": "country value",
+                        "unit": [
+                          "GJ"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "true",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Weighted average mass fraction of carbon",
+                        "code": "wciy",
+                        "type": "country value",
+                        "unit": [
+                          "tc"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "3",
+                        "name": "Weighted average density",
+                        "code": "piy",
+                        "type": "country value",
+                        "unit": [
+                          "mass unit"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "4",
+                        "name": "Weighted average CO₂ emission factor",
+                        "code": "efco2",
+                        "type": "country value",
+                        "unit": [
+                          "tCO₂/GJ"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Gasolin",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "CO₂ emission coefficient",
+                    "code": "coefiy",
+                    "type": "country value",
+                    "unit": [
+                      "tCO₂"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      {
+                        "id": "1",
+                        "name": "Weighted average net calorific value",
+                        "code": "ncv",
+                        "type": "country value",
+                        "unit": [
+                          "GJ"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "true",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Weighted average mass fraction of carbon",
+                        "code": "wciy",
+                        "type": "country value",
+                        "unit": [
+                          "tc"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "3",
+                        "name": "Weighted average density",
+                        "code": "piy",
+                        "type": "country value",
+                        "unit": [
+                          "mass unit"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      },
+                      {
+                        "id": "4",
+                        "name": "Weighted average CO₂ emission factor",
+                        "code": "efco2",
+                        "type": "country value",
+                        "unit": [
+                          "tCO₂/GJ"
+                        ],
+                        "defaultvalue": "",
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Emission factor for electricity generation",
+                    "code": "efefjy",
+                    "type": "country value",
+                    "unit": [
+                      "tCO₂/MWh"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Average technical transmission and distribution losses",
+                    "code": "tdljy",
+                    "type": "local value",
+                    "unit": [
+                      "%"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

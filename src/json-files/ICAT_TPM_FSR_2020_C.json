@@ -1,0 +1,461 @@
+{
+  "methodology": {
+    "id": "3",
+    "name": "ICAT transport pricing guidance",
+    "code": "ICAT_TPM_FSR_2020_C",
+    "versionnumber": "1",
+    "documentdate": "",
+    "description": "",
+    "parameters": [
+      {
+        "id": "1",
+        "name": "year",
+        "code": "year",
+        "description": "year",
+        "category": "baseline",
+        "type": "local value",
+        "multyselect": "true",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          
+        ]
+      },
+      {
+        "id": "2",
+        "name": "baseline details",
+        "code": "baseline",
+        "description": " baseline vehicle details",
+        "category": "baseline",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "vehicle type",
+            "type": "vehicle",
+            "code": "ve",
+            "fueltypeid": "2",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "1",
+            "multyselect": "false",
+            "description": "vehicle type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Car",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Specific fuel consumption",
+                    "code": "sfc",
+                    "type": "local value",
+                    "unit": [
+                      "L per VKT",
+                      "MWh per VKT"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Vehicle kilometres travelled",
+                    "code": "vkt",
+                    "type": "local value",
+                    "unit": [
+                      "VKT"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "Average number of persons travelling in same vehicle",
+                    "code": "or",
+                    "type": "local value",
+                    "unit": [
+                      "persons per vehicle"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Bus",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Specific fuel consumption",
+                    "code": "sfc",
+                    "type": "local value",
+                    "unit": [
+                      "L per VKT",
+                      "MWh per VKT"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Vehicle kilometres travelled",
+                    "code": "vkt",
+                    "type": "local value",
+                    "unit": [
+                      "VKT"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "Average number of persons travelling in same vehicle",
+                    "code": "or",
+                    "type": "local value",
+                    "unit": [
+                      "persons per vehicle"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Train",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Consumption",
+                    "code": "fc",
+                    "type": "local value",
+                    "unit": [
+                      "L","MWh "
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      {
+                        "id": "1",
+                        "name": "Vehicle kilometres travelled",
+                        "code": "vkt",
+                        "type": "local value",
+                        "unit": [
+                          "VKT"
+                        ],
+                        "usedefaultvalue": "false",
+                        "alternativeparameters": [
+                          
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Energy efficiency of a engine",
+                    "code": "n",
+                    "type": "local value",
+                    "unit": [
+                      "%"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "PKM for diesel rail passenger transpor",
+                    "code": "pkm",
+                    "type": "local value",
+                    "unit": [
+                      "PKM"
+                    ],
+                    "usedefaultvalue": "false",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          },
+          {
+            "id": "2",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/Gg"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "Density",
+                    "code": "density",
+                    "type": "country value",
+                    "unit": [
+                      "Kg/m3"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "1",
+                    "name": "Net calorific value",
+                    "code": "ncv",
+                    "type": "country value",
+                    "unit": [
+                      "TJ/Gg"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "3",
+                    "name": "Density",
+                    "code": "density",
+                    "type": "country value",
+                    "unit": [
+                      "Kg/m3"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  {
+                    "id": "2",
+                    "name": "CO₂ emission factor",
+                    "code": "ef",
+                    "type": "country value",
+                    "unit": [
+                      "t-CO₂/TJ"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ],
+            "parameter": [
+              
+            ]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "project parameter",
+        "code": "project",
+        "description": " project parameter",
+        "category": "project",
+        "type": "local value",
+        "defaultvalue": "",
+        "parameter": [
+          
+        ],
+        "dimensions": [
+          {
+            "id": "1",
+            "name": "fuel type",
+            "type": "fuel",
+            "code": "fu",
+            "fuelid": "1",
+            "vehicletypeid": "-99",
+            "routid": "-99",
+            "powerplantid": "-99",
+            "orderid": "2",
+            "multyselect": "false",
+            "description": "fuel type",
+            "values": [
+              {
+                "id": "1",
+                "name": "Diesel",
+                "defaultvalue": "false",
+                "parameter": [
+                  
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Petrol",
+                "defaultvalue": "false",
+                "parameter": [
+                  
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Electricity",
+                "defaultvalue": "false",
+                "parameter": [
+                  
+                ]
+              }
+
+            ],
+            "parameter": [
+              {
+                "id": "1",
+                "name": "Relative fuel price increase",
+                "code": "priceIncrease",
+                "type": "country value",
+                "unit": [
+                  "%"
+                ],
+                "defaultvalue": "",
+                "usedefaultvalue": "true",
+                "alternativeparameters": [
+                  
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Cross-price elasticity / Own price elasticity",
+                "code": "priceElasticity",
+                "type": "country value",
+                "unit": [
+                  "-"
+                ],
+                "defaultvalue": "-0.15",
+                "usedefaultvalue": "true",
+                "alternativeparameters": [
+                 
+                  {
+                    "id": "1",
+                    "name": "Actual fuel price (annual average) in local currency for the assessment year",
+                    "code": "fuelPrice",
+                    "type": "country value",
+                    "unit": [
+                      "price per liter"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  },
+                  {
+                    "id": "2",
+                    "name": "Actual per capita income in local currency for the assessment year",
+                    "code": "capitalIncome",
+                    "type": "country value",
+                    "unit": [
+                      "price per capita"
+                    ],
+                    "defaultvalue": "",
+                    "usedefaultvalue": "true",
+                    "alternativeparameters": [
+                      
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
