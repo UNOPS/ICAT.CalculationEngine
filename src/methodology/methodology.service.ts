@@ -1007,6 +1007,18 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               this.getValue(req[num], 'sfcblixy') === -999
                 ? (value = 1)
                 : (vehicle.sfcblixy = this.getValue(req[num], 'sfcblixy'));
+                this.getValue(req[num], 'avgweightbyvehicle') === -999
+                ? (value = 1)
+                : (vehicle.avgweightbyvehicle = this.getValue(
+                    req[num],
+                    'avgweightbyvehicle',
+                  ));
+                  this.getValue(req[num], 'totaldistancetravel') === -999
+                  ? (value = 1)
+                  : (vehicle.totaldistancetravel = this.getValue(
+                      req[num],
+                      'totaldistancetravel',
+                    ));
 
               if (
                 fuelType[fu] === req[num]['fuelType'] &&
@@ -1017,7 +1029,6 @@ export class MethodologyService extends TypeOrmCrudService<Methodology> {
               }
             }
           }
-          vehicle.fuel = fuel;
           vehicleArray.push(vehicle);
         }
 
