@@ -254,8 +254,8 @@ export class IcatTpm2020Service extends TypeOrmCrudService<PppConversionFactor> 
 
 
     public async elesticPrice(fuelPrice: number, capital: number, ppp: number, year: number) {
-        let usPrice = this.consumerPriceService.getConsumervalue("US", year);
-        let usPrice2016 = this.consumerPriceService.getConsumervalue("US", 2016);
+        let usPrice = this.consumerPriceService.getConsumervalue("USA", year);
+        let usPrice2016 = this.consumerPriceService.getConsumervalue("USA", 2016);
 
         let fuelPriceUS = fuelPrice / ppp;
         let capitalIncome = capital / ppp;
