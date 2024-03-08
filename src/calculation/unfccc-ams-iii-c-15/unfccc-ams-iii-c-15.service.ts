@@ -63,7 +63,7 @@ export class UnfcccAmsIiiC15Service {
 
         }
 
-        return emission;
+        return emission * baseline.vehicle.length /project.vehicle.length;
 
     }
 
@@ -79,9 +79,11 @@ export class UnfcccAmsIiiC15Service {
             if (fuel_1 > 0) {
                 fuel = fuel_1;
             }
-            else fuel = 0;
+            else {
+                fuel=  (project.vehicle[num].sfc * project.vehicle[num].fuel.ef / (1 - (project.tdl / 100))* 1000) 
+            }fuel = 0;
 
-            emissioFactor = (project.vehicle[num].sfc * project.vehicle[num].fuel.ef / (1 - (project.tdl / 100)) * 1000) + fuel;
+            emissioFactor =  fuel;
             let emission = emissioFactor * project.distance * project.vehicle[num].n;
             projectEmission += emission;
          
