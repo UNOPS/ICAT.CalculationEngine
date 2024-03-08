@@ -81,7 +81,7 @@ export class UnfcccAmsIiiC15Service {
             }
             else {
                 fuel=  (project.vehicle[num].sfc * project.vehicle[num].fuel.ef / (1 - (project.tdl / 100))* 1000) 
-            }fuel = 0;
+            }
 
             emissioFactor =  fuel;
             let emission = emissioFactor * project.distance * project.vehicle[num].n;
