@@ -9,6 +9,7 @@ import { IcatTpm2020Controller } from './calculation/icat-tpm-2020/icat-tpm-2020
 import { IcatTpm2020Service } from './calculation/icat-tpm-2020/icat-tpm-2020.service';
 import { IcatTpm2020Module } from './calculation/icat-tpm-2020/icat-tpm-2020.module';
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProjectionService } from './calculation/projection/projection.service';
 import { ProjectionController } from './calculation/projection/projection.controller';
@@ -74,6 +75,7 @@ import { MethodologyDataController } from './master-data/methodology-data/method
 import { MethodologyDataService } from './master-data/methodology-data/methodology-data.service';
 import { CdmAm0031AkModule } from './calculation/cdm-am0031/cdm-am0031.module';
 import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
+import { ApiKeyAuthGuard } from './auth/guards/api-key-auth.guard';
 @Module({
   imports: [SampleModule,
     TypeOrmModule.forFeature([
@@ -163,6 +165,7 @@ import { CDMAM0031Service } from './calculation/cdm-am0031/cdm-am0031.service';
     MethodologyDataController,
   ],
   providers: [
+    { provide: APP_GUARD, useClass: ApiKeyAuthGuard },
     AppService,
     JicaTcmMsPV3Service,
     IcatTpm2020Service,
